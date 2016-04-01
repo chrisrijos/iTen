@@ -18,6 +18,7 @@
 		FE2623BC1CAEFA940074C58F /* Conference_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2623BB1CAEFA940074C58F /* Conference_AppTests.swift */; };
 		FE2623C71CAEFA940074C58F /* Conference_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2623C61CAEFA940074C58F /* Conference_AppUITests.swift */; };
 		FE2623D51CAF39CF0074C58F /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623D41CAF39CF0074C58F /* Home.png */; };
+		FE2623D71CAF3A9A0074C58F /* Map.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623D61CAF3A9A0074C58F /* Map.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		FE2623C61CAEFA940074C58F /* Conference_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conference_AppUITests.swift; sourceTree = "<group>"; };
 		FE2623C81CAEFA940074C58F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE2623D41CAF39CF0074C58F /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home.png; sourceTree = "<group>"; };
+		FE2623D61CAF3A9A0074C58F /* Map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Map.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				FE2623D41CAF39CF0074C58F /* Home.png */,
 				FE2623A11CAEFA940074C58F /* AppDelegate.swift */,
 				FE2623A61CAEFA940074C58F /* MasterViewController.swift */,
+				FE2623D61CAF3A9A0074C58F /* Map.png */,
 				FE2623A81CAEFA940074C58F /* DetailViewController.swift */,
 				FE2623AA1CAEFA940074C58F /* Main.storyboard */,
 				EBDF60E91CAEFD1D00B883D6 /* MapStoryboard.storyboard */,
@@ -241,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE2623D71CAF3A9A0074C58F /* Map.png in Resources */,
 				FE2623B11CAEFA940074C58F /* LaunchScreen.storyboard in Resources */,
 				FE2623AE1CAEFA940074C58F /* Assets.xcassets in Resources */,
 				FE2623D51CAF39CF0074C58F /* Home.png in Resources */,
