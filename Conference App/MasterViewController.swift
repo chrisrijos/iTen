@@ -10,25 +10,27 @@ import UIKit
 import CoreData
 
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
-
+    let x:[AnyObject] = ["Home","Map","Agenda","My Iten","Social Media","Live Broadcast","About","Who is Here", "Settings"]
+    let m:[UIImage] = [UIImage(named:"Home.png")!,UIImage(named:"Map.png")!,UIImage(named:"Agenda.png")!,UIImage(named:"MyIten.png")!,UIImage(named:"SocialMedia.png")!,UIImage(named:"LiveBroadcast.png")!,UIImage(named:"About.png")!,UIImage(named:"Who.png")!,UIImage(named:"Settings.png")!]
     var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
-
+    var items: NSMutableArray!
+    var images: NSMutableArray!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        //self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.items = NSMutableArray(array: x)
+        self.images = NSMutableArray(array: m)
+        //self.view.frame = CGRect(x: 0, y: 0, width: 320, height: 480)
+        self.tableView = UITableView(frame:self.view!.frame)
+        self.tableView!.delegate = self
+        self.tableView!.dataSource = self
+        self.tableView!.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        //self.view?.addSubview(self.tableView)
+        self.view.backgroundColor = UIColor(red: 0, green: 255, blue: 255, alpha: 100)
 
-        //let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        //self.navigationItem.rightBarButtonItem = addButton
         
         
-        
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
-        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -41,30 +43,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         // Dispose of any resources that can be recreated.
     }
 
-    func insertNewObject(sender: AnyObject) {
-        /* Default Code
-        let context = self.fetchedResultsController.managedObjectContext
-        let entity = self.fetchedResultsController.fetchRequest.entity!
-        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context)
-             
-        // If appropriate, configure the new managed object.
-        // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-        newManagedObject.setValue(NSDate(), forKey: "timeStamp")
-             
-        // Save the context.
-        do {
-            try context.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            //print("Unresolved error \(error), \(error.userInfo)")
-            abort()
-        }
-        */
-        
-        
-        
-        
+    func insertNewObject(Name: String, Content: UIViewController) {
         
     }
 
@@ -89,15 +68,28 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionInfo = self.fetchedResultsController.sections![section]
-        return sectionInfo.numberOfObjects
+        /*let sectionInfo = self.fetchedResultsController.sections![section]
+        return sectionInfo.numberOfObjects*/
+        
+        return self.items.count;
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        /*let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
         self.configureCell(cell, withObject: object)
+        return cell*/
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+        cell.textLabel!.text = "\(self.items[indexPath.row])"
+        //cell.imageView?.image = image
+        
+        if let q:UIImage? = self.images[indexPath.row] as? UIImage{
+            cell.imageView?.image = q
+        }
+        cell.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 0.5)
+        cell.textLabel?.textColor = UIColor(red: 0.6, green: 0.2, blue: 0.7, alpha: 100)
         return cell
+
     }
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -207,3 +199,56 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 }
 
+
+
+
+
+
+/*
+func insertNewObject(Name: String, Content: UIViewController) {
+    /* Default Code
+     let context = self.fetchedResultsController.managedObjectContext
+     let entity = self.fetchedResultsController.fetchRequest.entity!
+     let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context)
+     
+     // If appropriate, configure the new managed object.
+     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+     newManagedObject.setValue(NSDate(), forKey: "timeStamp")
+     
+     // Save the context.
+     do {
+     try context.save()
+     } catch {
+     // Replace this implementation with code to handle the error appropriately.
+     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+     //print("Unresolved error \(error), \(error.userInfo)")
+     abort()
+     }
+     */
+    
+    
+    
+    
+    
+}
+*/
+
+
+
+/*
+ override func viewDidLoad() {
+ super.viewDidLoad()
+ // Do any additional setup after loading the view, typically from a nib.
+ //self.navigationItem.leftBarButtonItem = self.editButtonItem()
+ 
+ //let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
+ //self.navigationItem.rightBarButtonItem = addButton
+ 
+ 
+ 
+ if let split = self.splitViewController {
+ let controllers = split.viewControllers
+ self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+ }
+ }
+*/
