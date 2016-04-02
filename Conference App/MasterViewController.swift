@@ -205,10 +205,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 }
 
 
-
-
-
-
 /*
 func insertNewObject(Name: String, Content: UIViewController) {
     /* Default Code
