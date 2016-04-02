@@ -95,7 +95,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         let bgColorView = UIView()
         bgColorView.backgroundColor = UIColor.cyanColor()
         cell.selectedBackgroundView = bgColorView
-        cell.setValue(UIView(), forKeyPath: "Home")
+        //cell.setValue(UIView(), forKeyPath: "Home")
         return cell
     }
 
