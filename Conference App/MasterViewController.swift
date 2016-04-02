@@ -12,6 +12,7 @@ import CoreData
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     let x:[AnyObject] = ["Home","Map","Agenda","My Iten","Social Media","Live Broadcast","About","Who is Here", "Settings"]
     let m:[UIImage] = [UIImage(named:"Home.png")!,UIImage(named:"Map.png")!,UIImage(named:"Agenda.png")!,UIImage(named:"MyIten.png")!,UIImage(named:"SocialMedia.png")!,UIImage(named:"LiveBroadcast.png")!,UIImage(named:"About.png")!,UIImage(named:"Who.png")!,UIImage(named:"Settings.png")!]
+    let Vc:[UIViewController] = []
     var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
     var items: NSMutableArray!
@@ -61,7 +62,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             }
         }
     }
-
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let view = Vc[indexPath.row]
+        self.showDetailViewController(view, sender: self)
+    }
     // MARK: - Table View
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -82,8 +86,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         return cell*/
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
         cell.textLabel!.text = "\(self.items[indexPath.row])"
-        //cell.imageView?.image = image
-        
         if let q:UIImage? = self.images[indexPath.row] as? UIImage{
             cell.imageView?.image = q
         }
@@ -93,8 +95,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         let bgColorView = UIView()
         bgColorView.backgroundColor = UIColor.cyanColor()
         cell.selectedBackgroundView = bgColorView
+        cell.setValue(UIView(), forKeyPath: "Home")
         return cell
-
     }
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
