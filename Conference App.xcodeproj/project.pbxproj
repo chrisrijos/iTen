@@ -17,6 +17,15 @@
 		FE2623B11CAEFA940074C58F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2623AF1CAEFA940074C58F /* LaunchScreen.storyboard */; };
 		FE2623BC1CAEFA940074C58F /* Conference_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2623BB1CAEFA940074C58F /* Conference_AppTests.swift */; };
 		FE2623C71CAEFA940074C58F /* Conference_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2623C61CAEFA940074C58F /* Conference_AppUITests.swift */; };
+		FE2623D51CAF39CF0074C58F /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623D41CAF39CF0074C58F /* Home.png */; };
+		FE2623D71CAF3A9A0074C58F /* Map.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623D61CAF3A9A0074C58F /* Map.png */; };
+		FE2623D91CAF3B2B0074C58F /* Agenda.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623D81CAF3B2B0074C58F /* Agenda.png */; };
+		FE2623DB1CAF3BDB0074C58F /* MyIten.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623DA1CAF3BDB0074C58F /* MyIten.png */; };
+		FE2623DD1CAF3C800074C58F /* SocialMedia.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623DC1CAF3C800074C58F /* SocialMedia.png */; };
+		FE2623DF1CAF3CD80074C58F /* LiveBroadcast.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623DE1CAF3CD80074C58F /* LiveBroadcast.png */; };
+		FE2623E11CAF3D000074C58F /* About.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623E01CAF3D000074C58F /* About.png */; };
+		FE2623E31CAF3D520074C58F /* Who.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623E21CAF3D520074C58F /* Who.png */; };
+		FE2623E51CAF3D820074C58F /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623E41CAF3D820074C58F /* Settings.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +62,15 @@
 		FE2623C21CAEFA940074C58F /* Conference AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Conference AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2623C61CAEFA940074C58F /* Conference_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conference_AppUITests.swift; sourceTree = "<group>"; };
 		FE2623C81CAEFA940074C58F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE2623D41CAF39CF0074C58F /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home.png; sourceTree = "<group>"; };
+		FE2623D61CAF3A9A0074C58F /* Map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Map.png; sourceTree = "<group>"; };
+		FE2623D81CAF3B2B0074C58F /* Agenda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Agenda.png; sourceTree = "<group>"; };
+		FE2623DA1CAF3BDB0074C58F /* MyIten.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MyIten.png; sourceTree = "<group>"; };
+		FE2623DC1CAF3C800074C58F /* SocialMedia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SocialMedia.png; sourceTree = "<group>"; };
+		FE2623DE1CAF3CD80074C58F /* LiveBroadcast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LiveBroadcast.png; sourceTree = "<group>"; };
+		FE2623E01CAF3D000074C58F /* About.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = About.png; sourceTree = "<group>"; };
+		FE2623E21CAF3D520074C58F /* Who.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Who.png; sourceTree = "<group>"; };
+		FE2623E41CAF3D820074C58F /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +121,17 @@
 		FE2623A01CAEFA940074C58F /* Conference App */ = {
 			isa = PBXGroup;
 			children = (
+				FE2623D41CAF39CF0074C58F /* Home.png */,
 				FE2623A11CAEFA940074C58F /* AppDelegate.swift */,
 				FE2623A61CAEFA940074C58F /* MasterViewController.swift */,
+				FE2623E41CAF3D820074C58F /* Settings.png */,
+				FE2623E21CAF3D520074C58F /* Who.png */,
+				FE2623E01CAF3D000074C58F /* About.png */,
+				FE2623DE1CAF3CD80074C58F /* LiveBroadcast.png */,
+				FE2623DC1CAF3C800074C58F /* SocialMedia.png */,
+				FE2623DA1CAF3BDB0074C58F /* MyIten.png */,
+				FE2623D81CAF3B2B0074C58F /* Agenda.png */,
+				FE2623D61CAF3A9A0074C58F /* Map.png */,
 				FE2623A81CAEFA940074C58F /* DetailViewController.swift */,
 				FE2623AA1CAEFA940074C58F /* Main.storyboard */,
 				EBDF60E91CAEFD1D00B883D6 /* MapStoryboard.storyboard */,
@@ -238,10 +265,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE2623E31CAF3D520074C58F /* Who.png in Resources */,
+				FE2623E11CAF3D000074C58F /* About.png in Resources */,
+				FE2623D71CAF3A9A0074C58F /* Map.png in Resources */,
 				FE2623B11CAEFA940074C58F /* LaunchScreen.storyboard in Resources */,
 				FE2623AE1CAEFA940074C58F /* Assets.xcassets in Resources */,
+				FE2623DB1CAF3BDB0074C58F /* MyIten.png in Resources */,
+				FE2623DD1CAF3C800074C58F /* SocialMedia.png in Resources */,
+				FE2623D51CAF39CF0074C58F /* Home.png in Resources */,
 				EBDF60EA1CAEFD1D00B883D6 /* MapStoryboard.storyboard in Resources */,
+				FE2623D91CAF3B2B0074C58F /* Agenda.png in Resources */,
+				FE2623E51CAF3D820074C58F /* Settings.png in Resources */,
 				FE2623AC1CAEFA940074C58F /* Main.storyboard in Resources */,
+				FE2623DF1CAF3CD80074C58F /* LiveBroadcast.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
