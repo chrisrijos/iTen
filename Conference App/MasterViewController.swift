@@ -27,7 +27,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         self.tableView!.dataSource = self
         self.tableView!.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         //self.view?.addSubview(self.tableView)
-        self.view.backgroundColor = UIColor(red: 0, green: 255, blue: 255, alpha: 100)
+        self.tableView.rowHeight = CGFloat(65.00)
+        self.view.backgroundColor = UIColor(red: 0.15, green: 0.353, blue: 0.6, alpha: 100)
 
         
         
@@ -86,8 +87,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         if let q:UIImage? = self.images[indexPath.row] as? UIImage{
             cell.imageView?.image = q
         }
-        cell.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 0.5)
-        cell.textLabel?.textColor = UIColor(red: 0.6, green: 0.2, blue: 0.7, alpha: 100)
+        cell.backgroundColor = UIColor(red: 0.15, green: 0.353, blue: 0.6, alpha: 0.5)
+        //cell.backgroundColor = UIColor(red: 1.0, green: 0.0, blue: 0.75, alpha: 0.5)
+        cell.textLabel?.textColor = UIColor(red: 1, green: 0.63, blue: 0, alpha: 100)
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.cyanColor()
+        cell.selectedBackgroundView = bgColorView
         return cell
 
     }
