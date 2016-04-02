@@ -12,7 +12,7 @@ import CoreData
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     let x:[AnyObject] = ["Home","Map","Agenda","My Iten","Social Media","Live Broadcast","About","Who is Here", "Settings"]
     let m:[UIImage] = [UIImage(named:"Home.png")!,UIImage(named:"Map.png")!,UIImage(named:"Agenda.png")!,UIImage(named:"MyIten.png")!,UIImage(named:"SocialMedia.png")!,UIImage(named:"LiveBroadcast.png")!,UIImage(named:"About.png")!,UIImage(named:"Who.png")!,UIImage(named:"Settings.png")!]
-    let Vc:[UIViewController] = []
+    let Vc:[UIViewController] = [UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController()]
     var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
     var items: NSMutableArray!
