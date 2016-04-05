@@ -12,7 +12,7 @@ import CoreData
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     let x:[AnyObject] = ["Home","Map","Agenda","My Iten","Social Media","Live Broadcast","About","Who is Here", "Settings"]
     let m:[UIImage] = [UIImage(named:"Home.png")!,UIImage(named:"Map.png")!,UIImage(named:"Agenda.png")!,UIImage(named:"MyIten.png")!,UIImage(named:"SocialMedia.png")!,UIImage(named:"LiveBroadcast.png")!,UIImage(named:"About.png")!,UIImage(named:"Who.png")!,UIImage(named:"Settings.png")!]
-    let Vc:[UIViewController] = [UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController()]
+    let Vc:[UIViewController] = [UINavigationController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController()]
     var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
     var items: NSMutableArray!
@@ -31,6 +31,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         self.tableView.rowHeight = CGFloat(65.00)
         self.view.backgroundColor = UIColor(red: 0.15, green: 0.353, blue: 0.6, alpha: 100)
 
+        Vc[0].addChildViewController(UIViewController())
+        Vc[0].navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self.view, action: nil)
         
         
     }
@@ -64,6 +66,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let view = Vc[indexPath.row]
+        //self.showDetailViewController(view, sender: self)
+        //self.presentViewController(view,animated: true, completion: nil)
+        //self.navigationController?.pushViewController(view, animated: true)
+        
         self.showDetailViewController(view, sender: self)
     }
     // MARK: - Table View
