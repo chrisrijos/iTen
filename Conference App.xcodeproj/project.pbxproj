@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4F3A78DB1CB5AAF500A87EE6 /* Attendees.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3A78DA1CB5AAF500A87EE6 /* Attendees.storyboard */; };
-		4F3A78E11CB5B3C300A87EE6 /* Attendee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3A78E01CB5B3C300A87EE6 /* Attendee.storyboard */; };
 		EBDF60EA1CAEFD1D00B883D6 /* MapStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBDF60E91CAEFD1D00B883D6 /* MapStoryboard.storyboard */; };
 		FE2623A21CAEFA940074C58F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2623A11CAEFA940074C58F /* AppDelegate.swift */; };
 		FE2623A51CAEFA940074C58F /* Conference_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE2623A31CAEFA940074C58F /* Conference_App.xcdatamodeld */; };
@@ -49,7 +48,6 @@
 
 /* Begin PBXFileReference section */
 		4F3A78DA1CB5AAF500A87EE6 /* Attendees.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Attendees.storyboard; sourceTree = "<group>"; };
-		4F3A78E01CB5B3C300A87EE6 /* Attendee.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Attendee.storyboard; sourceTree = "<group>"; };
 		EBDF60E91CAEFD1D00B883D6 /* MapStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapStoryboard.storyboard; sourceTree = "<group>"; };
 		FE26239E1CAEFA940074C58F /* Conference App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Conference App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2623A11CAEFA940074C58F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 				FE2623B21CAEFA940074C58F /* Info.plist */,
 				FE2623A31CAEFA940074C58F /* Conference_App.xcdatamodeld */,
 				4F3A78DA1CB5AAF500A87EE6 /* Attendees.storyboard */,
-				4F3A78E01CB5B3C300A87EE6 /* Attendee.storyboard */,
 			);
 			path = "Conference App";
 			sourceTree = "<group>";
@@ -274,7 +271,6 @@
 				FE2623E31CAF3D520074C58F /* Who.png in Resources */,
 				FE2623E11CAF3D000074C58F /* About.png in Resources */,
 				FE2623D71CAF3A9A0074C58F /* Map.png in Resources */,
-				4F3A78E11CB5B3C300A87EE6 /* Attendee.storyboard in Resources */,
 				FE2623B11CAEFA940074C58F /* LaunchScreen.storyboard in Resources */,
 				FE2623AE1CAEFA940074C58F /* Assets.xcassets in Resources */,
 				FE2623DB1CAF3BDB0074C58F /* MyIten.png in Resources */,
