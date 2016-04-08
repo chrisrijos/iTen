@@ -12,7 +12,16 @@ import CoreData
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     let x:[AnyObject] = ["Home","Map","Agenda","My Iten","Social Media","Live Broadcast","About","Who is Here", "Settings"]
     let m:[UIImage] = [UIImage(named:"Home.png")!,UIImage(named:"Map.png")!,UIImage(named:"Agenda.png")!,UIImage(named:"MyIten.png")!,UIImage(named:"SocialMedia.png")!,UIImage(named:"LiveBroadcast.png")!,UIImage(named:"About.png")!,UIImage(named:"Who.png")!,UIImage(named:"Settings.png")!]
-    let Vc:[UIViewController] = [UINavigationController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController()]
+    
+        
+        //instantiateViewControllerWithIdentifier("Attendee") as? UIViewController
+    
+    
+    
+    
+    
+    
+    var Vc:[UIViewController] = [UINavigationController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController()]
     var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
     var items: NSMutableArray!
@@ -33,8 +42,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
         Vc[0].addChildViewController(UIViewController())
         Vc[0].navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self.view, action: nil)
-        
-        
+        var Sbd:UIStoryboard? = UIStoryboard.init(name: "Attendees", bundle: nil)
+        var dViewController:UIViewController = Sbd!.instantiateViewControllerWithIdentifier("Attendee")
+        Vc[7] = dViewController;
+        Sbd = UIStoryboard.init(name: "MapView", bundle: nil)
+        dViewController = Sbd!.instantiateViewControllerWithIdentifier("MapStoryboard")
+        Vc[1] = dViewController
     }
 
     override func viewWillAppear(animated: Bool) {
