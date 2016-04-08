@@ -7,7 +7,7 @@
         <!--MapStoryboard-->
         <scene sceneID="A7J-Ww-zrD">
             <objects>
-                <viewControllerPlaceholder storyboardName="MapStoryboard" id="ggc-I5-jIA" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MapStoryboard" referencedIdentifier="MapStoryboard" id="ggc-I5-jIA" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfZ-LL-S3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1038.5" y="-1397"/>
