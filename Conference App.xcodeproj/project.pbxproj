@@ -27,6 +27,7 @@
 		FE2623E11CAF3D000074C58F /* About.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623E01CAF3D000074C58F /* About.png */; };
 		FE2623E31CAF3D520074C58F /* Who.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623E21CAF3D520074C58F /* Who.png */; };
 		FE2623E51CAF3D820074C58F /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623E41CAF3D820074C58F /* Settings.png */; };
+		FEF7E0B91CB832D4002A810B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF7E0B81CB832D4002A810B /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		FE2623E01CAF3D000074C58F /* About.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = About.png; sourceTree = "<group>"; };
 		FE2623E21CAF3D520074C58F /* Who.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Who.png; sourceTree = "<group>"; };
 		FE2623E41CAF3D820074C58F /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
+		FEF7E0B81CB832D4002A810B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEF7E0B91CB832D4002A810B /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +106,7 @@
 		FE2623951CAEFA940074C58F = {
 			isa = PBXGroup;
 			children = (
+				FEF7E0B81CB832D4002A810B /* MapKit.framework */,
 				FE2623A01CAEFA940074C58F /* Conference App */,
 				FE2623BA1CAEFA940074C58F /* Conference AppTests */,
 				FE2623C51CAEFA940074C58F /* Conference AppUITests */,
