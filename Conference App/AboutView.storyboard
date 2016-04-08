@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--About-->
+        <scene sceneID="rUD-1S-AKq">
+            <objects>
+                <viewController storyboardIdentifier="AboutView" title="About" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1EW-Hn-lzk" customClass="AboutViewController" customModule="Conference_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d6b-Vk-6tp"/>
+                        <viewControllerLayoutGuide type="bottom" id="jdc-QG-U8d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vKM-jj-dvt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAJ-Bc-Ux7">
+                                <rect key="frame" x="256" y="289" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpr-Kd-Qe9">
+                                <rect key="frame" x="279" y="351" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fpr-Kd-Qe9" firstAttribute="centerY" secondItem="vKM-jj-dvt" secondAttribute="centerY" id="9uT-1a-TjG"/>
+                            <constraint firstItem="kAJ-Bc-Ux7" firstAttribute="centerX" secondItem="vKM-jj-dvt" secondAttribute="centerX" id="j9Z-mb-KvE"/>
+                            <constraint firstItem="kAJ-Bc-Ux7" firstAttribute="centerY" secondItem="vKM-jj-dvt" secondAttribute="centerY" id="kfM-20-Qnk"/>
+                            <constraint firstItem="Fpr-Kd-Qe9" firstAttribute="centerX" secondItem="vKM-jj-dvt" secondAttribute="centerX" id="vEA-7D-wSc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l1w-VR-rg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="143" y="482"/>
+        </scene>
+    </scenes>
+</document>
