@@ -20,10 +20,10 @@
             </objects>
             <point key="canvasLocation" x="-1050.5" y="-1301"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Attendees-->
         <scene sceneID="WcL-us-JCL">
             <objects>
-                <viewControllerPlaceholder id="F7h-Ig-WuW" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Attendees" id="F7h-Ig-WuW" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8z1-UZ-Zkr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-802.5" y="-1401"/>
