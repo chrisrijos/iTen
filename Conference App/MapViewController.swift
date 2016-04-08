@@ -30,6 +30,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var mainDescription: String = ""
 
     @IBAction func openDirections(sender: AnyObject) {
+        
         // User's Current Location
         let latitude:CLLocationDegrees = (locationManager.location?.coordinate.latitude)!
         let longitude:CLLocationDegrees = (locationManager.location?.coordinate.longitude)!
@@ -73,6 +74,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("Test View Did Load")
         addNotations()
         
         // Load JSON Data
@@ -81,7 +83,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         var contentData = NSData(contentsOfURL: url!)
         
         // Object that JSON is Stored In
-        var mainLocation:loc?
+        var mainLocation:loc = loc()
         
         // Styling
         segmentStyle.layer.cornerRadius = 5
@@ -100,11 +102,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 //let tempdata = dictionary.objectForKey("locations") as? NSArray
                 
                 mainLocation = betterParsing(dictionary)
-                print(mainLocation!.name)
-                print(mainLocation!.latitude)
-                print(mainLocation!.longitude)
-                print(mainLocation!.date)
-                print(mainLocation!.description)
+                
+                print(mainLocation.name)
+                print(mainLocation.latitude)
+                print(mainLocation.longitude)
+                print(mainLocation.date)
+                print(mainLocation.description)
                 
             }
             catch let error as NSError {
@@ -136,19 +139,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             var data = loc()
             if let locArray = dictionary.objectForKey("locations") as? NSArray {
                 
-                let locName = locArray[0]["name"]
-                let locLat = locArray[0]["latitude"]
-                let locLong = locArray[0]["longitude"]
-                let locDate = locArray[0]["date"]
-                let locDesc = locArray[0]["description"]
-                let newLocation = ["name": "\(locName)", "latitude": "\(locLat)", "longitude": "\(locLong)", "date": "\(locDate)", "description": "\(locDesc)"]
-                print(newLocation)
-                data = loc(dictionary: newLocation)
-                
+                let locName = locArray[0]["name"] as? String
+                let locLat = locArray[0]["latitude"] as? String
+                let locLong = locArray[0]["longitude"] as? String
+                let locDate = locArray[0]["date"] as? String
+                let locDesc = locArray[0]["description"] as? String
+                //print(locName)
+                if let newName = locName, newLat = locLat, newLong = locLong, newDate = locDate, newDesc = locDesc  {
+                    let newLocation : [String: String] = ["name": "\(newName)", "latitude": "\(newLat)", "longitude": "\(newLong)", "date": "\(newDate)", "description": "\(newDesc)"]
+                    data = loc(dictionary: newLocation)
+                }
             }
             
             return data
         }
+
     }
     
     func addNotations() {
