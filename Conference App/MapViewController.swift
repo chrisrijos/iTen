@@ -123,7 +123,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 }
                 else if let data = data {
                     if let str = NSString(data: data, encoding: NSUTF8StringEncoding) {
-                        print("Received data:\n\(str)")
+                        //print("Received data:\n\(str)")
                         serializeAndParse()
                     }
                     else {
