@@ -67,17 +67,17 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     // MARK: - Segues
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-            let object = self.fetchedResultsController.objectAtIndexPath(indexPath)
+            //let object = self.fetchedResultsController.objectAtIndexPath(indexPath)
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
+                //controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
-    }
+    }*/
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let view = Vc[indexPath.row]
         //self.showDetailViewController(view, sender: self)
@@ -88,9 +88,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
     // MARK: - Table View
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.fetchedResultsController.sections?.count ?? 0
-    }
+    /*override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        //return self.fetchedResultsController.sections?.count ?? 0
+    }*/
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         /*let sectionInfo = self.fetchedResultsController.sections![section]
@@ -121,11 +121,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        //return true
+        return false
     }
 
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    /*override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        /*if editingStyle == .Delete {
             let context = self.fetchedResultsController.managedObjectContext
             context.deleteObject(self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject)
                 
@@ -137,16 +138,16 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
                 //print("Unresolved error \(error), \(error.userInfo)")
                 abort()
             }
-        }
-    }
-
+        }*/
+    }*/
+/*
     func configureCell(cell: UITableViewCell, withObject object: NSManagedObject) {
-        cell.textLabel!.text = object.valueForKey("timeStamp")!.description
-    }
+        //cell.textLabel!.text = object.valueForKey("timeStamp")!.description
+    }*/
 
     // MARK: - Fetched results controller
 
-    var fetchedResultsController: NSFetchedResultsController {
+    /*var fetchedResultsController: NSFetchedResultsController {
         if _fetchedResultsController != nil {
             return _fetchedResultsController!
         }
@@ -160,9 +161,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         fetchRequest.fetchBatchSize = 20
         
         // Edit the sort key as appropriate.
-        let sortDescriptor = NSSortDescriptor(key: "timeStamp", ascending: false)
+        //let sortDescriptor = NSSortDescriptor(key: "timeStamp", ascending: false)
         
-        fetchRequest.sortDescriptors = [sortDescriptor]
+        //fetchRequest.sortDescriptors = [sortDescriptor]
         
         // Edit the section name key path and cache name if appropriate.
         // nil for section name key path means "no sections".
@@ -180,10 +181,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
         
         return _fetchedResultsController!
-    }    
-    var _fetchedResultsController: NSFetchedResultsController? = nil
+    }*/
+    //var _fetchedResultsController: NSFetchedResultsController? = nil
 
-    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+    /*func controllerWillChangeContent(controller: NSFetchedResultsController) {
         self.tableView.beginUpdates()
     }
 
@@ -222,7 +223,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
          // In the simplest, most efficient, case, reload the table view.
          self.tableView.reloadData()
      }
-     */
+     */*/
 
 }
 
