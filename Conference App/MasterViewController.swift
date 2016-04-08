@@ -51,7 +51,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("MapStoryboard")
         Vc[1] = dViewController
         
-        sbd = UIStoryboard.init(name: )
+        //Sbd = UIStoryboard.init(name: )
     }
 
     override func viewWillAppear(animated: Bool) {
