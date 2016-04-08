@@ -54,6 +54,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("AboutView")
         Vc[6] = dViewController
         //Sbd = UIStoryboard.init(name: )
+        Sbd = UIStoryboard.init(name: "AgendaMain", bundle: nil)
+        dViewController = Sbd!.instantiateViewControllerWithIdentifier("AgendaInitial")
+        Vc[2] = dViewController
     }
 
     override func viewWillAppear(animated: Bool) {
