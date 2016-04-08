@@ -31,6 +31,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         super.viewDidLoad()
         self.items = NSMutableArray(array: x)
         self.images = NSMutableArray(array: m)
+        self.title = "iTen Wired"
         //self.view.frame = CGRect(x: 0, y: 0, width: 320, height: 480)
         self.tableView = UITableView(frame:self.view!.frame)
         self.tableView!.delegate = self
