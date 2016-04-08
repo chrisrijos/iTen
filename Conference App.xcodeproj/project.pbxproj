@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0EE564CB1CB82EE1001678B0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE564CA1CB82EE1001678B0 /* MapViewController.swift */; };
 		0EE564CD1CB83036001678B0 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE564CC1CB83036001678B0 /* MapView.storyboard */; };
+		0EE564CF1CB8331A001678B0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE564CE1CB8331A001678B0 /* MapKit.framework */; };
 		4F3A78DB1CB5AAF500A87EE6 /* Attendees.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3A78DA1CB5AAF500A87EE6 /* Attendees.storyboard */; };
 		FE2623A21CAEFA940074C58F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2623A11CAEFA940074C58F /* AppDelegate.swift */; };
 		FE2623A51CAEFA940074C58F /* Conference_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE2623A31CAEFA940074C58F /* Conference_App.xcdatamodeld */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		0EE564CA1CB82EE1001678B0 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0EE564CC1CB83036001678B0 /* MapView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
+		0EE564CE1CB8331A001678B0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4F3A78DA1CB5AAF500A87EE6 /* Attendees.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Attendees.storyboard; sourceTree = "<group>"; };
 		FE26239E1CAEFA940074C58F /* Conference App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Conference App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2623A11CAEFA940074C58F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EE564CF1CB8331A001678B0 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +108,7 @@
 		FE2623951CAEFA940074C58F = {
 			isa = PBXGroup;
 			children = (
+				0EE564CE1CB8331A001678B0 /* MapKit.framework */,
 				FE2623A01CAEFA940074C58F /* Conference App */,
 				FE2623BA1CAEFA940074C58F /* Conference AppTests */,
 				FE2623C51CAEFA940074C58F /* Conference AppUITests */,
@@ -237,7 +241,7 @@
 						CreatedOnToolsVersion = 7.3;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
