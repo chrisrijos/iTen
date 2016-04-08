@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Map-->
+        <scene sceneID="ITp-Gb-s8B">
+            <objects>
+                <viewController storyboardIdentifier="MapStoryboard" title="Map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="raM-Z0-ecJ" customClass="MapViewController" customModule="Conference_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DZE-eF-m4K"/>
+                        <viewControllerLayoutGuide type="bottom" id="mE7-Fn-gVL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IZL-tC-iwY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IQg-u6-wIp">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Z8o-ti-aBt">
+                                <rect key="frame" x="20" y="608" width="335" height="41"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="y7h-9d-wcb"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="iTenWired"/>
+                                    <segment title="My Location"/>
+                                    <segment title="Directions"/>
+                                </segments>
+                                <connections>
+                                    <action selector="openDirections:" destination="raM-Z0-ecJ" eventType="valueChanged" id="TDn-Rj-r8T"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Z8o-ti-aBt" firstAttribute="top" secondItem="IQg-u6-wIp" secondAttribute="bottom" constant="-48" id="26Z-ct-sLW"/>
+                            <constraint firstItem="Z8o-ti-aBt" firstAttribute="top" secondItem="IQg-u6-wIp" secondAttribute="bottom" constant="-60" id="2Ud-D9-6Zp"/>
+                            <constraint firstItem="Z8o-ti-aBt" firstAttribute="leading" secondItem="IZL-tC-iwY" secondAttribute="leading" constant="20" id="2uX-Qt-Nft"/>
+                            <constraint firstAttribute="trailing" secondItem="Z8o-ti-aBt" secondAttribute="trailing" constant="20" id="E7b-wf-CmY"/>
+                            <constraint firstAttribute="trailing" secondItem="IQg-u6-wIp" secondAttribute="trailing" id="NyH-8s-qLS"/>
+                            <constraint firstItem="IQg-u6-wIp" firstAttribute="leading" secondItem="IZL-tC-iwY" secondAttribute="leading" id="SRp-uf-0Br"/>
+                            <constraint firstItem="IQg-u6-wIp" firstAttribute="top" secondItem="DZE-eF-m4K" secondAttribute="bottom" id="gZ2-SQ-aHG"/>
+                            <constraint firstItem="mE7-Fn-gVL" firstAttribute="top" secondItem="IQg-u6-wIp" secondAttribute="bottom" id="sTm-df-WxA"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="26Z-ct-sLW"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mainMap" destination="IQg-u6-wIp" id="d4w-oK-2Kq"/>
+                        <outlet property="segmentResult" destination="Z8o-ti-aBt" id="7yA-ff-0Em"/>
+                        <outlet property="segmentStyle" destination="Z8o-ti-aBt" id="7SC-Zw-HIb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qrd-I3-JPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8.5" y="369.5"/>
+        </scene>
+    </scenes>
+</document>
