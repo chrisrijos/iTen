@@ -9,17 +9,13 @@
 /* Begin PBXBuildFile section */
 		0EE564CF1CB8331A001678B0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE564CE1CB8331A001678B0 /* MapKit.framework */; };
 		0EE564D11CB83E6C001678B0 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE564D01CB83E6C001678B0 /* MapView.storyboard */; };
-		0EE564D31CB83E9A001678B0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE564D21CB83E9A001678B0 /* MapViewController.swift */; };
 		0EE564D51CB845E7001678B0 /* AboutView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE564D41CB845E7001678B0 /* AboutView.storyboard */; };
 		0EE564D71CB84DC1001678B0 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE564D61CB84DC1001678B0 /* AboutViewController.swift */; };
 		4F3A78DB1CB5AAF500A87EE6 /* Attendees.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3A78DA1CB5AAF500A87EE6 /* Attendees.storyboard */; };
-		D4C467C91CB84BA000BD6157 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C31CB84BA000BD6157 /* EventViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D4C467CA1CB84BA000BD6157 /* AgendaDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C41CB84BA000BD6157 /* AgendaDataLoader.swift */; settings = {ASSET_TAGS = (); }; };
-		D4C467CB1CB84BA000BD6157 /* Agenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C51CB84BA000BD6157 /* Agenda.swift */; settings = {ASSET_TAGS = (); }; };
-		D4C467CC1CB84BA000BD6157 /* AgendaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C61CB84BA000BD6157 /* AgendaController.swift */; settings = {ASSET_TAGS = (); }; };
-		D4C467CD1CB84BA000BD6157 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C71CB84BA000BD6157 /* Event.swift */; settings = {ASSET_TAGS = (); }; };
-		D4C467CE1CB84BA000BD6157 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C81CB84BA000BD6157 /* EventCell.swift */; settings = {ASSET_TAGS = (); }; };
-		D4C467D01CB84D9700BD6157 /* AgendaMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C467CF1CB84D9700BD6157 /* AgendaMain.storyboard */; settings = {ASSET_TAGS = (); }; };
+		D4C467CA1CB84BA000BD6157 /* AgendaDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C41CB84BA000BD6157 /* AgendaDataLoader.swift */; };
+		D4C467CB1CB84BA000BD6157 /* Agenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C51CB84BA000BD6157 /* Agenda.swift */; };
+		D4C467CC1CB84BA000BD6157 /* AgendaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C61CB84BA000BD6157 /* AgendaController.swift */; };
+		D4C467D01CB84D9700BD6157 /* AgendaMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C467CF1CB84D9700BD6157 /* AgendaMain.storyboard */; };
 		FE2623A21CAEFA940074C58F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2623A11CAEFA940074C58F /* AppDelegate.swift */; };
 		FE2623A51CAEFA940074C58F /* Conference_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE2623A31CAEFA940074C58F /* Conference_App.xcdatamodeld */; };
 		FE2623A71CAEFA940074C58F /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2623A61CAEFA940074C58F /* MasterViewController.swift */; };
@@ -38,8 +34,10 @@
 		FE2623E11CAF3D000074C58F /* About.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623E01CAF3D000074C58F /* About.png */; };
 		FE2623E31CAF3D520074C58F /* Who.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623E21CAF3D520074C58F /* Who.png */; };
 		FE2623E51CAF3D820074C58F /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623E41CAF3D820074C58F /* Settings.png */; };
-		FEF7E0BB1CB849CF002A810B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF7E0BA1CB849CF002A810B /* Home.swift */; };
-		FEF7E0BF1CB84B4E002A810B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEF7E0BE1CB84B4E002A810B /* Home.storyboard */; };
+		FEF7E0C51CB852A8002A810B /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C31CB84BA000BD6157 /* EventViewController.swift */; };
+		FEF7E0C61CB852B1002A810B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C71CB84BA000BD6157 /* Event.swift */; };
+		FEF7E0C71CB852B5002A810B /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C81CB84BA000BD6157 /* EventCell.swift */; };
+		FEF7E0CA1CB8542C002A810B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEF7E0C81CB85329002A810B /* Home.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +96,7 @@
 		FE2623E21CAF3D520074C58F /* Who.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Who.png; sourceTree = "<group>"; };
 		FE2623E41CAF3D820074C58F /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
 		FEF7E0BA1CB849CF002A810B /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		FEF7E0BE1CB84B4E002A810B /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = ../Home.storyboard; sourceTree = "<group>"; };
+		FEF7E0C81CB85329002A810B /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = ../Home.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +163,7 @@
 		FE2623A01CAEFA940074C58F /* Conference App */ = {
 			isa = PBXGroup;
 			children = (
+				FEF7E0C81CB85329002A810B /* Home.storyboard */,
 				D4C467C21CB84B5F00BD6157 /* Agenda */,
 				FE2623D41CAF39CF0074C58F /* Home.png */,
 				FE2623A11CAEFA940074C58F /* AppDelegate.swift */,
@@ -321,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEF7E0CA1CB8542C002A810B /* Home.storyboard in Resources */,
 				FE2623E31CAF3D520074C58F /* Who.png in Resources */,
 				FE2623E11CAF3D000074C58F /* About.png in Resources */,
 				FE2623D71CAF3A9A0074C58F /* Map.png in Resources */,
@@ -337,7 +337,6 @@
 				FE2623AC1CAEFA940074C58F /* Main.storyboard in Resources */,
 				4F3A78DB1CB5AAF500A87EE6 /* Attendees.storyboard in Resources */,
 				FE2623DF1CAF3CD80074C58F /* LiveBroadcast.png in Resources */,
-				FEF7E0BF1CB84B4E002A810B /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +365,10 @@
 				FE2623A21CAEFA940074C58F /* AppDelegate.swift in Sources */,
 				D4C467CA1CB84BA000BD6157 /* AgendaDataLoader.swift in Sources */,
 				FE2623A51CAEFA940074C58F /* Conference_App.xcdatamodeld in Sources */,
+				FEF7E0C61CB852B1002A810B /* Event.swift in Sources */,
 				FE2623A71CAEFA940074C58F /* MasterViewController.swift in Sources */,
+				FEF7E0C71CB852B5002A810B /* EventCell.swift in Sources */,
+				FEF7E0C51CB852A8002A810B /* EventViewController.swift in Sources */,
 				D4C467CC1CB84BA000BD6157 /* AgendaController.swift in Sources */,
 				D4C467CB1CB84BA000BD6157 /* Agenda.swift in Sources */,
 				FE2623A91CAEFA940074C58F /* DetailViewController.swift in Sources */,
