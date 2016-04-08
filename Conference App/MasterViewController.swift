@@ -32,6 +32,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         self.items = NSMutableArray(array: x)
         self.images = NSMutableArray(array: m)
         self.title = "iTen Wired"
+        //self.restorationIdentifier = "llll"
         //self.view.frame = CGRect(x: 0, y: 0, width: 320, height: 480)
         self.tableView = UITableView(frame:self.view!.frame)
         self.tableView!.delegate = self
@@ -49,6 +50,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         Sbd = UIStoryboard.init(name: "MapView", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("MapStoryboard")
         Vc[1] = dViewController
+        
+        sbd = UIStoryboard.init(name: )
     }
 
     override func viewWillAppear(animated: Bool) {
