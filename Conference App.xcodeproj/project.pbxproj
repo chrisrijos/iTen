@@ -38,6 +38,7 @@
 		FEF7E0C61CB852B1002A810B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C71CB84BA000BD6157 /* Event.swift */; };
 		FEF7E0C71CB852B5002A810B /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C81CB84BA000BD6157 /* EventCell.swift */; };
 		FEF7E0CA1CB8542C002A810B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEF7E0C81CB85329002A810B /* Home.storyboard */; };
+		FEF7E0CB1CB858E3002A810B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE564D21CB83E9A001678B0 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -360,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEF7E0CB1CB858E3002A810B /* MapViewController.swift in Sources */,
 				0EE564D71CB84DC1001678B0 /* AboutViewController.swift in Sources */,
 				FE2623A21CAEFA940074C58F /* AppDelegate.swift in Sources */,
 				D4C467CA1CB84BA000BD6157 /* AgendaDataLoader.swift in Sources */,
