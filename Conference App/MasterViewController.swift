@@ -50,7 +50,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         Sbd = UIStoryboard.init(name: "MapView", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("MapStoryboard")
         Vc[1] = dViewController
-        
+        Sbd = UIStoryboard.init(name: "AboutView", bundle: nil)
+        dViewController = Sbd!.instantiateViewControllerWithIdentifier("AboutView")
+        Vc[6] = dViewController
         //Sbd = UIStoryboard.init(name: )
     }
 
