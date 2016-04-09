@@ -12,6 +12,9 @@
 		0EE564D51CB845E7001678B0 /* AboutView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE564D41CB845E7001678B0 /* AboutView.storyboard */; };
 		0EE564D71CB84DC1001678B0 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE564D61CB84DC1001678B0 /* AboutViewController.swift */; };
 		4F3A78DB1CB5AAF500A87EE6 /* Attendees.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3A78DA1CB5AAF500A87EE6 /* Attendees.storyboard */; };
+		A123500E1CB945F300B1233E /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A123500D1CB945F300B1233E /* AgendaViewController.swift */; };
+		A12350181CB9500400B1233E /* ItineraryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A12350161CB9500400B1233E /* ItineraryStoryboard.storyboard */; };
+		A12350191CB9500400B1233E /* ItineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12350171CB9500400B1233E /* ItineraryViewController.swift */; };
 		D4C467CA1CB84BA000BD6157 /* AgendaDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C41CB84BA000BD6157 /* AgendaDataLoader.swift */; };
 		D4C467CB1CB84BA000BD6157 /* Agenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C51CB84BA000BD6157 /* Agenda.swift */; };
 		D4C467CC1CB84BA000BD6157 /* AgendaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C61CB84BA000BD6157 /* AgendaController.swift */; };
@@ -65,6 +68,9 @@
 		0EE564D41CB845E7001678B0 /* AboutView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AboutView.storyboard; sourceTree = "<group>"; };
 		0EE564D61CB84DC1001678B0 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		4F3A78DA1CB5AAF500A87EE6 /* Attendees.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Attendees.storyboard; sourceTree = "<group>"; };
+		A123500D1CB945F300B1233E /* AgendaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
+		A12350161CB9500400B1233E /* ItineraryStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItineraryStoryboard.storyboard; sourceTree = "<group>"; };
+		A12350171CB9500400B1233E /* ItineraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryViewController.swift; sourceTree = "<group>"; };
 		D4C467C31CB84BA000BD6157 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		D4C467C41CB84BA000BD6157 /* AgendaDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaDataLoader.swift; sourceTree = "<group>"; };
 		D4C467C51CB84BA000BD6157 /* Agenda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agenda.swift; sourceTree = "<group>"; };
@@ -129,11 +135,12 @@
 		D4C467C21CB84B5F00BD6157 /* Agenda */ = {
 			isa = PBXGroup;
 			children = (
+				A123500D1CB945F300B1233E /* AgendaViewController.swift */,
+				D4C467C61CB84BA000BD6157 /* AgendaController.swift */,
 				D4C467CF1CB84D9700BD6157 /* AgendaMain.storyboard */,
 				D4C467C31CB84BA000BD6157 /* EventViewController.swift */,
 				D4C467C41CB84BA000BD6157 /* AgendaDataLoader.swift */,
 				D4C467C51CB84BA000BD6157 /* Agenda.swift */,
-				D4C467C61CB84BA000BD6157 /* AgendaController.swift */,
 				D4C467C71CB84BA000BD6157 /* Event.swift */,
 				D4C467C81CB84BA000BD6157 /* EventCell.swift */,
 			);
@@ -167,6 +174,8 @@
 				FEF7E0C81CB85329002A810B /* Home.storyboard */,
 				D4C467C21CB84B5F00BD6157 /* Agenda */,
 				FE2623D41CAF39CF0074C58F /* Home.png */,
+				A12350161CB9500400B1233E /* ItineraryStoryboard.storyboard */,
+				A12350171CB9500400B1233E /* ItineraryViewController.swift */,
 				FE2623A11CAEFA940074C58F /* AppDelegate.swift */,
 				FE2623A61CAEFA940074C58F /* MasterViewController.swift */,
 				FEF7E0BA1CB849CF002A810B /* Home.swift */,
@@ -327,6 +336,7 @@
 				FE2623B11CAEFA940074C58F /* LaunchScreen.storyboard in Resources */,
 				FE2623AE1CAEFA940074C58F /* Assets.xcassets in Resources */,
 				FE2623DB1CAF3BDB0074C58F /* MyIten.png in Resources */,
+				A12350181CB9500400B1233E /* ItineraryStoryboard.storyboard in Resources */,
 				FE2623DD1CAF3C800074C58F /* SocialMedia.png in Resources */,
 				FE2623D51CAF39CF0074C58F /* Home.png in Resources */,
 				0EE564D51CB845E7001678B0 /* AboutView.storyboard in Resources */,
@@ -362,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEF7E0CB1CB858E3002A810B /* MapViewController.swift in Sources */,
+				A123500E1CB945F300B1233E /* AgendaViewController.swift in Sources */,
 				0EE564D71CB84DC1001678B0 /* AboutViewController.swift in Sources */,
 				FE2623A21CAEFA940074C58F /* AppDelegate.swift in Sources */,
 				D4C467CA1CB84BA000BD6157 /* AgendaDataLoader.swift in Sources */,
@@ -372,6 +383,7 @@
 				FEF7E0C51CB852A8002A810B /* EventViewController.swift in Sources */,
 				D4C467CC1CB84BA000BD6157 /* AgendaController.swift in Sources */,
 				D4C467CB1CB84BA000BD6157 /* Agenda.swift in Sources */,
+				A12350191CB9500400B1233E /* ItineraryViewController.swift in Sources */,
 				FE2623A91CAEFA940074C58F /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
