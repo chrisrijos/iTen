@@ -15,6 +15,11 @@ class Event{
     var timeStop:String = ""
     var date:String = ""
     
+    //attendees
+    var logo:String = ""
+    var website:String = ""
+    
+    
     init(id:Int){
         self.id = id
     }
