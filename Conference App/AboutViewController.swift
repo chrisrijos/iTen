@@ -10,10 +10,35 @@ import UIKit
 
 class AboutViewController: UIViewController {
 
+    
+    var about: AboutData = AboutData()
+    
+    @IBOutlet var aboutTextView: UITextView!
+    
+    @IBOutlet var imageURL: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor(red: 0.15, green: 0.353, blue: 0.6, alpha: 100)
+        aboutTextView.textColor = UIColor(red: 1, green: 0.63, blue: 0, alpha: 100)
+        //aboutTextView.text = "Test"
+        
+        if let aboutText = about.content as? String {
+            aboutTextView.text = aboutText
+        }
+        if let logoText = about.logo as? String {
+            let url = NSURL(string:logoText)
+            let data = NSData(contentsOfURL:url!)
+            if (data != nil) {
+                let tempImg = UIImage(data:data!)
+                imageURL.image = UIImage(data:data!)
+                imageURL.contentMode = .ScaleAspectFit
+            }
+        }
+        
+       aboutTextView.scrollRangeToVisible(NSMakeRange(0, 0))
+        
     }
 
     override func didReceiveMemoryWarning() {

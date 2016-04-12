@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E61b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--About-->
@@ -16,27 +18,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAJ-Bc-Ux7">
-                                <rect key="frame" x="256" y="289" width="89" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpr-Kd-Qe9">
-                                <rect key="frame" x="279" y="351" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Znl-Rw-mTU">
+                                <rect key="frame" x="20" y="30" width="560" height="136"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Znl-Rw-mTU" secondAttribute="height" multiplier="48:17" constant="176" id="Biy-eI-8wM"/>
+                                    <constraint firstAttribute="height" constant="136" id="xPZ-IF-u96"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Biy-eI-8wM"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FNR-D7-Hhu">
+                                <rect key="frame" x="20" y="174" width="560" height="406"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Fpr-Kd-Qe9" firstAttribute="centerY" secondItem="vKM-jj-dvt" secondAttribute="centerY" id="9uT-1a-TjG"/>
-                            <constraint firstItem="kAJ-Bc-Ux7" firstAttribute="centerX" secondItem="vKM-jj-dvt" secondAttribute="centerX" id="j9Z-mb-KvE"/>
-                            <constraint firstItem="kAJ-Bc-Ux7" firstAttribute="centerY" secondItem="vKM-jj-dvt" secondAttribute="centerY" id="kfM-20-Qnk"/>
-                            <constraint firstItem="Fpr-Kd-Qe9" firstAttribute="centerX" secondItem="vKM-jj-dvt" secondAttribute="centerX" id="vEA-7D-wSc"/>
+                            <constraint firstItem="FNR-D7-Hhu" firstAttribute="top" secondItem="Znl-Rw-mTU" secondAttribute="bottom" id="53H-73-LzZ"/>
+                            <constraint firstItem="Znl-Rw-mTU" firstAttribute="leading" secondItem="vKM-jj-dvt" secondAttribute="leadingMargin" id="6t1-Jt-55q"/>
+                            <constraint firstAttribute="bottom" secondItem="FNR-D7-Hhu" secondAttribute="bottom" constant="20" symbolic="YES" id="BqM-rM-PfW"/>
+                            <constraint firstItem="FNR-D7-Hhu" firstAttribute="top" secondItem="Znl-Rw-mTU" secondAttribute="bottom" constant="8" symbolic="YES" id="DFJ-Cw-eIP"/>
+                            <constraint firstItem="Znl-Rw-mTU" firstAttribute="trailing" secondItem="FNR-D7-Hhu" secondAttribute="trailing" id="M0K-l3-fa0"/>
+                            <constraint firstItem="Znl-Rw-mTU" firstAttribute="top" secondItem="d6b-Vk-6tp" secondAttribute="bottom" constant="10" id="eMi-rU-IrT"/>
+                            <constraint firstItem="Znl-Rw-mTU" firstAttribute="trailing" secondItem="vKM-jj-dvt" secondAttribute="trailingMargin" id="rpg-2M-7BR"/>
+                            <constraint firstItem="Znl-Rw-mTU" firstAttribute="leading" secondItem="FNR-D7-Hhu" secondAttribute="leading" id="xDc-sd-hl9"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="53H-73-LzZ"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="aboutTextView" destination="FNR-D7-Hhu" id="aCu-xN-jIk"/>
+                        <outlet property="imageURL" destination="Znl-Rw-mTU" id="8v8-GH-1s8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1w-VR-rg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
