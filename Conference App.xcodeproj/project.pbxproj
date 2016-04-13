@@ -15,6 +15,9 @@
 		4F2FBD121CBC5AEC0017A11F /* AttendeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2FBD111CBC5AEC0017A11F /* AttendeesViewController.swift */; };
 		4F2FBD141CBC5C7C0017A11F /* AttendeesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2FBD131CBC5C7C0017A11F /* AttendeesCell.swift */; };
 		4F3A78DB1CB5AAF500A87EE6 /* Attendees.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3A78DA1CB5AAF500A87EE6 /* Attendees.storyboard */; };
+		4F4590E41CBEC85A00F51BCE /* Attendee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4590E31CBEC85A00F51BCE /* Attendee.swift */; };
+		4F4590E61CBEC8DE00F51BCE /* AttendeeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4590E51CBEC8DE00F51BCE /* AttendeeData.swift */; };
+		4F4590E81CBEC98F00F51BCE /* AttendeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4590E71CBEC98F00F51BCE /* AttendeeController.swift */; };
 		A123500E1CB945F300B1233E /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A123500D1CB945F300B1233E /* AgendaViewController.swift */; };
 		A12350181CB9500400B1233E /* ItineraryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A12350161CB9500400B1233E /* ItineraryStoryboard.storyboard */; };
 		A12350191CB9500400B1233E /* ItineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12350171CB9500400B1233E /* ItineraryViewController.swift */; };
@@ -74,6 +77,9 @@
 		4F2FBD111CBC5AEC0017A11F /* AttendeesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendeesViewController.swift; sourceTree = "<group>"; };
 		4F2FBD131CBC5C7C0017A11F /* AttendeesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendeesCell.swift; sourceTree = "<group>"; };
 		4F3A78DA1CB5AAF500A87EE6 /* Attendees.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Attendees.storyboard; sourceTree = "<group>"; };
+		4F4590E31CBEC85A00F51BCE /* Attendee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attendee.swift; sourceTree = "<group>"; };
+		4F4590E51CBEC8DE00F51BCE /* AttendeeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendeeData.swift; sourceTree = "<group>"; };
+		4F4590E71CBEC98F00F51BCE /* AttendeeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendeeController.swift; sourceTree = "<group>"; };
 		A123500D1CB945F300B1233E /* AgendaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
 		A12350161CB9500400B1233E /* ItineraryStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItineraryStoryboard.storyboard; sourceTree = "<group>"; };
 		A12350171CB9500400B1233E /* ItineraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryViewController.swift; sourceTree = "<group>"; };
@@ -191,17 +197,20 @@
 				FE2623DE1CAF3CD80074C58F /* LiveBroadcast.png */,
 				FE2623DC1CAF3C800074C58F /* SocialMedia.png */,
 				FE2623DA1CAF3BDB0074C58F /* MyIten.png */,
-				FE2623D81CAF3B2B0074C58F /* Agenda.png */,
 				FE2623D61CAF3A9A0074C58F /* Map.png */,
-				FE2623A81CAEFA940074C58F /* DetailViewController.swift */,
+				FE2623D81CAF3B2B0074C58F /* Agenda.png */,
 				FE2623AA1CAEFA940074C58F /* Main.storyboard */,
 				FE2623AD1CAEFA940074C58F /* Assets.xcassets */,
+				FE2623A81CAEFA940074C58F /* DetailViewController.swift */,
 				FE2623AF1CAEFA940074C58F /* LaunchScreen.storyboard */,
 				FE2623B21CAEFA940074C58F /* Info.plist */,
 				FE2623A31CAEFA940074C58F /* Conference_App.xcdatamodeld */,
 				4F3A78DA1CB5AAF500A87EE6 /* Attendees.storyboard */,
-				4F2FBD131CBC5C7C0017A11F /* AttendeesCell.swift */,
 				4F2FBD111CBC5AEC0017A11F /* AttendeesViewController.swift */,
+				4F4590E71CBEC98F00F51BCE /* AttendeeController.swift */,
+				4F4590E51CBEC8DE00F51BCE /* AttendeeData.swift */,
+				4F4590E31CBEC85A00F51BCE /* Attendee.swift */,
+				4F2FBD131CBC5C7C0017A11F /* AttendeesCell.swift */,
 				0EE564D01CB83E6C001678B0 /* MapView.storyboard */,
 				0EE564D21CB83E9A001678B0 /* MapViewController.swift */,
 				0EE564D41CB845E7001678B0 /* AboutView.storyboard */,
@@ -389,12 +398,15 @@
 				FEF7E0C61CB852B1002A810B /* Event.swift in Sources */,
 				FE2623A71CAEFA940074C58F /* MasterViewController.swift in Sources */,
 				FEF7E0C71CB852B5002A810B /* EventCell.swift in Sources */,
+				4F4590E61CBEC8DE00F51BCE /* AttendeeData.swift in Sources */,
 				4F2FBD121CBC5AEC0017A11F /* AttendeesViewController.swift in Sources */,
 				0ED487731CBD817D007DCC2B /* AboutData.swift in Sources */,
 				FEF7E0C51CB852A8002A810B /* EventViewController.swift in Sources */,
+				4F4590E81CBEC98F00F51BCE /* AttendeeController.swift in Sources */,
 				4F2FBD141CBC5C7C0017A11F /* AttendeesCell.swift in Sources */,
 				D4C467CC1CB84BA000BD6157 /* AgendaController.swift in Sources */,
 				D4C467CB1CB84BA000BD6157 /* Agenda.swift in Sources */,
+				4F4590E41CBEC85A00F51BCE /* Attendee.swift in Sources */,
 				A12350191CB9500400B1233E /* ItineraryViewController.swift in Sources */,
 				FE2623A91CAEFA940074C58F /* DetailViewController.swift in Sources */,
 			);

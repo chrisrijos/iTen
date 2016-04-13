@@ -8,23 +8,26 @@
 
 import UIKit
 
-class AttendeesCells: UITableViewCell {
+class AttendeesCell: UITableViewCell {
     
+    @IBOutlet weak var logoImage: UIImageView!
   
+    @IBOutlet weak var websiteLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     
     func setName(name:String){
-        
+        nameLabel.text = name
     }
     
     func setLogo(logo:String)
     {
-        
+        logoImage.image = UIImage(named: "test")
     }
     
     func setWebsite(website:String)
     {
-        
+        websiteLabel.text = website
     }
     
   

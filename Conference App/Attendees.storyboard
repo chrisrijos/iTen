@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7A2-Qh-knD" customClass="AttendeesCells" customModule="Conference_App" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7A2-Qh-knD" customClass="AttendeesCell" customModule="Conference_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7A2-Qh-knD" id="mcE-AM-px6">
@@ -55,6 +55,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="logoImage" destination="Lqa-bg-tbx" id="Hda-kn-n0K"/>
+                                    <outlet property="nameLabel" destination="LWC-BE-xly" id="0wc-4l-YmZ"/>
+                                    <outlet property="websiteLabel" destination="c8R-h1-VTJ" id="h4u-sE-eZZ"/>
                                     <segue destination="Oc3-Hq-fU0" kind="show" id="2Nq-zX-XmD"/>
                                 </connections>
                             </tableViewCell>
