@@ -18,7 +18,7 @@ class Event{
     //attendees
     var logo:String = ""
     var website:String = ""
-    
+    var type:String = ""
     
     init(id:Int){
         self.id = id

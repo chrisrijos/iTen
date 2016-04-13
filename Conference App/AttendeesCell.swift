@@ -12,6 +12,7 @@ class AttendeesCell: UITableViewCell {
     
     @IBOutlet weak var logoImage: UIImageView!
   
+    @IBOutlet weak var type: UILabel!
     @IBOutlet weak var websiteLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -29,6 +30,9 @@ class AttendeesCell: UITableViewCell {
     {
         websiteLabel.text = website
     }
-    
+    func settype(types:String)
+    {
+        type.text = types
+    }
   
 }

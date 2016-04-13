@@ -5,16 +5,16 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Attendees View Controller-->
         <scene sceneID="ucK-Bf-UNd">
             <objects>
-                <tableViewController id="D4x-NL-wQ1" sceneMemberID="viewController">
+                <tableViewController id="D4x-NL-wQ1" customClass="AttendeesViewController" customModule="Conference_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SKd-Zt-Ene">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7A2-Qh-knD" customClass="AttendeesCell" customModule="Conference_App" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="7A2-Qh-knD" customClass="AttendeesCell" customModule="Conference_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7A2-Qh-knD" id="mcE-AM-px6">
@@ -27,16 +27,22 @@
                                                 <constraint firstAttribute="width" constant="88" id="yd5-dn-pE6"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWC-BE-xly">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWC-BE-xly">
                                             <rect key="frame" x="124" y="11" width="91" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8SJ-9g-LZS">
+                                            <rect key="frame" x="251" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8R-h1-VTJ">
-                                            <rect key="frame" x="279" y="11" width="77" height="21"/>
+                                            <rect key="frame" x="352" y="11" width="77" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="77" id="y1e-1M-pvJ"/>
+                                                <constraint firstAttribute="width" constant="77" id="QNW-24-XqL"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -44,19 +50,21 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="c8R-h1-VTJ" secondAttribute="trailing" constant="171" id="3fr-Mn-oI2"/>
+                                        <constraint firstItem="c8R-h1-VTJ" firstAttribute="leading" secondItem="8SJ-9g-LZS" secondAttribute="trailing" constant="59" id="CQs-bG-7rP"/>
                                         <constraint firstItem="LWC-BE-xly" firstAttribute="leading" secondItem="Lqa-bg-tbx" secondAttribute="trailing" constant="28" id="Emx-YZ-LrS"/>
-                                        <constraint firstItem="c8R-h1-VTJ" firstAttribute="leading" secondItem="mcE-AM-px6" secondAttribute="leading" constant="279" id="IRT-wO-YIR"/>
                                         <constraint firstItem="Lqa-bg-tbx" firstAttribute="leading" secondItem="mcE-AM-px6" secondAttribute="leadingMargin" id="LO3-NT-Udb"/>
                                         <constraint firstAttribute="bottom" secondItem="Lqa-bg-tbx" secondAttribute="bottom" id="T5X-NB-Nns"/>
-                                        <constraint firstItem="c8R-h1-VTJ" firstAttribute="baseline" secondItem="LWC-BE-xly" secondAttribute="baseline" id="Usr-DD-XtI"/>
-                                        <constraint firstItem="c8R-h1-VTJ" firstAttribute="leading" secondItem="LWC-BE-xly" secondAttribute="trailing" constant="64" id="agY-La-ghg"/>
                                         <constraint firstItem="LWC-BE-xly" firstAttribute="centerY" secondItem="Lqa-bg-tbx" secondAttribute="centerY" id="dg0-eh-TRS"/>
+                                        <constraint firstItem="c8R-h1-VTJ" firstAttribute="baseline" secondItem="8SJ-9g-LZS" secondAttribute="baseline" id="moC-7A-ZBG"/>
                                         <constraint firstItem="Lqa-bg-tbx" firstAttribute="top" secondItem="mcE-AM-px6" secondAttribute="top" id="pnI-FG-YMr"/>
+                                        <constraint firstItem="c8R-h1-VTJ" firstAttribute="baseline" secondItem="LWC-BE-xly" secondAttribute="baseline" id="uWa-MR-vT7"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="logoImage" destination="Lqa-bg-tbx" id="Hda-kn-n0K"/>
                                     <outlet property="nameLabel" destination="LWC-BE-xly" id="0wc-4l-YmZ"/>
+                                    <outlet property="type" destination="8SJ-9g-LZS" id="iYf-US-Mdk"/>
                                     <outlet property="websiteLabel" destination="c8R-h1-VTJ" id="h4u-sE-eZZ"/>
                                     <segue destination="Oc3-Hq-fU0" kind="show" id="2Nq-zX-XmD"/>
                                 </connections>
