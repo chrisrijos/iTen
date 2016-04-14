@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E647B2D1CBF2DDB006DFB68 /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E647B2C1CBF2DDB006DFB68 /* MapData.swift */; };
+		0E647B2F1CBF2E19006DFB68 /* loc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E647B2E1CBF2E19006DFB68 /* loc.swift */; };
+		0E647B311CBF2E38006DFB68 /* AddAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E647B301CBF2E38006DFB68 /* AddAnnotation.swift */; };
+		0E647B331CBF2E67006DFB68 /* AnnotationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E647B321CBF2E67006DFB68 /* AnnotationDetailViewController.swift */; };
 		0ED487731CBD817D007DCC2B /* AboutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED487721CBD817D007DCC2B /* AboutData.swift */; };
 		0EE564CF1CB8331A001678B0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE564CE1CB8331A001678B0 /* MapKit.framework */; };
 		0EE564D11CB83E6C001678B0 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE564D01CB83E6C001678B0 /* MapView.storyboard */; };
@@ -68,6 +72,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E647B2C1CBF2DDB006DFB68 /* MapData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapData.swift; sourceTree = "<group>"; };
+		0E647B2E1CBF2E19006DFB68 /* loc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loc.swift; sourceTree = "<group>"; };
+		0E647B301CBF2E38006DFB68 /* AddAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAnnotation.swift; sourceTree = "<group>"; };
+		0E647B321CBF2E67006DFB68 /* AnnotationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationDetailViewController.swift; sourceTree = "<group>"; };
 		0ED487721CBD817D007DCC2B /* AboutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutData.swift; sourceTree = "<group>"; };
 		0EE564CE1CB8331A001678B0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0EE564D01CB83E6C001678B0 /* MapView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
@@ -212,6 +220,10 @@
 				4F4590E31CBEC85A00F51BCE /* Attendee.swift */,
 				4F2FBD131CBC5C7C0017A11F /* AttendeesCell.swift */,
 				0EE564D01CB83E6C001678B0 /* MapView.storyboard */,
+				0E647B2E1CBF2E19006DFB68 /* loc.swift */,
+				0E647B301CBF2E38006DFB68 /* AddAnnotation.swift */,
+				0E647B321CBF2E67006DFB68 /* AnnotationDetailViewController.swift */,
+				0E647B2C1CBF2DDB006DFB68 /* MapData.swift */,
 				0EE564D21CB83E9A001678B0 /* MapViewController.swift */,
 				0EE564D41CB845E7001678B0 /* AboutView.storyboard */,
 				0ED487721CBD817D007DCC2B /* AboutData.swift */,
@@ -393,12 +405,16 @@
 				A123500E1CB945F300B1233E /* AgendaViewController.swift in Sources */,
 				0EE564D71CB84DC1001678B0 /* AboutViewController.swift in Sources */,
 				FE2623A21CAEFA940074C58F /* AppDelegate.swift in Sources */,
+				0E647B331CBF2E67006DFB68 /* AnnotationDetailViewController.swift in Sources */,
 				D4C467CA1CB84BA000BD6157 /* AgendaDataLoader.swift in Sources */,
+				0E647B311CBF2E38006DFB68 /* AddAnnotation.swift in Sources */,
 				FE2623A51CAEFA940074C58F /* Conference_App.xcdatamodeld in Sources */,
 				FEF7E0C61CB852B1002A810B /* Event.swift in Sources */,
 				FE2623A71CAEFA940074C58F /* MasterViewController.swift in Sources */,
+				0E647B2F1CBF2E19006DFB68 /* loc.swift in Sources */,
 				FEF7E0C71CB852B5002A810B /* EventCell.swift in Sources */,
 				4F4590E61CBEC8DE00F51BCE /* AttendeeData.swift in Sources */,
+				0E647B2D1CBF2DDB006DFB68 /* MapData.swift in Sources */,
 				4F2FBD121CBC5AEC0017A11F /* AttendeesViewController.swift in Sources */,
 				0ED487731CBD817D007DCC2B /* AboutData.swift in Sources */,
 				FEF7E0C51CB852A8002A810B /* EventViewController.swift in Sources */,

@@ -12,162 +12,177 @@ import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
-    
+    // Outlets for Map, and Segment Result
     @IBOutlet weak var segmentResult: UISegmentedControl!
     @IBOutlet weak var mainMap: MKMapView!
     @IBOutlet weak var segmentStyle: UISegmentedControl!
-  
+    
     // Global Variables
     var locationManager: CLLocationManager = CLLocationManager()
     var startLocation: CLLocation!
     var destination: MKMapItem?
     
-    // Main Location Information
-    var mainName: String = ""
+    // Pulls Map Data
+    var mapController: MapData = MapData()
+    var locArray: [loc] = []
+    var annotationArray: [AddAnnotation] = []
+    
+    // Coordinates for Center Location
+    var latSum:Double = 0.00
+    var longSum:Double = 0.00
+    
+    // Fallback incase JSON does not load
     var mainLatitude: CLLocationDegrees = 30.331991 // Need to get from JSON
     var mainLongitude: CLLocationDegrees = -87.136002 // Need to get from JSON
-    var mainDate: String = ""
-    var mainDescription: String = ""
-
+    
+    
     @IBAction func openDirections(sender: AnyObject) {
-        
-        // User's Current Location
-        let latitude:CLLocationDegrees = (locationManager.location?.coordinate.latitude)!
-        let longitude:CLLocationDegrees = (locationManager.location?.coordinate.longitude)!
-        
-        // Zoom Level
-        let latDelta:CLLocationDegrees = 0.01
-        let lonDelta:CLLocationDegrees = 0.01
-        
-        // User's Current Coordinates
-        let userLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
         
         // Segmented Control on the Bottom of Screen (iTenWired, My Location, & Directions)
         switch sender.selectedSegmentIndex
         {
         case 0:
-            // Show Event Location on the Map
-            addNotations()
+            // Show All Map Annotations
+            let newCoords = CLLocationCoordinate2D(latitude: CLLocationDegrees(latSum), longitude: CLLocationDegrees(longSum))
+            let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+            let newRegion:MKCoordinateRegion = MKCoordinateRegion(center:newCoords, span:span )
+            
+            self.mainMap.setRegion(newRegion, animated: true)
             
         case 1:
+            
             // Show User's Location on the Map
             self.mainMap.showsUserLocation = true;
-            let span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
-            let region:MKCoordinateRegion = MKCoordinateRegionMake(userLocation, span)
-            mainMap.setRegion(region, animated: false)
             
-        case 2:
+            let latDelta:CLLocationDegrees = 0.04
+            let lonDelta:CLLocationDegrees = 0.04
             
-            // Get Directions to Event
-            let localLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(mainLatitude, mainLongitude)
-            let placemark = MKPlacemark(coordinate: localLocation, addressDictionary: nil)
-            let mapItem = MKMapItem(placemark: placemark)
-            mapItem.name = "iTenWired Conference"
-            let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving]
-            mapItem.openInMapsWithLaunchOptions(launchOptions)
+            // If lat & long are available, center map on location
+            if let latitude:CLLocationDegrees = locationManager.location?.coordinate.latitude {
+                if let longitude:CLLocationDegrees = locationManager.location?.coordinate.longitude {
+                    let userLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+                    let span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
+                    let region:MKCoordinateRegion = MKCoordinateRegionMake(userLocation, span)
+                    mainMap.setRegion(region, animated: false)
+                }
+            }
             
         default:
             break;
         }
-
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Test View Did Load")
-        addNotations()
-        
-        // Load JSON Data
-        let urlString = "http://djmobilesoftware.com/jsondata.json"
-        let url = NSURL(string: urlString)
-        var contentData = NSData(contentsOfURL: url!)
-        
-        // Object that JSON is Stored In
-        var mainLocation:loc = loc()
-        
-        // Styling
         segmentStyle.layer.cornerRadius = 5
         
-        // Ask for Authorisation from the User.
-        //self.locationManager.requestAlwaysAuthorization()
+        // Setup the Map and Location Manager
         self.locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         self.mainMap.delegate = self
         startLocation = nil
         
-        func serializeAndParse(){
-            do {
-                let dictionary =  try NSJSONSerialization.JSONObjectWithData(contentData!, options: .MutableContainers) as! NSDictionary
-                //let tempdata = dictionary.objectForKey("locations") as? NSArray
+        // Retrieves locations from MapData and loaded into locArray
+        for locs in mapController.conferenceLocations {
+            locArray.append(locs)
+        }
+        
+        if (annotationArray.count == 0) {
+            addNotations()
+        }
+        
+    }
+    
+    // Adds the Info Button to all of the Annotations
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "LocationAnnotation"
+        
+        if annotation.isKindOfClass(AddAnnotation.self) {
+            if let annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) {
+                annotationView.annotation = annotation
+                return annotationView
+            } else {
+                let annotationView = MKPinAnnotationView(annotation:annotation, reuseIdentifier:identifier)
+                annotationView.enabled = true
+                annotationView.canShowCallout = true
                 
-                mainLocation = betterParsing(dictionary)
-                
-                print(mainLocation.name)
-                print(mainLocation.latitude)
-                print(mainLocation.longitude)
-                print(mainLocation.date)
-                print(mainLocation.description)
-                
-            }
-            catch let error as NSError {
-                print(error)
+                let btn = UIButton(type: .DetailDisclosure)
+                annotationView.rightCalloutAccessoryView = btn
+                return annotationView
             }
         }
         
-        if let url = url {
-            let session = NSURLSession.sharedSession()
-            let task = session.dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
-                if let error =  error {
-                    print("error: \(error.localizedDescription): \(error.userInfo)")
-                }
-                else if let data = data {
-                    if let str = NSString(data: data, encoding: NSUTF8StringEncoding) {
-                        //print("Received data:\n\(str)")
-                        serializeAndParse()
-                    }
-                    else {
-                        print("unable to convert data to text")
-                    }
-                }
-            })
-            task.resume()
-            
-        }
-        func betterParsing(dictionary:NSDictionary)->loc {
-            
-            var data = loc()
-            if let locArray = dictionary.objectForKey("locations") as? NSArray {
-                
-                let locName = locArray[0]["name"] as? String
-                let locLat = locArray[0]["latitude"] as? String
-                let locLong = locArray[0]["longitude"] as? String
-                let locDate = locArray[0]["date"] as? String
-                let locDesc = locArray[0]["description"] as? String
-                //print(locName)
-                if let newName = locName, newLat = locLat, newLong = locLong, newDate = locDate, newDesc = locDesc  {
-                    let newLocation : [String: String] = ["name": "\(newName)", "latitude": "\(newLat)", "longitude": "\(newLong)", "date": "\(newDate)", "description": "\(newDesc)"]
-                    data = loc(dictionary: newLocation)
-                }
-            }
-            
-            return data
-        }
-
+        return nil
     }
     
+    // Object that Selected Map Annotation will be Stored In
+    var selectedAnnotation: AddAnnotation!
+    
+    // Called when Annotation Info Button is Selected
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView {
+            
+            if let tempName = view.annotation?.title, let tempLat = view.annotation?.coordinate.latitude, let tempLong = view.annotation?.coordinate.longitude, let tempSub = view.annotation?.subtitle {
+                
+                let tempCoord = CLLocationCoordinate2D(latitude: tempLat, longitude: tempLong)
+                
+                selectedAnnotation = AddAnnotation(title: tempName!, coordinate: tempCoord, info: tempSub!)
+                
+            }
+            //selectedAnnotation = view.annotation as? MKPointAnnotation
+            
+            // Launches AnnotationDetailViewController
+            performSegueWithIdentifier("NextScene", sender: self)
+        }
+        
+        
+    }
+    
+    // Preparing to segue to AnnotationDetailViewController and sending the selected annotation data with it
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destination = segue.destinationViewController as? AnnotationDetailViewController {
+            destination.receivedAnnotation = selectedAnnotation
+        }
+    }
+    
+    // This is called when viewDidLoad() and sets up all of the annotations on the map
     func addNotations() {
         
         // Centers Map on Main Location (Called on Launch)
-        let annotation: MKPointAnnotation = MKPointAnnotation()
-        let coords = CLLocationCoordinate2D(latitude: mainLatitude, longitude: mainLongitude)
-        annotation.title = "iTenWired Conference"
-        annotation.coordinate = coords
-        self.mainMap.addAnnotation(annotation)
-        self.mainMap.selectAnnotation(annotation, animated: true)
-        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-        let newRegion:MKCoordinateRegion = MKCoordinateRegion(center:coords, span:span )
+        var count = 0.00
+        
+        // All locations "loc" are stored in this array and converted into annotations
+        for locs in locArray {
+            let tempCoord = CLLocationCoordinate2D(latitude: CLLocationDegrees(locs.latitude)!, longitude: CLLocationDegrees(locs.longitude)!)
+            latSum += Double(locs.latitude)!
+            longSum += Double(locs.longitude)!
+            let tempAnnotation = AddAnnotation(title: locs.name, coordinate: tempCoord, info: locs.description)
+            
+            annotationArray.append(tempAnnotation)
+            count += 1
+        }
+        
+        // Add annotations to the map
+        self.mainMap.addAnnotations(annotationArray)
+        
+        for locs in annotationArray {
+            self.mainMap.selectAnnotation(locs, animated: false)
+        }
+        
+        // Gets the average coordinates to center the map region on
+        latSum = latSum/count
+        longSum = longSum/count
+        
+        // Centers the map based on average of locations
+        let newCoords = CLLocationCoordinate2D(latitude: CLLocationDegrees(latSum), longitude: CLLocationDegrees(longSum))
+        let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+        let newRegion:MKCoordinateRegion = MKCoordinateRegion(center:newCoords, span:span )
+        
         self.mainMap.setRegion(newRegion, animated: true)
+        self.mainMap.showsUserLocation = true;
+        
         
     }
     
@@ -176,54 +191,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-
-// Enum for JSON Data
-enum locationEnum:String {
-    case name
-    case latitude
-    case longitude
-    case date
-    case description
-}
-
-// Location Object that Stores JSON
-class loc {
-    var name = ""
-    var latitude = ""
-    var longitude = ""
-    var date = ""
-    var description = ""
-    init() {
-        
-    }
-    init(dictionary:NSDictionary) {
-        if let name = dictionary.objectForKey(locationEnum.name.rawValue) as? String {
-            self.name = name
-        }
-        if let latitude = dictionary.objectForKey(locationEnum.latitude.rawValue) as? String {
-            self.latitude = latitude
-        }
-        if let longitude = dictionary.objectForKey(locationEnum.longitude.rawValue) as? String {
-            self.longitude = longitude
-        }
-        if let date = dictionary.objectForKey(locationEnum.date.rawValue) as? String {
-            self.date = date
-        }
-        if let description = dictionary.objectForKey(locationEnum.description.rawValue) as? String {
-            self.description = description
-        }
-    }
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     
+     
+     }
+     */
+    
     
 }
+
