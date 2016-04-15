@@ -12,7 +12,7 @@ import SystemConfiguration
 
 
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
-    let x:[AnyObject] = ["Home","Map","Agenda","My Iten","Social Media","Live Broadcast","About","Who is Here", "Settings"]
+    let x:[String] = ["Home","Map","Agenda","My Iten","Social Media","Live Broadcast","About","Who is Here", "Settings"]
     let m:[UIImage] = [UIImage(named:"Home.png")!,UIImage(named:"Map.png")!,UIImage(named:"Agenda.png")!,UIImage(named:"MyIten.png")!,UIImage(named:"SocialMedia.png")!,UIImage(named:"LiveBroadcast.png")!,UIImage(named:"About.png")!,UIImage(named:"Who.png")!,UIImage(named:"Settings.png")!]
     
         
@@ -112,7 +112,56 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         //self.presentViewController(view,animated: true, completion: nil)
         //self.navigationController?.pushViewController(view, animated: true)
         
-        self.showDetailViewController(view, sender: self)
+        
+        if !MasterViewController.isConnectedToNetwork() {
+            print(x)
+            print("\(indexPath.row) \(x.count)")
+            if x[indexPath.row] == "Map" || x[indexPath.row] == "Social Media" || x[indexPath.row] == "Live Broadcast" || x[indexPath.row] == "About" || x[indexPath.row] == "Who is Here"{
+                
+                print("Network not found")
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                /*let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+                //cell.userInteractionEnabled = false
+                //cell.userInteractionEnabled = true
+                //cell.selected = false
+                
+                cell.textLabel!.text = "\(self.items[indexPath.row])"
+                if let q:UIImage? = self.images[indexPath.row] as? UIImage{
+                    cell.imageView?.image = q
+                }
+                cell.backgroundColor = UIColor(red: 0.15, green: 0.353, blue: 0.6, alpha: 1)
+                //cell.backgroundColor = UIColor(red: 1.0, green: 0.0, blue: 0.75, alpha: 0.5)
+                cell.textLabel?.textColor = UIColor(red: 1, green: 0.63, blue: 0, alpha: 1)
+                let bgColorView = UIView()
+                bgColorView.backgroundColor = UIColor.cyanColor()
+                cell.selectedBackgroundView = bgColorView
+
+                cell.setSelected(false, animated: true)
+                cell.selectionStyle = UITableViewCellSelectionStyle.None
+                cell.backgroundColor = UIColor(red: 0.15, green: 0.353, blue: 0.6, alpha: 1)
+                self.view.backgroundColor = UIColor(red: 0.15, green: 0.353, blue: 0.6, alpha: 1)
+                //cell.selectedBackgroundView = nil
+                //cell.userInteractionEnabled = false*/
+            }
+            else{
+                self.showDetailViewController(view, sender: self)
+            }
+            //if cell.textLabel!.text == "Map" {
+              //  cell.userInteractionEnabled = false
+            //}
+            //else if cell.textLabel!.text == "Social Media" {
+             //   cell.userInteractionEnabled = false
+            //}
+            
+        }
+        else {
+            self.showDetailViewController(view, sender: self)
+        }
+
+        
+        
+        
+        
     }
     // MARK: - Table View
 
@@ -144,9 +193,22 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         bgColorView.backgroundColor = UIColor.cyanColor()
         cell.selectedBackgroundView = bgColorView
         //cell.setValue(UIView(), forKeyPath: "Home")
-        if MasterViewController.isConnectedToNetwork() {
-            
+        /*if !MasterViewController.isConnectedToNetwork() {
+            if cell.textLabel!.text == "Map" {
+                cell.userInteractionEnabled = false
+            }
+            else if cell.textLabel!.text == "Social Media" {
+                cell.userInteractionEnabled = false
+            }
         }
+        else {
+            if cell.textLabel!.text == "Map" {
+                cell.userInteractionEnabled = true
+            }
+            else if cell.textLabel!.text == "Social Media" {
+                cell.userInteractionEnabled = true
+            }
+        }*/
         return cell
     }
     

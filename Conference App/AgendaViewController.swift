@@ -11,6 +11,7 @@ import UIKit
 class AgendaViewController: UITableViewController {
 
     var agendaController:AgendaController = AgendaController()
+    var append = appendToMyIten()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +57,7 @@ class AgendaViewController: UITableViewController {
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
         let add = UITableViewRowAction(style: .Normal, title: "Add to MyIten") { action, index in
-           
+            self.append.appendAgenda(self.agendaController.getEventAt(indexPath.row))
             print("Selected")
             print(indexPath.row)
 
