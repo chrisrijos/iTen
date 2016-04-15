@@ -18,3 +18,4 @@ class Agenda{
         self.events.appendContentsOf(events)
     }
 }
+

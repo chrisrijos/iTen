@@ -12,14 +12,12 @@ class AgendaViewController: UITableViewController {
 
     var agendaController:AgendaController = AgendaController()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         tableView.estimatedRowHeight = 85.0
         tableView.rowHeight = UITableViewAutomaticDimension     // Sets the table view's row height to automatic
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +30,8 @@ class AgendaViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        
+       
         
         if(section == 0){
             return agendaController.getEventsCount()
@@ -86,7 +86,6 @@ class AgendaViewController: UITableViewController {
         
         self.navigationController?.pushViewController(destinationViewController, animated: true)
     }
- 
     
 }
 

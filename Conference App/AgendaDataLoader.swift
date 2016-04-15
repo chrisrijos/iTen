@@ -10,67 +10,72 @@ import Foundation
 
 class AgendaDataLoader{
 
-    var agenda:Agenda = Agenda()
+    private var agenda:Agenda = Agenda()
     
     init(){
+       
+    }
+    
+    internal func loadAgenda(data:NSData){
+        do{
+            let json = try NSJSONSerialization.JSONObjectWithData(data, options:.AllowFragments)
+            
+            if let eventsJSON = json["events"] as? [NSDictionary] {
+                
+                
+                for eventJson in eventsJSON {
+                    
+                    let event =  Event(dictionary: eventJson)
+                    self.agenda.addEvent(event)
+                }
+            }
+            
+        } catch {
+            print("Error with Json: \(error)")
+        }
         
-        let requestURL: NSURL = NSURL(string: "http://djmobilesoftware.com/jsondata.json")!
+    }
+    
+    internal func getDataFromURL(requestURL: NSURL) -> NSData?{
+        
+        var locked = true       // Flag to make sure the
+        var returnData:NSData?
+        
         let urlRequest: NSMutableURLRequest = NSMutableURLRequest(URL: requestURL)
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(urlRequest) {
             (data, response, error) -> Void in
             
-            let httpResponse = response as! NSHTTPURLResponse
-            let statusCode = httpResponse.statusCode
-            
-            if (statusCode == 200) {
+            if let httpResponse = response as? NSHTTPURLResponse {
+               
+                let statusCode = httpResponse.statusCode
                 
-                do{
-                    
-                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments)
-                    
-                    if let events = json["events"] as? [[String: AnyObject]] {
-                        
-                        
-                        for eventData in events {
-                            
-                            let event = self.parseEvent(eventData)
-                            self.agenda.addEvent(event)
-                        }
-                    }
-                    
-                } catch {
-                    print("Error with Json: \(error)")
+                if (statusCode == 200) {
+                    returnData = data!
+                }else{
+                    print("Error while retriving data!")
                 }
+                locked = false
+            
             }
         }
         
         
         task.resume()
-    }
-    
-    private func parseEvent(data:[String: AnyObject]) -> Event{
         
-        let id = data["id"] as? String
-        let name = data["name"] as? String
-        let summary = data["summary"] as? String
-        let timeStart = data["timeStart"] as? String
-        let timeStop = data["timeStop"] as? String
-        let date = data["date"] as? String
-
-        let event:Event = Event(id: Int(id!)!)
+        while(locked){ // Runs untill the response is received
+            
+        }
         
-        event.name = name!
-
-        event.summary = summary!
-        event.timeStart = timeStart!
-        event.timeStop = timeStop!
-        event.date = date!
-        
-        return event
+        return returnData
     }
 
     func getAgenda() -> Agenda {
+        
+        let requestURL: NSURL = NSURL(string: "http://djmobilesoftware.com/jsondata.json")! // URL for the JSON file
+        let data:NSData = self.getDataFromURL(requestURL)!  //loads the JSON data from the URL
+        self.loadAgenda(data)   // Parses the data into agenda
         return self.agenda
+        
     }
 }
