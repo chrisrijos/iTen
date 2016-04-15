@@ -120,6 +120,14 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
                 
                 print("Network not found")
                 tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                
+                let pop:UIAlertController = UIAlertController(title: "No Network!", message: "This Item Is Unavailable Offline!", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                pop.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+                //func viewControllerElement() -> Void{
+                //}
+                self.presentViewController(pop, animated: true, completion: nil)//viewControllerElement)
+                
                 /*let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
                 //cell.userInteractionEnabled = false
                 //cell.userInteractionEnabled = true
@@ -144,7 +152,37 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
                 //cell.userInteractionEnabled = false*/
             }
             else{
+                //self.showDetailViewController(view, sender: self)
+                /*if let navCtl = self.navigationController{
+                    navCtl.pushViewController(view, animated: true)
+                } else {*/
+                if let m = view.navigationController{
+                    m.navigationItem.setHidesBackButton(false, animated: true)
+                    m.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+                    m.navigationItem.hidesBackButton = false
+                    m.navigationItem.leftBarButtonItem = m.navigationItem.backBarButtonItem
+                    m.navigationBarHidden = false
+                }
+                if let q = self.detailViewController{
+                    q.navigationItem.setHidesBackButton(false, animated: true)
+                    q.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+                    q.navigationItem.hidesBackButton = false
+                    q.navigationItem.leftBarButtonItem = q.navigationItem.backBarButtonItem
+                    //q.navigationBarHidden = false
+                
+                }
+                let f = UINavigationController(rootViewController: self)
+                
+                f.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+                f.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+                f.title = "iTen Wired"
+                //f.addChildViewController(view)
+                //self.showDetailViewController(f, sender: self)
                 self.showDetailViewController(view, sender: self)
+
+                    //self.showDetailViewController(view, sender: self)
+                //}
+                
             }
             //if cell.textLabel!.text == "Map" {
               //  cell.userInteractionEnabled = false
@@ -155,10 +193,58 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             
         }
         else {
-            self.showDetailViewController(view, sender: self)
-        }
+            //if let navCtl = self.navigationController{
+              //  if view is UINavigationController{
+            if let m = view.navigationController{
+                m.navigationItem.setHidesBackButton(false, animated: true)
+                m.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+                m.navigationItem.hidesBackButton = false
+                m.navigationItem.leftBarButtonItem = m.navigationItem.backBarButtonItem
+                m.navigationBarHidden = false
 
+            }
+
+            if let q = self.detailViewController{
+                q.navigationItem.setHidesBackButton(false, animated: true)
+                q.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+                q.navigationItem.hidesBackButton = false
+                q.navigationItem.leftBarButtonItem = q.navigationItem.backBarButtonItem
+                //q.navigationBarHidden = false
+                
+            }
+            let f = UINavigationController(rootViewController: self)
+            
+            f.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+            f.title = "iTen Wired"
+            //f.addChildViewController(view)
+                    //self.showDetailViewController(f, sender: self)
+            self.showDetailViewController(view, sender: self)
+                //}
+                /*else{
+                    if let DetVCtrl = self.detailViewController{
+                        if let vw = DetVCtrl.view{
+                            if let m = view.view{
+                                vw.addSubview(m)
+                            }
+                        }
+                    }
+                    //self.detailViewController!.view!.addSubview(view.view!)
+                    //navCtl.pushViewController(view, animated: true)
+                }*/
+            /*} else {
+                //self.detailViewController!.view!.addSubview(view.view!)
+                self.showDetailViewController(view, sender: self)
+                /*if let DetVCtrl = self.detailViewController{
+                    if let vw = DetVCtrl.view{
+                        if let m = view.view{
+                            vw.addSubview(m)
+                        }
+                    }
+                }*/
+            }*/
+        }
         
+                
         
         
         
