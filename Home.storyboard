@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="Bgo-LU-dTK">
             <objects>
-                <viewController id="YER-xn-d3C" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="YER-xn-d3C" customClass="Home" customModule="Conference_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oXm-pE-uo4"/>
                         <viewControllerLayoutGuide type="bottom" id="0Py-do-i2c"/>
@@ -15,8 +15,37 @@
                     <view key="view" contentMode="scaleToFill" id="FgL-JX-mhY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e1x-CT-Rgf">
+                                <rect key="frame" x="0.0" y="14" width="600" height="586"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UMq-Sa-Ak6">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="572"/>
+                                    </stackView>
+                                </subviews>
+                                <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstItem="UMq-Sa-Ak6" firstAttribute="leading" secondItem="e1x-CT-Rgf" secondAttribute="leading" id="QhW-4h-ZXn"/>
+                                    <constraint firstItem="UMq-Sa-Ak6" firstAttribute="centerX" secondItem="e1x-CT-Rgf" secondAttribute="centerX" id="Trd-q2-Id3"/>
+                                    <constraint firstItem="UMq-Sa-Ak6" firstAttribute="top" secondItem="e1x-CT-Rgf" secondAttribute="top" id="egb-AQ-p6s"/>
+                                    <constraint firstAttribute="bottom" secondItem="UMq-Sa-Ak6" secondAttribute="bottom" constant="14" id="eit-0f-s8O"/>
+                                    <constraint firstAttribute="trailing" secondItem="UMq-Sa-Ak6" secondAttribute="trailing" id="k0s-iY-2O1"/>
+                                    <constraint firstItem="UMq-Sa-Ak6" firstAttribute="centerY" secondItem="e1x-CT-Rgf" secondAttribute="centerY" constant="-7" id="vJ2-op-NbD"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e1x-CT-Rgf" firstAttribute="leading" secondItem="FgL-JX-mhY" secondAttribute="leading" id="eHM-Ul-s90"/>
+                            <constraint firstItem="0Py-do-i2c" firstAttribute="top" secondItem="e1x-CT-Rgf" secondAttribute="bottom" id="eIo-rB-Poq"/>
+                            <constraint firstAttribute="trailing" secondItem="e1x-CT-Rgf" secondAttribute="trailing" id="rbK-A4-0kc"/>
+                            <constraint firstItem="e1x-CT-Rgf" firstAttribute="centerY" secondItem="FgL-JX-mhY" secondAttribute="centerY" constant="7" id="xAF-C8-O2s"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="HomeStack" destination="UMq-Sa-Ak6" id="ido-lB-zMC"/>
+                        <outlet property="ScrollView" destination="e1x-CT-Rgf" id="rQa-hr-1RQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRM-P6-vbw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
