@@ -13,7 +13,6 @@ class AttendeesViewController: UITableViewController {
     
     @IBOutlet weak var cellColor: AttendeesCell!
     var AttendeeControl:AttendeeController = AttendeeController()
-    
     var detailViewController: DetailViewController? = nil
     var attendes = [Event]()
     var filtered = [Event]()
@@ -37,8 +36,7 @@ class AttendeesViewController: UITableViewController {
         
         
         // Do any additional setup after loading the view, typically from a nib.
-        tableView.estimatedRowHeight = 85.0
-        tableView.rowHeight = UITableViewAutomaticDimension     // Sets the table view's row height to automatic
+           // Sets the table view's row height to automatic
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,31 +46,32 @@ class AttendeesViewController: UITableViewController {
     
    
     
-
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(section == 0){
             return AttendeeControl.getEventsCount()
         }
-        else  if searchController.active && searchController.searchBar.text != "" {
-            return filtered.count
-        }
-      
+   
         return attendes.count
     }
     
     
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! AttendeesCell
-        let event = AttendeeControl.getEventAt(indexPath.row)
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! AttendeesCell
+            let event = AttendeeControl.getEventAt(indexPath.row)
+            cell.setName(event.name)
+            cell.setjobTitle(event.jobTitle)
+            
         
-        
-        cell.setName(event.name)
-        cell.setLogo(event.logo)
-        cell.setjobTitle(event.jobTitle)
-        
-        return cell
+            return cell
     }
  
 }
