@@ -113,18 +113,34 @@
                                     <action selector="getDirections:" destination="zRE-pd-5tI" eventType="touchUpInside" id="aPy-dt-Vfq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qk2-kn-Ekd">
+                                <rect key="frame" x="20" y="203" width="335" height="40"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6sB-uJ-3RC"/>
+                                </constraints>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissView:" destination="zRE-pd-5tI" eventType="touchUpInside" id="nDX-qr-0w6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xEX-wA-AP3" firstAttribute="top" secondItem="fKC-IQ-k1g" secondAttribute="bottom" constant="8" id="3St-UR-oUs"/>
                             <constraint firstItem="E1s-uI-VN6" firstAttribute="centerX" secondItem="7ss-q8-wm1" secondAttribute="centerX" id="9hH-hv-KIX"/>
+                            <constraint firstItem="Qk2-kn-Ekd" firstAttribute="top" secondItem="xEX-wA-AP3" secondAttribute="bottom" constant="8" id="FMM-4a-ei7"/>
                             <constraint firstItem="kIb-vo-Uym" firstAttribute="top" secondItem="E1s-uI-VN6" secondAttribute="bottom" constant="8" id="FPB-bd-W7l"/>
                             <constraint firstItem="xEX-wA-AP3" firstAttribute="centerX" secondItem="7ss-q8-wm1" secondAttribute="centerX" id="H3A-1Z-Uk0"/>
                             <constraint firstItem="fKC-IQ-k1g" firstAttribute="top" secondItem="tML-I0-il3" secondAttribute="bottom" constant="8" id="Hba-gS-Hp5"/>
                             <constraint firstItem="kIb-vo-Uym" firstAttribute="centerX" secondItem="7ss-q8-wm1" secondAttribute="centerX" id="He1-vY-clx"/>
                             <constraint firstAttribute="trailing" secondItem="xEX-wA-AP3" secondAttribute="trailing" constant="20" id="Inh-r0-tFK"/>
+                            <constraint firstItem="Qk2-kn-Ekd" firstAttribute="leading" secondItem="7ss-q8-wm1" secondAttribute="leading" constant="20" id="MBZ-3a-wai"/>
                             <constraint firstItem="tML-I0-il3" firstAttribute="centerX" secondItem="7ss-q8-wm1" secondAttribute="centerX" id="Ofy-vT-kWr"/>
                             <constraint firstItem="E1s-uI-VN6" firstAttribute="top" secondItem="0iv-at-IVV" secondAttribute="bottom" constant="15" id="P1n-Gp-sh2"/>
+                            <constraint firstAttribute="trailing" secondItem="Qk2-kn-Ekd" secondAttribute="trailing" constant="20" id="VSd-uK-wdV"/>
                             <constraint firstItem="xEX-wA-AP3" firstAttribute="leading" secondItem="7ss-q8-wm1" secondAttribute="leading" constant="20" id="ZeI-SQ-wMY"/>
                             <constraint firstItem="fKC-IQ-k1g" firstAttribute="centerX" secondItem="7ss-q8-wm1" secondAttribute="centerX" id="n33-bl-j2n"/>
                             <constraint firstItem="tML-I0-il3" firstAttribute="top" secondItem="kIb-vo-Uym" secondAttribute="bottom" constant="8" id="wCp-fY-dGa"/>

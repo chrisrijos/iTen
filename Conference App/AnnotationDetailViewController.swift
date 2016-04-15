@@ -20,6 +20,18 @@ class AnnotationDetailViewController: UIViewController {
     @IBOutlet var pointLong: UILabel!
     @IBOutlet var pointInfo: UILabel!
     
+    @IBAction func dismissView(sender: AnyObject) {
+        if let nav = self.navigationController {
+            print("Inside Nav")
+            navigationController?.popViewControllerAnimated(true)
+        }
+        else {
+            print("Not Inside Nav")
+            self.dismissViewControllerAnimated(true, completion: nil)
+            //dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+    }
     @IBAction func getDirections(sender: AnyObject) {
         if let mainLatitude = receivedAnnotation?.coordinate.latitude, let mainLongitude = receivedAnnotation?.coordinate.longitude, let mainName = receivedAnnotation?.title {
             let localLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(mainLatitude, mainLongitude)

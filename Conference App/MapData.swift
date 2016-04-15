@@ -16,6 +16,7 @@ class MapData {
         
         // Get the JSON File
         let urlString = "http://pensacolacandidatewatcher.com/sample.json"
+        // let urlString = "http://djmobilesoftware.com/jsondata.json"
         let url = NSURL(string: urlString)
         
         // Start a NSURLSession to Download JSON
