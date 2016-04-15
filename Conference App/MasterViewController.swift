@@ -57,7 +57,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         Vc[6] = dViewController
         Sbd = UIStoryboard.init(name: "ItineraryStoryboard", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("Itinerary")
-        Vc[2] = dViewController
+        Vc[3] = dViewController
         //Sbd = UIStoryboard.init(name: )
         Sbd = UIStoryboard.init(name: "AgendaMain", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("AgendaInitial")
