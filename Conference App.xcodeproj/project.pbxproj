@@ -32,6 +32,7 @@
 		A12350181CB9500400B1233E /* ItineraryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A12350161CB9500400B1233E /* ItineraryStoryboard.storyboard */; };
 		A12350191CB9500400B1233E /* ItineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12350171CB9500400B1233E /* ItineraryViewController.swift */; };
 		B1C3E2E01CC17BEA00E77ADA /* appendToMyIten.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3E2DF1CC17BEA00E77ADA /* appendToMyIten.swift */; settings = {ASSET_TAGS = (); }; };
+		B1C3E2E81CC18BE400E77ADA /* AppDataRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3E2E71CC18BE400E77ADA /* AppDataRequesting.swift */; settings = {ASSET_TAGS = (); }; };
 		D4C467CA1CB84BA000BD6157 /* AgendaDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C41CB84BA000BD6157 /* AgendaDataLoader.swift */; };
 		D4C467CB1CB84BA000BD6157 /* Agenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C51CB84BA000BD6157 /* Agenda.swift */; };
 		D4C467CC1CB84BA000BD6157 /* AgendaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C61CB84BA000BD6157 /* AgendaController.swift */; };
@@ -106,6 +107,7 @@
 		A12350161CB9500400B1233E /* ItineraryStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItineraryStoryboard.storyboard; sourceTree = "<group>"; };
 		A12350171CB9500400B1233E /* ItineraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryViewController.swift; sourceTree = "<group>"; };
 		B1C3E2DF1CC17BEA00E77ADA /* appendToMyIten.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = appendToMyIten.swift; sourceTree = "<group>"; };
+		B1C3E2E71CC18BE400E77ADA /* AppDataRequesting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDataRequesting.swift; sourceTree = "<group>"; };
 		D4C467C31CB84BA000BD6157 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		D4C467C41CB84BA000BD6157 /* AgendaDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaDataLoader.swift; sourceTree = "<group>"; };
 		D4C467C51CB84BA000BD6157 /* Agenda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agenda.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				D4C467C21CB84B5F00BD6157 /* Agenda */,
 				FE2623D41CAF39CF0074C58F /* Home.png */,
 				A12350161CB9500400B1233E /* ItineraryStoryboard.storyboard */,
+				B1C3E2E71CC18BE400E77ADA /* AppDataRequesting.swift */,
 				A12350171CB9500400B1233E /* ItineraryViewController.swift */,
 				FE2623A11CAEFA940074C58F /* AppDelegate.swift */,
 				FE2623A61CAEFA940074C58F /* MasterViewController.swift */,
@@ -452,6 +455,7 @@
 				4F2FBD141CBC5C7C0017A11F /* AttendeesCell.swift in Sources */,
 				D4C467CC1CB84BA000BD6157 /* AgendaController.swift in Sources */,
 				D4C467CB1CB84BA000BD6157 /* Agenda.swift in Sources */,
+				B1C3E2E81CC18BE400E77ADA /* AppDataRequesting.swift in Sources */,
 				4F4590E41CBEC85A00F51BCE /* Attendee.swift in Sources */,
 				A12350191CB9500400B1233E /* ItineraryViewController.swift in Sources */,
 				FE2623A91CAEFA940074C58F /* DetailViewController.swift in Sources */,
