@@ -19,7 +19,31 @@ class AboutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        var tempDictionary = AppDataRequesting()
+//        var dictionaryResult = tempDictionary.getDataFromFile()
+//        print(dictionaryResult)
+//        if let newLocations  = dictionaryResult.objectForKey("locations") as? NSArray {
+//            for locs in newLocations {
+//                let locationName = locs["name"] as? String
+//                let locationLat = locs["latitude"] as? String
+//                let locationLong = locs["longitude"] as? String
+//                let locationDate = locs["date"] as? String
+//                let locationDesc = locs["description"] as? String
+//                print(locationName)
+//                
+//                if let newName = locationName {
+//                    print(newName)
+//                }
+//                print(locationLat)
+//                print(locationLong)
+//                print(locationDate)
+//                print(locationDesc)
+//                //tempLoc.append(loc(n:locationName!, lat: locationLat!, long: locationLong!, date: locationDate!, desc: locationDesc!))
+//            }
+//        }
 
+        
         self.view.backgroundColor = UIColor(red: 0.15, green: 0.353, blue: 0.6, alpha: 100)
         aboutTextView.textColor = UIColor(red: 1, green: 0.63, blue: 0, alpha: 100)
         //aboutTextView.text = "Test"

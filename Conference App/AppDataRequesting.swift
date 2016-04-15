@@ -9,7 +9,7 @@
 import Foundation
 
 class AppDataRequesting {
-    var path: NSString
+    var path: String
     var mainFile: String
     
     //Make sure that this url is the main json request
@@ -18,17 +18,27 @@ class AppDataRequesting {
     init()
     {
         let dir:NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first!
-        mainFile = "jsonData.dat"
+        mainFile = "jsonData.json"
         path = dir.stringByAppendingPathComponent(mainFile);
     }
     func initData()
     {
         let data:NSData = getDataFromURL(dataPath)!
-        data.writeToFile(path.stringByAppendingPathExtension(mainFile)!, atomically: true)
+        data.writeToFile(path as String, atomically: false)
     }
     func getDataFromFile()-> NSDictionary
     {
-        return NSDictionary.init(contentsOfFile:(path.stringByAppendingPathExtension(mainFile)!))!
+        var resultDictionary: NSData?
+        var dictionary: NSDictionary?
+        do {
+            resultDictionary = try NSData(contentsOfFile:path)
+            dictionary =  try NSJSONSerialization.JSONObjectWithData(resultDictionary!, options: .MutableContainers) as! NSDictionary
+        }
+        catch {
+            
+        }
+        
+        return dictionary!
     }
     func getDataFromURL(requestURL: NSURL) -> NSData?{
         
