@@ -34,9 +34,9 @@ class AttendeesCell: UITableViewCell {
     }
     
     
-    func setjobTitle(types:String)
+    func setjobTitle(title:String)
     {
-        Title.text = types
+        Title.text = title
     }
     
   
