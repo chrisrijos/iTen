@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import SystemConfiguration
+
 
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     let x:[AnyObject] = ["Home","Map","Agenda","My Iten","Social Media","Live Broadcast","About","Who is Here", "Settings"]
@@ -46,25 +48,35 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         Vc[0].navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self.view, action: nil)
         
         
-        var Sbd:UIStoryboard? = UIStoryboard.init(name: "Attendees", bundle: nil)
-        var dViewController:UIViewController = Sbd!.instantiateViewControllerWithIdentifier("Attendee")
-        Vc[7] = dViewController;
+        
+        
+        var Sbd:UIStoryboard? = UIStoryboard.init(name: "Home", bundle: nil)
+        var dViewController:UIViewController = Sbd!.instantiateViewControllerWithIdentifier("Home")
+        Vc[0] = dViewController
+        
         Sbd = UIStoryboard.init(name: "MapView", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("MapStoryboard")
         Vc[1] = dViewController
-        Sbd = UIStoryboard.init(name: "AboutView", bundle: nil)
-        dViewController = Sbd!.instantiateViewControllerWithIdentifier("AboutView")
-        Vc[6] = dViewController
-        Sbd = UIStoryboard.init(name: "ItineraryStoryboard", bundle: nil)
-        dViewController = Sbd!.instantiateViewControllerWithIdentifier("Itinerary")
-        Vc[2] = dViewController
-        //Sbd = UIStoryboard.init(name: )
+        
         Sbd = UIStoryboard.init(name: "AgendaMain", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("AgendaInitial")
         Vc[2] = dViewController
-        Sbd = UIStoryboard.init(name: "Home", bundle: nil)
-        dViewController = Sbd!.instantiateViewControllerWithIdentifier("Home")
-        Vc[0] = dViewController
+        
+        Sbd = UIStoryboard.init(name: "ItineraryStoryboard", bundle: nil)
+        dViewController = Sbd!.instantiateViewControllerWithIdentifier("Itinerary")
+        Vc[3] = dViewController
+        
+        
+        
+        Sbd = UIStoryboard.init(name: "AboutView", bundle: nil)
+        dViewController = Sbd!.instantiateViewControllerWithIdentifier("AboutView")
+        Vc[6] = dViewController
+        
+        Sbd = UIStoryboard.init(name: "Attendees", bundle: nil)
+        dViewController = Sbd!.instantiateViewControllerWithIdentifier("Attendee")
+        Vc[7] = dViewController
+        //Sbd = UIStoryboard.init(name: )
+        
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -132,9 +144,31 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         bgColorView.backgroundColor = UIColor.cyanColor()
         cell.selectedBackgroundView = bgColorView
         //cell.setValue(UIView(), forKeyPath: "Home")
+        if MasterViewController.isConnectedToNetwork() {
+            
+        }
         return cell
     }
-
+    
+    /*
+     * Voodoo Magic, Don't question it! (from stack overflow)
+     * http://stackoverflow.com/users/2303865/leo-dabus : http://stackoverflow.com/questions/30743408/check-for-internet-connection-in-swift-2-ios-9
+     */
+    class func isConnectedToNetwork() -> Bool {
+        var zeroAddress = sockaddr_in()
+        zeroAddress.sin_len = UInt8(sizeofValue(zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        let defaultRouteReachability = withUnsafePointer(&zeroAddress) {
+            SCNetworkReachabilityCreateWithAddress(nil, UnsafePointer($0))
+        }
+        var flags = SCNetworkReachabilityFlags()
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+            return false
+        }
+        let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
+        let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+        return (isReachable && !needsConnection)
+    }
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         //return true
