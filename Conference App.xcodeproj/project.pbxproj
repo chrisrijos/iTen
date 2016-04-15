@@ -11,6 +11,7 @@
 		0E647B2F1CBF2E19006DFB68 /* loc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E647B2E1CBF2E19006DFB68 /* loc.swift */; };
 		0E647B311CBF2E38006DFB68 /* AddAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E647B301CBF2E38006DFB68 /* AddAnnotation.swift */; };
 		0E647B331CBF2E67006DFB68 /* AnnotationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E647B321CBF2E67006DFB68 /* AnnotationDetailViewController.swift */; };
+		0E7A8FE51CC19D150034513C /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7A8FE41CC19D150034513C /* AppData.swift */; };
 		0ED487731CBD817D007DCC2B /* AboutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED487721CBD817D007DCC2B /* AboutData.swift */; };
 		0EE564CF1CB8331A001678B0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE564CE1CB8331A001678B0 /* MapKit.framework */; };
 		0EE564D11CB83E6C001678B0 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE564D01CB83E6C001678B0 /* MapView.storyboard */; };
@@ -78,6 +79,7 @@
 		0E647B2E1CBF2E19006DFB68 /* loc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loc.swift; sourceTree = "<group>"; };
 		0E647B301CBF2E38006DFB68 /* AddAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAnnotation.swift; sourceTree = "<group>"; };
 		0E647B321CBF2E67006DFB68 /* AnnotationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationDetailViewController.swift; sourceTree = "<group>"; };
+		0E7A8FE41CC19D150034513C /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		0ED487721CBD817D007DCC2B /* AboutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutData.swift; sourceTree = "<group>"; };
 		0EE564CE1CB8331A001678B0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0EE564D01CB83E6C001678B0 /* MapView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
@@ -94,7 +96,6 @@
 		A12350161CB9500400B1233E /* ItineraryStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItineraryStoryboard.storyboard; sourceTree = "<group>"; };
 		A12350171CB9500400B1233E /* ItineraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryViewController.swift; sourceTree = "<group>"; };
 		B1C3E2DF1CC17BEA00E77ADA /* appendToMyIten.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = appendToMyIten.swift; sourceTree = "<group>"; };
-		B1C3E2E71CC18BE400E77ADA /* AppDataRequesting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDataRequesting.swift; sourceTree = "<group>"; };
 		D4C467C31CB84BA000BD6157 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		D4C467C41CB84BA000BD6157 /* AgendaDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaDataLoader.swift; sourceTree = "<group>"; };
 		D4C467C51CB84BA000BD6157 /* Agenda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agenda.swift; sourceTree = "<group>"; };
@@ -200,8 +201,8 @@
 				D4C467C21CB84B5F00BD6157 /* Agenda */,
 				FE2623D41CAF39CF0074C58F /* Home.png */,
 				A12350161CB9500400B1233E /* ItineraryStoryboard.storyboard */,
-				B1C3E2E71CC18BE400E77ADA /* AppDataRequesting.swift */,
 				A12350171CB9500400B1233E /* ItineraryViewController.swift */,
+				0E7A8FE41CC19D150034513C /* AppData.swift */,
 				FE2623A11CAEFA940074C58F /* AppDelegate.swift */,
 				FE2623A61CAEFA940074C58F /* MasterViewController.swift */,
 				B1C3E2DF1CC17BEA00E77ADA /* appendToMyIten.swift */,
@@ -415,6 +416,7 @@
 				FE2623A21CAEFA940074C58F /* AppDelegate.swift in Sources */,
 				0E647B331CBF2E67006DFB68 /* AnnotationDetailViewController.swift in Sources */,
 				D4C467CA1CB84BA000BD6157 /* AgendaDataLoader.swift in Sources */,
+				0E7A8FE51CC19D150034513C /* AppData.swift in Sources */,
 				0E647B311CBF2E38006DFB68 /* AddAnnotation.swift in Sources */,
 				FE2623A51CAEFA940074C58F /* Conference_App.xcdatamodeld in Sources */,
 				FEF7E0C61CB852B1002A810B /* Event.swift in Sources */,
@@ -430,7 +432,6 @@
 				4F2FBD141CBC5C7C0017A11F /* AttendeesCell.swift in Sources */,
 				D4C467CC1CB84BA000BD6157 /* AgendaController.swift in Sources */,
 				D4C467CB1CB84BA000BD6157 /* Agenda.swift in Sources */,
-				B1C3E2E81CC18BE400E77ADA /* AppDataRequesting.swift in Sources */,
 				4F4590E41CBEC85A00F51BCE /* Attendee.swift in Sources */,
 				A12350191CB9500400B1233E /* ItineraryViewController.swift in Sources */,
 				FE2623A91CAEFA940074C58F /* DetailViewController.swift in Sources */,

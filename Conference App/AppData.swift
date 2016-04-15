@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AppDataRequesting {
+class AppData {
     var path: String
     var mainFile: String
     

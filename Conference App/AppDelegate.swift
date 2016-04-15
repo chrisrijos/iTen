@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
         let controller = masterNavigationController.topViewController as! MasterViewController
         controller.managedObjectContext = self.managedObjectContext
-        let appData = AppDataRequesting()
+        let appData = AppData()
         appData.initData()
         return true
     }
