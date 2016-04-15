@@ -23,6 +23,7 @@
         <!--Title-->
         <scene sceneID="BvE-nw-TiW">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FYd-kt-tHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Itinerary" id="s1b-zJ-Ocj" customClass="ItineraryViewController" customModule="Conference_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z0y-MR-FGw"/>
@@ -43,9 +44,8 @@
                         <barButtonItem key="rightBarButtonItem" title="?" id="Qxi-zp-Aa4"/>
                     </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FYd-kt-tHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="642" y="446"/>
+            <point key="canvasLocation" x="597" y="446"/>
         </scene>
     </scenes>
 </document>
