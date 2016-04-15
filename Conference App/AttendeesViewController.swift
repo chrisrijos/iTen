@@ -11,6 +11,7 @@ import UIKit
 class AttendeesViewController: UITableViewController {
     
     
+    @IBOutlet weak var cellColor: AttendeesCell!
     var AttendeeControl:AttendeeController = AttendeeController()
     
     var detailViewController: DetailViewController? = nil
@@ -25,8 +26,8 @@ class AttendeesViewController: UITableViewController {
         
         
         // Setup the Search Controller
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
+        //searchController.searchResultsUpdater = self
+       // searchController.searchBar.delegate = self
         definesPresentationContext = true
         searchController.dimsBackgroundDuringPresentation = false
         
@@ -64,47 +65,17 @@ class AttendeesViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! AttendeesCell
-        var event = AttendeeControl.getEventAt(indexPath.row)
-        
-        if searchController.active && searchController.searchBar.text != "" {
-            //event = filtered[indexPath.row]
-        } else {
-            //vevent = attendes[indexPath.row]
-        }
+        let event = AttendeeControl.getEventAt(indexPath.row)
         
         
         cell.setName(event.name)
-        cell.setWebsite(event.website)
         cell.setLogo(event.logo)
-        cell.settype("sponsors")
+        cell.setjobTitle(event.jobTitle)
         
         return cell
     }
-    
-    func filterContentForSearchText(searchText: String, scope: String = "All") {
-        filtered = attendes.filter({( attendee : Event) -> Bool in
-            let categoryMatch = (scope == "All") || (attendee.type == scope)
-            return categoryMatch && attendee.name.lowercaseString.containsString(searchText.lowercaseString)
-        })
-        tableView.reloadData()
-    }
+ 
 }
 
 
 
-extension AttendeesViewController: UISearchBarDelegate {
-    // MARK: - UISearchBar Delegate
-    func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
-    }
-}
-
-
-extension AttendeesViewController: UISearchResultsUpdating {
-    // MARK: - UISearchResultsUpdating Delegate
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
-    }
-}

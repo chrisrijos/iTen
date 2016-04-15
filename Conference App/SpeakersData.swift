@@ -1,15 +1,14 @@
 //
-//  AttendeeData.swift
+//  SpeakersData.swift
 //  Conference App
 //
-//  Created by tuong on 4/13/16.
+//  Created by tuong on 4/15/16.
 //  Copyright © 2016 Chrystech Systems. All rights reserved.
 //
 
 import Foundation
 
-
-class AttendeeData{
+class SpeakersData{
     
     var attendee:Attendee = Attendee()
     
@@ -30,7 +29,7 @@ class AttendeeData{
                     
                     let json = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments)
                     
-                    if let events = json["sponsors"] as? [[String: AnyObject]] {
+                    if let events = json["speakers"] as? [[String: AnyObject]] {
                         
                         
                         for eventData in events {
@@ -55,15 +54,21 @@ class AttendeeData{
         let id = data["id"] as? String
         let name = data["name"] as? String
         let website = data["website"] as? String
-        let logo = data["logo"] as? String
-        let description = data["description"] as? String
-        let jobTitle = data["level"] as? String
+        let jobTitle = data["jobTitle"] as? String
+        let description = data["bio"] as? String
+        let company = data["company"] as? String
+        let linkedin = data["linkedin"] as? String
+        let email = data["email"] as? String
+        
+        
         let event:Event = Event(id: Int(id!)!)
         
         event.name = name!
         event.website = website!
-        event.logo = logo!
         event.jobTitle = jobTitle!
+        event.company = company!
+        event.linkedin = linkedin!
+        event.email = email!
         event.description = description!
         
         return event

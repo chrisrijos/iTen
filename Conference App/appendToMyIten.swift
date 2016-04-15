@@ -8,14 +8,15 @@
 
 import Foundation
 class appendToMyIten {
-    //var path
+    var path: NSString
     var mainFile: String
     
     init()
     {
-        let dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first!
+        //let dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first!
         mainFile = "data.dat"
         //path = dir.stringByAppendingPathComponent(mainFile);
+        path = ""
         
         
     }
@@ -29,7 +30,7 @@ class appendToMyIten {
     func appendAgenda(event :Event)
     {
         /*
-        var data:NSString = "|id|"+event.id+""+event.date+""++""++""++""
+        var data:NSString = "|id|"+event.id+"|name|"+event.name+"|summary|"+event.summary+"|timeStart|"+event.timeStart+"|timeStop|"+event.timeStop+"|date|"+event.date+"|logo|"+event.logo+"|website|"+event.website+"|type|"+event.type+"\n"
         do{
             try data.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
             
