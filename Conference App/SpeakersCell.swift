@@ -1,22 +1,22 @@
 //
-//  AttendeesCell.swift
+//  SpeakersCell.swift
 //  Conference App
 //
-//  Created by tuong on 4/11/16.
+//  Created by tuong on 4/15/16.
 //  Copyright © 2016 Chrystech Systems. All rights reserved.
 //
 
 import UIKit
 
-class AttendeesCell: UITableViewCell {
+
+class SpeakersCell: UITableViewCell {
+    
     
     @IBOutlet weak var logoImage: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var Title: UILabel!
-    
-    
     
     func setName(name:String){
         nameLabel.text = name
@@ -33,11 +33,9 @@ class AttendeesCell: UITableViewCell {
         }
     }
     
-    
-    func setjobTitle(types:String)
+    func setjobTitle(title:String)
     {
-        Title.text = types
+        Title.text = title
     }
     
-  
 }

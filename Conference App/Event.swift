@@ -17,6 +17,12 @@ class Event{
     
     //attendees
     var logo:String = ""
+    var level: String = ""
+    var description: String = ""
+    var jobTitle : String = ""
+    var company: String = ""
+    var linkedin : String = ""
+    var email : String = ""
     var website:String = ""
     var type:String = ""
     
