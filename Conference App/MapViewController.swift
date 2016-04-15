@@ -155,34 +155,57 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         // All locations "loc" are stored in this array and converted into annotations
         for locs in locArray {
-            let tempCoord = CLLocationCoordinate2D(latitude: CLLocationDegrees(locs.latitude)!, longitude: CLLocationDegrees(locs.longitude)!)
-            latSum += Double(locs.latitude)!
-            longSum += Double(locs.longitude)!
-            let tempAnnotation = AddAnnotation(title: locs.name, coordinate: tempCoord, info: locs.description)
+            if let tempLat = CLLocationDegrees(locs.latitude), let tempLong = CLLocationDegrees(locs.longitude), let tempName = locs.name as? String, let tempDesc = locs.description as? String {
             
-            annotationArray.append(tempAnnotation)
-            count += 1
+                let tempCoord = CLLocationCoordinate2D(latitude: CLLocationDegrees(tempLat), longitude: CLLocationDegrees(tempLong))
+                latSum += Double(tempLat)
+                longSum += Double(tempLong)
+                let tempAnnotation = AddAnnotation(title: tempName, coordinate: tempCoord, info: tempDesc)
+                
+                annotationArray.append(tempAnnotation)
+                count += 1
+            }
+            
         }
         
         // Add annotations to the map
-        self.mainMap.addAnnotations(annotationArray)
-        
-        for locs in annotationArray {
-            self.mainMap.selectAnnotation(locs, animated: false)
+        if !(annotationArray.isEmpty) {
+            self.mainMap.addAnnotations(annotationArray)
+            
+            //        for locs in annotationArray {
+            //            self.mainMap.selectAnnotation(locs, animated: false)
+            //        }
+            
+            // Gets the average coordinates to center the map region on
+            latSum = latSum/count
+            longSum = longSum/count
+            
+            // Centers the map based on average of locations
+            let newCoords = CLLocationCoordinate2D(latitude: CLLocationDegrees(latSum), longitude: CLLocationDegrees(longSum))
+            let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+            let newRegion:MKCoordinateRegion = MKCoordinateRegion(center:newCoords, span:span )
+            
+            self.mainMap.setRegion(newRegion, animated: true)
+            self.mainMap.showsUserLocation = true;
+            
         }
-        
-        // Gets the average coordinates to center the map region on
-        latSum = latSum/count
-        longSum = longSum/count
-        
-        // Centers the map based on average of locations
-        let newCoords = CLLocationCoordinate2D(latitude: CLLocationDegrees(latSum), longitude: CLLocationDegrees(longSum))
-        let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
-        let newRegion:MKCoordinateRegion = MKCoordinateRegion(center:newCoords, span:span )
-        
-        self.mainMap.setRegion(newRegion, animated: true)
-        self.mainMap.showsUserLocation = true;
-        
+        else {
+            var noInternet = UIAlertController(title: "Internet Connection", message: "Map cannot be loaded because there is no internet connection.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            noInternet.addAction(UIAlertAction(title: "Dismiss", style: .Default, handler: { (action: UIAlertAction!) in
+                print("Handle Ok logic here")
+            }))
+            
+            presentViewController(noInternet, animated: true, completion: nil)
+            latSum = mainLatitude
+            longSum = mainLongitude
+            
+            let newCoords = CLLocationCoordinate2D(latitude: CLLocationDegrees(latSum), longitude: CLLocationDegrees(longSum))
+            let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+            let newRegion:MKCoordinateRegion = MKCoordinateRegion(center:newCoords, span:span )
+            
+            self.mainMap.setRegion(newRegion, animated: true)
+        }
         
     }
     

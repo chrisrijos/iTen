@@ -44,22 +44,37 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
         Vc[0].addChildViewController(UIViewController())
         Vc[0].navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self.view, action: nil)
-        var Sbd:UIStoryboard? = UIStoryboard.init(name: "Attendees", bundle: nil)
-        var dViewController:UIViewController = Sbd!.instantiateViewControllerWithIdentifier("Attendee")
-        Vc[7] = dViewController;
+        
+        
+        
+        
+        var Sbd:UIStoryboard? = UIStoryboard.init(name: "Home", bundle: nil)
+        var dViewController:UIViewController = Sbd!.instantiateViewControllerWithIdentifier("Home")
+        Vc[0] = dViewController
+        
         Sbd = UIStoryboard.init(name: "MapView", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("MapStoryboard")
         Vc[1] = dViewController
-        Sbd = UIStoryboard.init(name: "AboutView", bundle: nil)
-        dViewController = Sbd!.instantiateViewControllerWithIdentifier("AboutView")
-        Vc[6] = dViewController
-        Sbd = UIStoryboard.init(name: "ItineraryStoryboard", bundle: nil)
-        dViewController = Sbd!.instantiateViewControllerWithIdentifier("Itinerary")
-        Vc[2] = dViewController
-        //Sbd = UIStoryboard.init(name: )
+        
         Sbd = UIStoryboard.init(name: "AgendaMain", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("AgendaInitial")
         Vc[2] = dViewController
+        
+        Sbd = UIStoryboard.init(name: "ItineraryStoryboard", bundle: nil)
+        dViewController = Sbd!.instantiateViewControllerWithIdentifier("Itinerary")
+        Vc[3] = dViewController
+        
+        
+        
+        Sbd = UIStoryboard.init(name: "AboutView", bundle: nil)
+        dViewController = Sbd!.instantiateViewControllerWithIdentifier("AboutView")
+        Vc[6] = dViewController
+        
+        Sbd = UIStoryboard.init(name: "Attendees", bundle: nil)
+        dViewController = Sbd!.instantiateViewControllerWithIdentifier("Attendee")
+        Vc[7] = dViewController
+        //Sbd = UIStoryboard.init(name: )
+        
     }
 
     override func viewWillAppear(animated: Bool) {
