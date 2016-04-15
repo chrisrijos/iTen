@@ -27,7 +27,6 @@ class ItineraryViewController: UIViewController {
     {
         
         
-    }
-    
+    }    
     
 }
