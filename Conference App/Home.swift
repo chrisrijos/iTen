@@ -19,18 +19,22 @@ class Home: UIViewController {
         super.viewDidLoad()
         super.restorationIdentifier = "HomeScreen"
         // Do any additional setup after loading the view.
-        var Sbd:UIStoryboard? = UIStoryboard.init(name: "Attendees", bundle: nil)
-        var dViewController:UIViewController = Sbd!.instantiateViewControllerWithIdentifier("Attendee")
-        Vc.append(dViewController)
-        Sbd = UIStoryboard.init(name: "MapView", bundle: nil)
-        dViewController = Sbd!.instantiateViewControllerWithIdentifier("MapStoryboard")
-        Vc.append(dViewController)
-        Sbd = UIStoryboard.init(name: "AboutView", bundle: nil)
-        dViewController = Sbd!.instantiateViewControllerWithIdentifier("AboutView")
+                //Sbd = UIStoryboard.init(name: "MapView", bundle: nil)
+        //dViewController = Sbd!.instantiateViewControllerWithIdentifier("MapStoryboard")
+        //Vc.append(dViewController)
+        var Sbd:UIStoryboard? = UIStoryboard.init(name: "AboutView", bundle: nil)
+        var dViewController:UIViewController = Sbd!.instantiateViewControllerWithIdentifier("AboutView")
         Vc.append(dViewController)
         //Sbd = UIStoryboard.init(name: "ItineraryStoryboard", bundle: nil)
         //dViewController = Sbd!.instantiateViewControllerWithIdentifier("Itinerary")
-        //Vc[2] = dViewController
+        Sbd = UIStoryboard.init(name: "Attendees", bundle: nil)
+        dViewController = Sbd!.instantiateViewControllerWithIdentifier("Attendee")
+        Vc.append(dViewController)
+
+        
+        Sbd = UIStoryboard.init(name: "AgendaMain", bundle: nil)
+        dViewController = Sbd!.instantiateViewControllerWithIdentifier("AgendaInitial")
+        Vc.append(dViewController)
         //Sbd = UIStoryboard.init(name: )
         //Sbd = UIStoryboard.init(name: "AgendaMain", bundle: nil)
         //dViewController = Sbd!.instantiateViewControllerWithIdentifier("AgendaInitial")
@@ -38,6 +42,15 @@ class Home: UIViewController {
         //Sbd = UIStoryboard.init(name: "Home", bundle: nil)
         //dViewController = Sbd!.instantiateViewControllerWithIdentifier("Home")
         //Vc[0] = dViewController
+        let f = UINavigationController(rootViewController: self)
+        
+        f.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+        f.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+        f.title = "iTen Wired"
+        //f.addChildViewController(self)
+        //self.addChildViewController(f)
+        
+        
         
         for i in 0...2{
             //Vc[i].view!.sizeThatFits(CGSize(width: self.view!.width, height: self.view!.height/40.0))
