@@ -44,6 +44,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
         Vc[0].addChildViewController(UIViewController())
         Vc[0].navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self.view, action: nil)
+        
+        
         var Sbd:UIStoryboard? = UIStoryboard.init(name: "Attendees", bundle: nil)
         var dViewController:UIViewController = Sbd!.instantiateViewControllerWithIdentifier("Attendee")
         Vc[7] = dViewController;
@@ -60,6 +62,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         Sbd = UIStoryboard.init(name: "AgendaMain", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("AgendaInitial")
         Vc[2] = dViewController
+        Sbd = UIStoryboard.init(name: "Home", bundle: nil)
+        dViewController = Sbd!.instantiateViewControllerWithIdentifier("Home")
+        Vc[0] = dViewController
     }
 
     override func viewWillAppear(animated: Bool) {

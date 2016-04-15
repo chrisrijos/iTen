@@ -47,6 +47,7 @@
 		FE2623E11CAF3D000074C58F /* About.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623E01CAF3D000074C58F /* About.png */; };
 		FE2623E31CAF3D520074C58F /* Who.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623E21CAF3D520074C58F /* Who.png */; };
 		FE2623E51CAF3D820074C58F /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2623E41CAF3D820074C58F /* Settings.png */; };
+		FE8936721CC14EF100F4F103 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8936701CC1458100F4F103 /* Home.swift */; };
 		FEF7E0C51CB852A8002A810B /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C31CB84BA000BD6157 /* EventViewController.swift */; };
 		FEF7E0C61CB852B1002A810B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C71CB84BA000BD6157 /* Event.swift */; };
 		FEF7E0C71CB852B5002A810B /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C467C81CB84BA000BD6157 /* EventCell.swift */; };
@@ -122,7 +123,7 @@
 		FE2623E01CAF3D000074C58F /* About.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = About.png; sourceTree = "<group>"; };
 		FE2623E21CAF3D520074C58F /* Who.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Who.png; sourceTree = "<group>"; };
 		FE2623E41CAF3D820074C58F /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
-		FEF7E0BA1CB849CF002A810B /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		FE8936701CC1458100F4F103 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		FEF7E0C81CB85329002A810B /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = ../Home.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,13 +193,13 @@
 			isa = PBXGroup;
 			children = (
 				FEF7E0C81CB85329002A810B /* Home.storyboard */,
+				FE8936701CC1458100F4F103 /* Home.swift */,
 				D4C467C21CB84B5F00BD6157 /* Agenda */,
 				FE2623D41CAF39CF0074C58F /* Home.png */,
 				A12350161CB9500400B1233E /* ItineraryStoryboard.storyboard */,
 				A12350171CB9500400B1233E /* ItineraryViewController.swift */,
 				FE2623A11CAEFA940074C58F /* AppDelegate.swift */,
 				FE2623A61CAEFA940074C58F /* MasterViewController.swift */,
-				FEF7E0BA1CB849CF002A810B /* Home.swift */,
 				FE2623E41CAF3D820074C58F /* Settings.png */,
 				FE2623E21CAF3D520074C58F /* Who.png */,
 				FE2623E01CAF3D000074C58F /* About.png */,
@@ -401,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE8936721CC14EF100F4F103 /* Home.swift in Sources */,
 				FEF7E0CB1CB858E3002A810B /* MapViewController.swift in Sources */,
 				A123500E1CB945F300B1233E /* AgendaViewController.swift in Sources */,
 				0EE564D71CB84DC1001678B0 /* AboutViewController.swift in Sources */,
