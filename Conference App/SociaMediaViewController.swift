@@ -11,8 +11,6 @@ import Social
 
 class SociaMediaViewController: UIViewController {
     
-    @IBOutlet weak var facebook: UIButton!
-    @IBOutlet weak var twitter: UIButton!
     
     
     override func viewDidLoad() {

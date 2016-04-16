@@ -16,27 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyC-Eg-PIl">
-                                <rect key="frame" x="20" y="83" width="196" height="30"/>
-                                <state key="normal" title="Facebook"/>
-                            </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYs-Ee-2PW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Connect With Us" id="2q7-FA-Udm"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYU-Eo-BEQ">
-                                <rect key="frame" x="20" y="146" width="196" height="30"/>
-                                <state key="normal" title="Twitter"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="facebook" destination="PyC-Eg-PIl" id="rgm-of-1XG"/>
-                        <outlet property="twitter" destination="aYU-Eo-BEQ" id="BMv-A4-BhP"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cV7-lb-oZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
