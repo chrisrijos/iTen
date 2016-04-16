@@ -12,6 +12,8 @@
 		0E647B311CBF2E38006DFB68 /* AddAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E647B301CBF2E38006DFB68 /* AddAnnotation.swift */; };
 		0E647B331CBF2E67006DFB68 /* AnnotationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E647B321CBF2E67006DFB68 /* AnnotationDetailViewController.swift */; };
 		0E7A8FE51CC19D150034513C /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7A8FE41CC19D150034513C /* AppData.swift */; };
+		0EBCE1E41CC2E128008CEA2C /* LiveBroadcast.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EBCE1E31CC2E128008CEA2C /* LiveBroadcast.storyboard */; };
+		0EBCE1E61CC2E14E008CEA2C /* LiveBroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBCE1E51CC2E14E008CEA2C /* LiveBroadcastViewController.swift */; };
 		0ED487731CBD817D007DCC2B /* AboutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED487721CBD817D007DCC2B /* AboutData.swift */; };
 		0EE564CF1CB8331A001678B0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE564CE1CB8331A001678B0 /* MapKit.framework */; };
 		0EE564D11CB83E6C001678B0 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE564D01CB83E6C001678B0 /* MapView.storyboard */; };
@@ -80,6 +82,8 @@
 		0E647B301CBF2E38006DFB68 /* AddAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAnnotation.swift; sourceTree = "<group>"; };
 		0E647B321CBF2E67006DFB68 /* AnnotationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationDetailViewController.swift; sourceTree = "<group>"; };
 		0E7A8FE41CC19D150034513C /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		0EBCE1E31CC2E128008CEA2C /* LiveBroadcast.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LiveBroadcast.storyboard; sourceTree = "<group>"; };
+		0EBCE1E51CC2E14E008CEA2C /* LiveBroadcastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveBroadcastViewController.swift; sourceTree = "<group>"; };
 		0ED487721CBD817D007DCC2B /* AboutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutData.swift; sourceTree = "<group>"; };
 		0EE564CE1CB8331A001678B0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0EE564D01CB83E6C001678B0 /* MapView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 				FE2623A11CAEFA940074C58F /* AppDelegate.swift */,
 				FE2623A61CAEFA940074C58F /* MasterViewController.swift */,
 				B1C3E2DF1CC17BEA00E77ADA /* appendToMyIten.swift */,
+				0EBCE1E31CC2E128008CEA2C /* LiveBroadcast.storyboard */,
+				0EBCE1E51CC2E14E008CEA2C /* LiveBroadcastViewController.swift */,
 				FE2623E41CAF3D820074C58F /* Settings.png */,
 				FE2623E21CAF3D520074C58F /* Who.png */,
 				FE2623E01CAF3D000074C58F /* About.png */,
@@ -379,6 +385,7 @@
 				0EE564D51CB845E7001678B0 /* AboutView.storyboard in Resources */,
 				0EE564D11CB83E6C001678B0 /* MapView.storyboard in Resources */,
 				FE2623D91CAF3B2B0074C58F /* Agenda.png in Resources */,
+				0EBCE1E41CC2E128008CEA2C /* LiveBroadcast.storyboard in Resources */,
 				D4C467D01CB84D9700BD6157 /* AgendaMain.storyboard in Resources */,
 				FE2623E51CAF3D820074C58F /* Settings.png in Resources */,
 				FE2623AC1CAEFA940074C58F /* Main.storyboard in Resources */,
@@ -410,6 +417,7 @@
 			files = (
 				FE8936721CC14EF100F4F103 /* Home.swift in Sources */,
 				FEF7E0CB1CB858E3002A810B /* MapViewController.swift in Sources */,
+				0EBCE1E61CC2E14E008CEA2C /* LiveBroadcastViewController.swift in Sources */,
 				A123500E1CB945F300B1233E /* AgendaViewController.swift in Sources */,
 				0EE564D71CB84DC1001678B0 /* AboutViewController.swift in Sources */,
 				B1C3E2E01CC17BEA00E77ADA /* appendToMyIten.swift in Sources */,

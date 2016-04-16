@@ -67,6 +67,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         Vc[3] = dViewController
         
         
+        Sbd = UIStoryboard.init(name: "LiveBroadcast", bundle:nil)
+        dViewController = Sbd!.instantiateViewControllerWithIdentifier("LiveBroadcast")
+        Vc[5] = dViewController
         
         Sbd = UIStoryboard.init(name: "AboutView", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("AboutView")
