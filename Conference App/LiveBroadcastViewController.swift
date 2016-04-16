@@ -33,7 +33,7 @@ class LiveBroadcastViewController: UIViewController {
 //            print("No")
 //        }
         configureView()
-    }
+    } 
     @IBAction func pauseAudio(sender: AnyObject) {
         player!.pause()
         player = nil

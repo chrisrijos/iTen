@@ -22,7 +22,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     
     
-    
     var Vc:[UIViewController] = [UINavigationController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController()]
     var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
