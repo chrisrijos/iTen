@@ -62,6 +62,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("Itinerary")
         Vc[3] = dViewController
         
+        Sbd = UIStoryboard.init(name: "SocialMedia", bundle: nil)
+        dViewController = Sbd!.instantiateViewControllerWithIdentifier("SocialMedia")
+        Vc[4] = dViewController
         
         Sbd = UIStoryboard.init(name: "LiveBroadcast", bundle:nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("LiveBroadcast")

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Socia Media View Controller-->
         <scene sceneID="rBb-Um-uHj">
             <objects>
-                <viewController id="kbL-Et-oOB" customClass="SociaMediaViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SocialMedia" id="kbL-Et-oOB" customClass="SociaMediaViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wbq-YI-sm0"/>
                         <viewControllerLayoutGuide type="bottom" id="e6b-UT-2na"/>
@@ -16,15 +16,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYs-Ee-2PW">
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYs-Ee-2PW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Connect With Us" id="2q7-FA-Udm"/>
+                                    <navigationItem title="Connect With Us" id="2q7-FA-Udm">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="g1R-fn-OEZ"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BYs-Ee-2PW" firstAttribute="centerX" secondItem="efu-MP-tUt" secondAttribute="centerX" id="Pph-bS-Gsf"/>
+                            <constraint firstItem="BYs-Ee-2PW" firstAttribute="centerY" secondItem="efu-MP-tUt" secondAttribute="centerY" id="Pv2-6i-03e"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="g1R-fn-OEZ" id="RWM-bL-4fY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cV7-lb-oZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

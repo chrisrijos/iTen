@@ -12,6 +12,7 @@ import Social
 class SociaMediaViewController: UIViewController {
     
     
+    @IBOutlet weak var backButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
