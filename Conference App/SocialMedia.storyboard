@@ -19,9 +19,7 @@
                             <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYs-Ee-2PW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Connect With Us" id="2q7-FA-Udm">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="g1R-fn-OEZ"/>
-                                    </navigationItem>
+                                    <navigationItem title="Connect With Us" id="2q7-FA-Udm"/>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -31,9 +29,6 @@
                             <constraint firstItem="BYs-Ee-2PW" firstAttribute="centerY" secondItem="efu-MP-tUt" secondAttribute="centerY" id="Pv2-6i-03e"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="backButton" destination="g1R-fn-OEZ" id="RWM-bL-4fY"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cV7-lb-oZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
