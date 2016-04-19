@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Socia Media View Controller-->
+        <!--Social Media View Controller-->
         <scene sceneID="rBb-Um-uHj">
             <objects>
-                <viewController storyboardIdentifier="SocialMedia" id="kbL-Et-oOB" customClass="SociaMediaViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SocialMedia" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kbL-Et-oOB" customClass="SocialMediaViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wbq-YI-sm0"/>
                         <viewControllerLayoutGuide type="bottom" id="e6b-UT-2na"/>

@@ -23,13 +23,10 @@ class SociaMediaViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func postToFacebookTapped(sender: UIButton) {
-        post(toService: SLServiceTypeFacebook)
-    }
     
-    @IBAction func postToTwitterTapped(sender: UIButton) {
-        post(toService: SLServiceTypeTwitter)
-    }
+   // @IBAction func postToTwitterTapped(sender: UIButton) {
+    //    post(toService: SLServiceTypeTwitter)
+    //}
     func post(toService service: String) {
         let socialController = SLComposeViewController(forServiceType: service)
         //            socialController.setInitialText("Hello World!")
