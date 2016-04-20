@@ -12,6 +12,8 @@
 		0E647B311CBF2E38006DFB68 /* AddAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E647B301CBF2E38006DFB68 /* AddAnnotation.swift */; };
 		0E647B331CBF2E67006DFB68 /* AnnotationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E647B321CBF2E67006DFB68 /* AnnotationDetailViewController.swift */; };
 		0E7A8FE51CC19D150034513C /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7A8FE41CC19D150034513C /* AppData.swift */; };
+		0EBCE1E41CC2E128008CEA2C /* LiveBroadcast.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EBCE1E31CC2E128008CEA2C /* LiveBroadcast.storyboard */; };
+		0EBCE1E61CC2E14E008CEA2C /* LiveBroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBCE1E51CC2E14E008CEA2C /* LiveBroadcastViewController.swift */; };
 		0ED487731CBD817D007DCC2B /* AboutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED487721CBD817D007DCC2B /* AboutData.swift */; };
 		0EE564CF1CB8331A001678B0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE564CE1CB8331A001678B0 /* MapKit.framework */; };
 		0EE564D11CB83E6C001678B0 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE564D01CB83E6C001678B0 /* MapView.storyboard */; };
@@ -23,6 +25,9 @@
 		4F4590E41CBEC85A00F51BCE /* Attendee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4590E31CBEC85A00F51BCE /* Attendee.swift */; };
 		4F4590E61CBEC8DE00F51BCE /* AttendeeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4590E51CBEC8DE00F51BCE /* AttendeeData.swift */; };
 		4F4590E81CBEC98F00F51BCE /* AttendeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4590E71CBEC98F00F51BCE /* AttendeeController.swift */; };
+		827BA99F1CC2E44B003085BA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 827BA99E1CC2E44B003085BA /* Social.framework */; };
+		827BA9A11CC2E464003085BA /* SocialMedia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827BA9A01CC2E464003085BA /* SocialMedia.storyboard */; };
+		827BA9A31CC2E48F003085BA /* SocialMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BA9A21CC2E48F003085BA /* SocialMediaViewController.swift */; };
 		A123500E1CB945F300B1233E /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A123500D1CB945F300B1233E /* AgendaViewController.swift */; };
 		A12350181CB9500400B1233E /* ItineraryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A12350161CB9500400B1233E /* ItineraryStoryboard.storyboard */; };
 		A12350191CB9500400B1233E /* ItineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12350171CB9500400B1233E /* ItineraryViewController.swift */; };
@@ -80,6 +85,8 @@
 		0E647B301CBF2E38006DFB68 /* AddAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAnnotation.swift; sourceTree = "<group>"; };
 		0E647B321CBF2E67006DFB68 /* AnnotationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationDetailViewController.swift; sourceTree = "<group>"; };
 		0E7A8FE41CC19D150034513C /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		0EBCE1E31CC2E128008CEA2C /* LiveBroadcast.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LiveBroadcast.storyboard; sourceTree = "<group>"; };
+		0EBCE1E51CC2E14E008CEA2C /* LiveBroadcastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveBroadcastViewController.swift; sourceTree = "<group>"; };
 		0ED487721CBD817D007DCC2B /* AboutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutData.swift; sourceTree = "<group>"; };
 		0EE564CE1CB8331A001678B0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0EE564D01CB83E6C001678B0 /* MapView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
@@ -92,6 +99,9 @@
 		4F4590E31CBEC85A00F51BCE /* Attendee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attendee.swift; sourceTree = "<group>"; };
 		4F4590E51CBEC8DE00F51BCE /* AttendeeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendeeData.swift; sourceTree = "<group>"; };
 		4F4590E71CBEC98F00F51BCE /* AttendeeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendeeController.swift; sourceTree = "<group>"; };
+		827BA99E1CC2E44B003085BA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		827BA9A01CC2E464003085BA /* SocialMedia.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SocialMedia.storyboard; sourceTree = "<group>"; };
+		827BA9A21CC2E48F003085BA /* SocialMediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaViewController.swift; sourceTree = "<group>"; };
 		A123500D1CB945F300B1233E /* AgendaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
 		A12350161CB9500400B1233E /* ItineraryStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItineraryStoryboard.storyboard; sourceTree = "<group>"; };
 		A12350171CB9500400B1233E /* ItineraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				827BA99F1CC2E44B003085BA /* Social.framework in Frameworks */,
 				0EE564CF1CB8331A001678B0 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,6 +186,7 @@
 		FE2623951CAEFA940074C58F = {
 			isa = PBXGroup;
 			children = (
+				827BA99E1CC2E44B003085BA /* Social.framework */,
 				0EE564CE1CB8331A001678B0 /* MapKit.framework */,
 				FE2623A01CAEFA940074C58F /* Conference App */,
 				FE2623BA1CAEFA940074C58F /* Conference AppTests */,
@@ -206,6 +218,8 @@
 				FE2623A11CAEFA940074C58F /* AppDelegate.swift */,
 				FE2623A61CAEFA940074C58F /* MasterViewController.swift */,
 				B1C3E2DF1CC17BEA00E77ADA /* appendToMyIten.swift */,
+				0EBCE1E31CC2E128008CEA2C /* LiveBroadcast.storyboard */,
+				0EBCE1E51CC2E14E008CEA2C /* LiveBroadcastViewController.swift */,
 				FE2623E41CAF3D820074C58F /* Settings.png */,
 				FE2623E21CAF3D520074C58F /* Who.png */,
 				FE2623E01CAF3D000074C58F /* About.png */,
@@ -235,6 +249,8 @@
 				0EE564D41CB845E7001678B0 /* AboutView.storyboard */,
 				0ED487721CBD817D007DCC2B /* AboutData.swift */,
 				0EE564D61CB84DC1001678B0 /* AboutViewController.swift */,
+				827BA9A01CC2E464003085BA /* SocialMedia.storyboard */,
+				827BA9A21CC2E48F003085BA /* SocialMediaViewController.swift */,
 			);
 			path = "Conference App";
 			sourceTree = "<group>";
@@ -379,7 +395,9 @@
 				0EE564D51CB845E7001678B0 /* AboutView.storyboard in Resources */,
 				0EE564D11CB83E6C001678B0 /* MapView.storyboard in Resources */,
 				FE2623D91CAF3B2B0074C58F /* Agenda.png in Resources */,
+				0EBCE1E41CC2E128008CEA2C /* LiveBroadcast.storyboard in Resources */,
 				D4C467D01CB84D9700BD6157 /* AgendaMain.storyboard in Resources */,
+				827BA9A11CC2E464003085BA /* SocialMedia.storyboard in Resources */,
 				FE2623E51CAF3D820074C58F /* Settings.png in Resources */,
 				FE2623AC1CAEFA940074C58F /* Main.storyboard in Resources */,
 				4F3A78DB1CB5AAF500A87EE6 /* Attendees.storyboard in Resources */,
@@ -410,6 +428,7 @@
 			files = (
 				FE8936721CC14EF100F4F103 /* Home.swift in Sources */,
 				FEF7E0CB1CB858E3002A810B /* MapViewController.swift in Sources */,
+				0EBCE1E61CC2E14E008CEA2C /* LiveBroadcastViewController.swift in Sources */,
 				A123500E1CB945F300B1233E /* AgendaViewController.swift in Sources */,
 				0EE564D71CB84DC1001678B0 /* AboutViewController.swift in Sources */,
 				B1C3E2E01CC17BEA00E77ADA /* appendToMyIten.swift in Sources */,
@@ -422,6 +441,7 @@
 				FEF7E0C61CB852B1002A810B /* Event.swift in Sources */,
 				FE2623A71CAEFA940074C58F /* MasterViewController.swift in Sources */,
 				0E647B2F1CBF2E19006DFB68 /* loc.swift in Sources */,
+				827BA9A31CC2E48F003085BA /* SocialMediaViewController.swift in Sources */,
 				FEF7E0C71CB852B5002A810B /* EventCell.swift in Sources */,
 				4F4590E61CBEC8DE00F51BCE /* AttendeeData.swift in Sources */,
 				0E647B2D1CBF2DDB006DFB68 /* MapData.swift in Sources */,
