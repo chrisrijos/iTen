@@ -9,7 +9,7 @@
 import UIKit
 import Social
 
-class SociaMediaViewController: UIViewController {
+class SocialMediaViewController: UIViewController {
     
     @IBOutlet weak var facebook: UIButton!
     @IBOutlet weak var twitter: UIButton!
@@ -26,9 +26,11 @@ class SociaMediaViewController: UIViewController {
     }
     
     @IBAction func postToTwitter(sender: AnyObject) {
+        post(toService: SLServiceTypeTwitter)
     }
     
     @IBAction func postToFacebook(sender: AnyObject) {
+        post(toService: SLServiceTypeFacebook)
     }
     
     
