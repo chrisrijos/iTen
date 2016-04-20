@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Social Media View Controller-->
+        <!--Socia Media View Controller-->
         <scene sceneID="rBb-Um-uHj">
             <objects>
-                <viewController storyboardIdentifier="SocialMedia" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kbL-Et-oOB" customClass="SocialMediaViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SocialMedia" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kbL-Et-oOB" customClass="SociaMediaViewController" customModule="Conference_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wbq-YI-sm0"/>
                         <viewControllerLayoutGuide type="bottom" id="e6b-UT-2na"/>
@@ -22,13 +22,33 @@
                                     <navigationItem title="Connect With Us" id="2q7-FA-Udm"/>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zL2-xd-W4m">
+                                <rect key="frame" x="232" y="84" width="136" height="30"/>
+                                <state key="normal" title="Twitter"/>
+                                <connections>
+                                    <action selector="postToTwitter:" destination="kbL-Et-oOB" eventType="touchUpInside" id="UBc-Qv-ugf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PO9-gx-9As">
+                                <rect key="frame" x="232" y="154" width="136" height="30"/>
+                                <state key="normal" title="Facebook"/>
+                                <connections>
+                                    <action selector="postToFacebook:" destination="kbL-Et-oOB" eventType="touchUpInside" id="bxY-5h-ekQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BYs-Ee-2PW" firstAttribute="centerX" secondItem="efu-MP-tUt" secondAttribute="centerX" id="Pph-bS-Gsf"/>
                             <constraint firstItem="BYs-Ee-2PW" firstAttribute="centerY" secondItem="efu-MP-tUt" secondAttribute="centerY" id="Pv2-6i-03e"/>
+                            <constraint firstItem="PO9-gx-9As" firstAttribute="centerX" secondItem="efu-MP-tUt" secondAttribute="centerX" id="kfS-Wl-0H2"/>
+                            <constraint firstItem="zL2-xd-W4m" firstAttribute="centerX" secondItem="efu-MP-tUt" secondAttribute="centerX" id="w7X-tf-FCO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="facebook" destination="PO9-gx-9As" id="oQU-Mj-obm"/>
+                        <outlet property="twitter" destination="zL2-xd-W4m" id="m4M-uA-YvF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cV7-lb-oZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
