@@ -9,9 +9,10 @@
 import UIKit
 import Social
 
-class SociaMediaViewController: UIViewController {
+class SocialMediaViewController: UIViewController {
     
-    
+    @IBOutlet weak var facebook: UIButton!
+    @IBOutlet weak var twitter: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +25,18 @@ class SociaMediaViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func postToFacebookTapped(sender: UIButton) {
+    @IBAction func postToTwitter(sender: AnyObject) {
+        post(toService: SLServiceTypeTwitter)
+    }
+    
+    @IBAction func postToFacebook(sender: AnyObject) {
         post(toService: SLServiceTypeFacebook)
     }
     
-    @IBAction func postToTwitterTapped(sender: UIButton) {
-        post(toService: SLServiceTypeTwitter)
-    }
+    
+   // @IBAction func postToTwitterTapped(sender: UIButton) {
+    //    post(toService: SLServiceTypeTwitter)
+    //}
     func post(toService service: String) {
         let socialController = SLComposeViewController(forServiceType: service)
         //            socialController.setInitialText("Hello World!")

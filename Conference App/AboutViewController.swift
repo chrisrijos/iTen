@@ -55,7 +55,7 @@ class AboutViewController: UIViewController {
             let url = NSURL(string:logoText)
             let data = NSData(contentsOfURL:url!)
             if (data != nil) {
-                let tempImg = UIImage(data:data!)
+                //let tempImg = UIImage(data:data!)
                 imageURL.image = UIImage(data:data!)
                 imageURL.contentMode = .ScaleAspectFit
             }

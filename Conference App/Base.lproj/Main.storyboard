@@ -55,7 +55,7 @@
         <!--SocialMedia-->
         <scene sceneID="yH4-Kw-v0H">
             <objects>
-                <viewControllerPlaceholder storyboardName="SocialMedia" id="4oY-p3-t38" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="SocialMedia" storyboardName="SocialMedia" referencedIdentifier="SocialMedia" id="4oY-p3-t38" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AAJ-SS-Gel" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-526" y="-1297"/>

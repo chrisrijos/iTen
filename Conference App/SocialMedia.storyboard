@@ -1,34 +1,59 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Socia Media View Controller-->
+        <!--Connect With Us-->
         <scene sceneID="rBb-Um-uHj">
             <objects>
-                <viewController id="kbL-Et-oOB" customClass="SociaMediaViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SocialMedia" title="Connect With Us" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kbL-Et-oOB" customClass="SocialMediaViewController" customModule="Conference_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wbq-YI-sm0"/>
                         <viewControllerLayoutGuide type="bottom" id="e6b-UT-2na"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="efu-MP-tUt">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYs-Ee-2PW">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYs-Ee-2PW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Connect With Us" id="2q7-FA-Udm"/>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zL2-xd-W4m">
+                                <rect key="frame" x="119" y="81" width="136" height="30"/>
+                                <state key="normal" title="Twitter"/>
+                                <connections>
+                                    <action selector="postToTwitter:" destination="kbL-Et-oOB" eventType="touchUpInside" id="UBc-Qv-ugf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PO9-gx-9As">
+                                <rect key="frame" x="119" y="119" width="136" height="30"/>
+                                <state key="normal" title="Facebook"/>
+                                <connections>
+                                    <action selector="postToFacebook:" destination="kbL-Et-oOB" eventType="touchUpInside" id="bxY-5h-ekQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BYs-Ee-2PW" firstAttribute="centerX" secondItem="efu-MP-tUt" secondAttribute="centerX" id="Pph-bS-Gsf"/>
+                            <constraint firstItem="BYs-Ee-2PW" firstAttribute="centerY" secondItem="efu-MP-tUt" secondAttribute="centerY" id="Pv2-6i-03e"/>
+                            <constraint firstItem="PO9-gx-9As" firstAttribute="centerX" secondItem="efu-MP-tUt" secondAttribute="centerX" id="kfS-Wl-0H2"/>
+                            <constraint firstItem="zL2-xd-W4m" firstAttribute="centerX" secondItem="efu-MP-tUt" secondAttribute="centerX" id="w7X-tf-FCO"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="facebook" destination="PO9-gx-9As" id="oQU-Mj-obm"/>
+                        <outlet property="twitter" destination="zL2-xd-W4m" id="m4M-uA-YvF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cV7-lb-oZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="253" y="279"/>
+            <point key="canvasLocation" x="252.5" y="278.5"/>
         </scene>
     </scenes>
 </document>
