@@ -4,35 +4,64 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Social Media View Controller-->
+        <!--Connect With Us-->
         <scene sceneID="rBb-Um-uHj">
             <objects>
-                <viewController storyboardIdentifier="SocialMedia" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kbL-Et-oOB" customClass="SocialMediaViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SocialMedia" title="Connect With Us" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kbL-Et-oOB" customClass="SocialMediaViewController" customModule="Conference_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wbq-YI-sm0"/>
                         <viewControllerLayoutGuide type="bottom" id="e6b-UT-2na"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="efu-MP-tUt">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYs-Ee-2PW">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Connect With Us" id="2q7-FA-Udm"/>
+                                    <navigationItem title="Share" id="2q7-FA-Udm"/>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PO9-gx-9As">
+                                <rect key="frame" x="33" y="289" width="321" height="41"/>
+                                <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Share on Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="postToFacebook:" destination="kbL-Et-oOB" eventType="touchUpInside" id="bxY-5h-ekQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zL2-xd-W4m">
+                                <rect key="frame" x="33" y="220" width="321" height="42"/>
+                                <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Share on Twitter">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="postToTwitter:" destination="kbL-Et-oOB" eventType="touchUpInside" id="UBc-Qv-ugf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BYs-Ee-2PW" firstAttribute="centerX" secondItem="efu-MP-tUt" secondAttribute="centerX" id="Pph-bS-Gsf"/>
                             <constraint firstItem="BYs-Ee-2PW" firstAttribute="centerY" secondItem="efu-MP-tUt" secondAttribute="centerY" id="Pv2-6i-03e"/>
+                            <constraint firstItem="PO9-gx-9As" firstAttribute="centerX" secondItem="efu-MP-tUt" secondAttribute="centerX" id="kfS-Wl-0H2"/>
+                            <constraint firstItem="zL2-xd-W4m" firstAttribute="centerX" secondItem="efu-MP-tUt" secondAttribute="centerX" id="w7X-tf-FCO"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="facebook" destination="PO9-gx-9As" id="oQU-Mj-obm"/>
+                        <outlet property="twitter" destination="zL2-xd-W4m" id="m4M-uA-YvF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cV7-lb-oZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="253" y="279"/>
+            <point key="canvasLocation" x="252.5" y="278.5"/>
         </scene>
     </scenes>
 </document>

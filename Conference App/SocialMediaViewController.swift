@@ -9,13 +9,15 @@
 import UIKit
 import Social
 
-class SociaMediaViewController: UIViewController {
+class SocialMediaViewController: UIViewController {
     
+    @IBOutlet weak var facebook: UIButton!
+    @IBOutlet weak var twitter: UIButton!
+    @IBOutlet weak var google: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor(red: 0.15, green: 0.353, blue: 0.6, alpha: 50)
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,15 +25,17 @@ class SociaMediaViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func postToTwitter(sender: AnyObject) {
+        post(toService: SLServiceTypeTwitter)
+    }
     
-   // @IBAction func postToTwitterTapped(sender: UIButton) {
-    //    post(toService: SLServiceTypeTwitter)
-    //}
+    @IBAction func postToFacebook(sender: AnyObject) {
+        post(toService: SLServiceTypeFacebook)
+    }
+    
     func post(toService service: String) {
         let socialController = SLComposeViewController(forServiceType: service)
-        //            socialController.setInitialText("Hello World!")
-        //            socialController.addImage(someUIImageInstance)
-        //            socialController.addURL(someNSURLInstance)
+                   socialController.setInitialText("tell your friends about us www.itenwired.com")
         self.presentViewController(socialController, animated: true, completion: nil)
     }
 

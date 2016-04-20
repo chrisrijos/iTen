@@ -14,7 +14,7 @@ import SystemConfiguration
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     //initialize String for Menu List
-    let x:[String] = ["Home","Map","Agenda","My Iten","SocialMedia","Live Broadcast","About","Who is Here", "Settings"]
+    let x:[String] = ["Home","Map","Agenda","My Iten","Social Media","Live Broadcast","About","Who is Here", "Settings"]
     //assigns images to menu listß
     let m:[UIImage] = [UIImage(named:"Home.png")!,UIImage(named:"Map.png")!,UIImage(named:"Agenda.png")!,UIImage(named:"MyIten.png")!,UIImage(named:"SocialMedia.png")!,UIImage(named:"LiveBroadcast.png")!,UIImage(named:"About.png")!,UIImage(named:"Who.png")!,UIImage(named:"Settings.png")!]
     
@@ -58,9 +58,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("AgendaInitial")
         Vc[2] = dViewController
         
-        Sbd = UIStoryboard.init(name: "ItineraryStoryboard", bundle: nil)
-        dViewController = Sbd!.instantiateViewControllerWithIdentifier("Itinerary")
-        Vc[3] = dViewController
+      
         
         Sbd = UIStoryboard.init(name: "SocialMedia", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("SocialMedia")
@@ -142,12 +140,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
                     //q.navigationBarHidden = false
                 
                 }
-                let f = UINavigationController(rootViewController: self)
+               /*let f = UINavigationController(rootViewController: self)
                 
                 f.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
                 f.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
                 f.title = "iTen Wired"
-          
+                //f.view = view.view*/
                 self.showDetailViewController(view, sender: self)
             }
         }
@@ -155,26 +153,26 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
           
             if let m = view.navigationController{
                 m.navigationItem.setHidesBackButton(false, animated: true)
-                m.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+                //m.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
                 m.navigationItem.hidesBackButton = false
-                m.navigationItem.leftBarButtonItem = m.navigationItem.backBarButtonItem
-                m.navigationBarHidden = false
-
+                //m.navigationItem.leftBarButtonItem = m.navigationItem.backBarButtonItem
+                //m.navigationBarHidden = false
+                
             }
 
             if let q = self.detailViewController{
                 q.navigationItem.setHidesBackButton(false, animated: true)
-                q.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+                //q.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
                 q.navigationItem.hidesBackButton = false
-                q.navigationItem.leftBarButtonItem = q.navigationItem.backBarButtonItem
+                //q.navigationItem.leftBarButtonItem = q.navigationItem.backBarButtonItem
                 //q.navigationBarHidden = false
                 
             }
-            let f = UINavigationController(rootViewController: self)
+            /*let f = UINavigationController(rootViewController: self)
             
             f.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
             f.title = "iTen Wired"
-
+*/
             self.showDetailViewController(view, sender: self)
             
         }
