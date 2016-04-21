@@ -51,7 +51,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="6yB-UH-T94"/>
+                    <navigationItem key="navigationItem" title="Maps" id="6yB-UH-T94"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mainMap" destination="IQg-u6-wIp" id="d4w-oK-2Kq"/>
@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="820.5" y="369.5"/>
         </scene>
-        <!--Annotation Detail View Controller-->
+        <!--Location Detail-->
         <scene sceneID="Wdv-uI-4zO">
             <objects>
-                <viewController id="zRE-pd-5tI" customClass="AnnotationDetailViewController" customModule="Conference_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Location Detail" id="zRE-pd-5tI" customClass="AnnotationDetailViewController" customModule="Conference_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0iv-at-IVV"/>
                         <viewControllerLayoutGuide type="bottom" id="O0k-fN-7PF"/>
@@ -157,10 +157,10 @@
             </objects>
             <point key="canvasLocation" x="1398.5" y="369.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Map-->
         <scene sceneID="etO-ae-HDs">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z03-iX-fkq" sceneMemberID="viewController">
+                <navigationController title="Map" automaticallyAdjustsScrollViewInsets="NO" id="Z03-iX-fkq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fPJ-Gl-1OV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

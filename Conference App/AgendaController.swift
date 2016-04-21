@@ -20,8 +20,23 @@ class AgendaController{
     }
     
     func getEventAt(index:Int) ->Event{
+        
+        
         return self.agenda.events[index]
     }
+    func getById(id:Int)->Event
+    {
+        var event : Event?
+        for tempEvents in self.agenda.events
+        {
+            if(tempEvents.id == id)
+            {
+                event = tempEvents
+            }
+        }
+        return event!
+    }
+    
     
     func getEventsCount() -> Int{
         return agenda.events.count
