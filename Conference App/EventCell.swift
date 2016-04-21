@@ -12,14 +12,15 @@ class EventCell: UITableViewCell {
 
     @IBOutlet var nameLable: UILabel!
     
-
-    
     @IBOutlet var timeLable: UILabel!
     
     
     @IBOutlet var dateLable: UILabel!
     
     @IBOutlet var timeStopLable: UILabel!
+    
+    @IBOutlet weak var swipeImageView: UIImageView!
+    
     
     func setName(name:String){
         nameLable.text = name
@@ -35,5 +36,13 @@ class EventCell: UITableViewCell {
     
     func setDate(date:String){
         dateLable.text = date
+    }
+    
+    func showSwipe(bool:Bool){
+        if bool {
+            
+        }else{
+            self.swipeImageView.removeFromSuperview()
+        }
     }
 }

@@ -50,6 +50,13 @@ class AgendaViewController: UITableViewController {
         cell.setStartTime(event.timeStart)
         cell.setStopTime(event.timeStop)
         cell.setDate(event.date)
+        
+        if(indexPath.row == 3){
+            cell.showSwipe(true)
+        }else{
+            cell.showSwipe(false)
+        }
+        
 
         return cell
     }
