@@ -8,12 +8,13 @@
 
 import UIKit
 
-class AgendaViewController: UITableViewController {
+class AgendaViewController: UITableViewController, UIGestureRecognizerDelegate {
 
     var agendaController:AgendaController = AgendaController()
     var append = appendToMyIten()
     var fistTouch:Bool = false
     let swipeImageIndex = 2
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +24,15 @@ class AgendaViewController: UITableViewController {
         
         tableView.estimatedRowHeight = 85.0
         tableView.rowHeight = UITableViewAutomaticDimension     // Sets the table view's row height to automatic
+        
+        let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
+        tap.delegate = self
+        self.view.addGestureRecognizer(tap)
+        
     }
-
+    func handleTap(sender: UITapGestureRecognizer? = nil) {
+        //self.swipeImage.removeFromSuperview()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -67,10 +75,7 @@ class AgendaViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
-        if(indexPath.row == swipeImageIndex && !fistTouch){
-            fistTouch = true
-            tableView.reloadData()
-        }
+        
         
         let add = UITableViewRowAction(style: .Normal, title: "Add to MyIten") { action, index in
             self.append.appendAgenda(self.agendaController.getEventAt(indexPath.row))
@@ -79,6 +84,11 @@ class AgendaViewController: UITableViewController {
 
         }
         add.backgroundColor = UIColor.lightGrayColor()
+        
+        if(indexPath.row == swipeImageIndex && !fistTouch){
+            fistTouch = true
+            tableView.reloadData()
+        }
         
         return [add]
     }
