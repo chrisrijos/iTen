@@ -14,10 +14,14 @@ class SocialMediaViewController: UIViewController {
     @IBOutlet weak var facebook: UIButton!
     @IBOutlet weak var twitter: UIButton!
     @IBOutlet weak var google: UIButton!
+    @IBOutlet weak var facebookwebview: UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 0.15, green: 0.353, blue: 0.6, alpha: 50)
+        let url = NSURL (string: "https://www.facebook.com/itenwired");
+        let requestObj = NSURLRequest(URL: url!);
+        facebookwebview.loadRequest(requestObj);
     }
 
     override func didReceiveMemoryWarning() {
