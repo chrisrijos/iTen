@@ -42,7 +42,10 @@ class EventCell: UITableViewCell {
         if bool {
             
         }else{
-            self.swipeImageView.removeFromSuperview()
+            if let swipeImg = self.swipeImageView {
+                swipeImg.removeFromSuperview()
+            }
+            //self.swipeImageView.removeFromSuperview()
         }
     }
 }
