@@ -33,8 +33,13 @@ class Event{
     }
     
     init(dictionary: NSDictionary){
-        if let id = dictionary.objectForKey(EventEnum.id.rawValue) as? Int{
-            self.id = id
+        
+        var IDString:String
+        if let IDString = dictionary.objectForKey(EventEnum.id.rawValue) as? String{
+            self.id = Int(IDString)!
+            
+        } else {
+         
         }
         
         if let name = dictionary.objectForKey(EventEnum.name.rawValue) as? String{
