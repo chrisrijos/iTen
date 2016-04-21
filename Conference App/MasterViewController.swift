@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import SystemConfiguration
 
-
+public var Vc:[UIViewController] = [UINavigationController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController()]
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     //initialize String for Menu List
@@ -20,14 +20,14 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     
     //creates new default instances of UIViewController to initialize storyboards
-    var Vc:[UIViewController] = [UINavigationController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController()]
+    
     
     var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
     var items: NSMutableArray!
     var images: NSMutableArray!
 
-    
+    //Entry Function
     override func viewDidLoad() {
         super.viewDidLoad()
         self.items = NSMutableArray(array: x)
@@ -77,6 +77,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         Sbd = UIStoryboard.init(name: "Attendees", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("Attendee")
         Vc[7] = dViewController
+        
+        Sbd = UIStoryboard.init(name: "Home", bundle: nil)
+        dViewController = Sbd!.instantiateViewControllerWithIdentifier("Home")
+        Vc[0] = dViewController
      
     }
     //Animates view
@@ -84,7 +88,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
         super.viewWillAppear(animated)
     }
-
+    //Memory Issues Function (UNUSED)
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -104,7 +108,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }*/
     
-    
+    //What happens when you push a button
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
         let view = Vc[indexPath.row]
@@ -189,14 +193,15 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     /*override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         //return self.fetchedResultsController.sections?.count ?? 0
     }*/
-
+    
+    //Number of Selectable Rows
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         /*let sectionInfo = self.fetchedResultsController.sections![section]
         return sectionInfo.numberOfObjects*/
         
         return self.items.count;
     }
-
+    //Add Cells To Table View
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         /*let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
