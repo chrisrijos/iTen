@@ -24,7 +24,7 @@ class AppData {
         agenda = Agenda()
         otherPath = dir.stringByAppendingPathComponent("data.dat")
         path = dir.stringByAppendingPathComponent(mainFile);
-        checkForPurgeFiles()
+        
     }
     func initData()
     {
@@ -38,6 +38,7 @@ class AppData {
     }
     func getDataFromFile()-> NSDictionary
     {
+        checkForPurgeFiles()
         var resultDictionary: NSData?
         var dictionary: NSDictionary?
         do {
