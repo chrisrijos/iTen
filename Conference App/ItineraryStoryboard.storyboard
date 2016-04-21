@@ -131,5 +131,56 @@
             </objects>
             <point key="canvasLocation" x="2152" y="-435"/>
         </scene>
+        <!--Event View Controller-->
+        <scene sceneID="6We-Rw-CJx">
+            <objects>
+                <viewController storyboardIdentifier="EventViewController" id="6ii-6G-6Pv" customClass="EventViewController" customModule="Conference_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yhF-cW-M4J"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qx0-BM-6MI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="brd-FA-sYq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Summary" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRA-4B-Rhb">
+                                <rect key="frame" x="20" y="57" width="280" height="491"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" priority="250" constant="491" id="yzn-Ht-Xh8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.98656028510000005" green="0.6345037818" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Event Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxL-8f-UfT">
+                                <rect key="frame" x="20" y="28" width="280" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="21" id="uMU-kx-ZND"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.98656028510000005" green="0.6345037818" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1508229673" green="0.35499495269999998" blue="0.59834796189999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="yRA-4B-Rhb" secondAttribute="leading" id="3fP-bY-7FM"/>
+                            <constraint firstItem="fxL-8f-UfT" firstAttribute="top" secondItem="yhF-cW-M4J" secondAttribute="bottom" constant="8" id="A18-YR-5MM"/>
+                            <constraint firstItem="yRA-4B-Rhb" firstAttribute="top" secondItem="fxL-8f-UfT" secondAttribute="bottom" constant="8" id="Lcr-aC-qF8"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="fxL-8f-UfT" secondAttribute="leading" id="aPX-Y2-nY2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fxL-8f-UfT" secondAttribute="trailing" id="iyG-DC-hEu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yRA-4B-Rhb" secondAttribute="trailing" id="pAU-JE-264"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="NameLabel" destination="fxL-8f-UfT" id="qkd-He-Dli"/>
+                        <outlet property="summaryLabel" destination="yRA-4B-Rhb" id="9wA-rO-tzm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MaM-UC-tgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1575" y="425"/>
+        </scene>
     </scenes>
 </document>

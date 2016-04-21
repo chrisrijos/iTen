@@ -11,20 +11,30 @@ import Foundation
 class AppData {
     var path: String
     var mainFile: String
-    
+    var agenda: Agenda
+    var status: Bool = true
     //Make sure that this url is the main json request
     var dataPath: NSURL =  NSURL(string: "http://djmobilesoftware.com/jsondata.json")!
+    var otherPath: String
     
     init()
     {
         let dir:NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first!
         mainFile = "jsonData.json"
+        agenda = Agenda()
+        otherPath = dir.stringByAppendingPathComponent("data.dat")
         path = dir.stringByAppendingPathComponent(mainFile);
+        checkForPurgeFiles()
     }
     func initData()
     {
         let data:NSData = getDataFromURL(dataPath)!
         data.writeToFile(path as String, atomically: false)
+        checkForPurgeFiles()
+        if(!status)
+        {
+            print("Out of date files")
+        }
     }
     func getDataFromFile()-> NSDictionary
     {
@@ -35,7 +45,14 @@ class AppData {
             dictionary =  try NSJSONSerialization.JSONObjectWithData(resultDictionary!, options: .MutableContainers) as! NSDictionary
         }
         catch {
-            
+            initData()
+            do {
+                resultDictionary = try NSData(contentsOfFile:path)
+                dictionary =  try NSJSONSerialization.JSONObjectWithData(resultDictionary!, options: .MutableContainers) as! NSDictionary
+            }
+            catch {
+                
+            }
         }
         
         return dictionary!
@@ -73,6 +90,64 @@ class AppData {
         
         return returnData
     }
+    
+    //
+    func checkForPurgeFiles()
+    {
+        let urlString = "http://pensacolacandidatewatcher.com/sample.json"
+        // let urlString = "http://djmobilesoftware.com/jsondata.json"
+        let url = NSURL(string: urlString)
+        var pastDate: Bool = false
+        var data: NSDictionary = getDataFromFile()
+        
+        do{
+            
+            
+            if let eventsJSON = data["events"] as? [NSDictionary] {
+                
+                
+                for eventJson in eventsJSON {
+                    
+                    let event =  Event(dictionary: eventJson)
+                    agenda.addEvent(event)
+                }
+            }
+            
+        } catch {
+            print("Error with file: \(error)")
+            
+        }
+        let allUnits = NSCalendarUnit(rawValue: UInt.max)
+        let components = NSCalendar.currentCalendar().components(allUnits, fromDate: NSDate())
+        
+        for event in agenda.events
+        {
+            var dateFromString:[Int] = [Int]()
+            var dateString = (event.date).characters.split{$0 == "/"}.map(String.init)
+            dateFromString.append(Int(dateString[0])!)
+            dateFromString.append(Int(dateString[1])!)
+            dateFromString.append(Int(dateString[2])!)
+            
+            
+            if(status)
+            {
+               status =  !(components.month > dateFromString[0] &&   components.year >= dateFromString[2])
+            }
+            
+        }
+        if(!status)
+        {
+            let str:NSData = NSData()
+            str.writeToFile(path as String, atomically: false)
+            str.writeToFile(otherPath as String, atomically: false)
+        }
+    }
+    func clearItin()
+    {
+        let str:NSData = NSData()
+        str.writeToFile(otherPath as String, atomically: false)
+    }
+    
     //Credit to http://stackoverflow.com/questions/24097826/read-and-write-data-from-text-file by user Adam on the stack
     //overflow site
 }
