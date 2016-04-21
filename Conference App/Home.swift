@@ -17,9 +17,9 @@ class Home: UITableViewController {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
         super.viewWillAppear(animated)
         //tableView.reloadData()
-        let q = Vc[0]
-        let tvc = q.childViewControllers[0] as! UITableViewController
-        tvc.tableView.reloadData()
+        //let q = Vc[0]
+        //let tvc = q.childViewControllers[0] as! UITableViewController
+        //tvc.tableView.reloadData()
     }
 
     override func viewDidLoad() {
@@ -30,9 +30,9 @@ class Home: UITableViewController {
         super.restorationIdentifier = "HomeScreen"
         self.tableView!.delegate = self
         self.tableView!.dataSource = self
-        let q = Vc[0]
-        let tvc = q.childViewControllers[0] as! UITableViewController
-        tvc.tableView.reloadData()
+        //let q = Vc[0]
+        //let tvc = q.childViewControllers[0] as! UITableViewController
+        //tvc.tableView.reloadData()
         
  //       tableView.reloadData()
         //self.viewDidLoad()
@@ -95,9 +95,9 @@ class Home: UITableViewController {
         //return currVc.count;
         super.tableView(tableView, numberOfRowsInSection: section)
         //tableView.reloadData()
-        let q = Vc[0]
-        let tvc = q.childViewControllers[0] as! UITableViewController
-        tvc.tableView.reloadData()
+        //////let q = Vc[0]
+        ////let tvc = q.childViewControllers[0] as! UITableViewController
+        ////tvc.tableView.reloadData()
         return currVc.count
     }
     
@@ -117,17 +117,17 @@ class Home: UITableViewController {
         cell.contentMode = .ScaleToFill
         cell.userInteractionEnabled = true
         //tableView.reloadData()
-        let q = Vc[0]
-        let tvc = q.childViewControllers[0] as! UITableViewController
-        tvc.tableView.reloadData()
+        ////let q = Vc[0]
+        //let tvc = q.childViewControllers[0] as! UITableViewController
+        //tvc.tableView.reloadData()
         return cell
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         //tableView.reloadData()
-        let q = Vc[0]
-        let tvc = q.childViewControllers[0] as! UITableViewController
-        tvc.tableView.reloadData()
+        ////let q = Vc[0]
+        //let tvc = q.childViewControllers[0] as! UITableViewController
+        //tvc.tableView.reloadData()
         //ScrollView.contentSize = CGSize(width: HomeStack.frame.width, height: HomeStack.frame.height)
     }
     /*override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath){
