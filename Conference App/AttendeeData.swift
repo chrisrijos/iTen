@@ -11,144 +11,110 @@ import Foundation
 
 class AttendeeData{
     
-    var attendee:Attendee = Attendee()
+    private var attendee:Attendee = Attendee()
     
     init(){
         
-        let requestURL: NSURL = NSURL(string: "http://djmobilesoftware.com/jsondata.json")!
+    }
+    internal func loadSponsors(data:NSData){
+        do{
+            let json = try NSJSONSerialization.JSONObjectWithData(data, options:.AllowFragments)
+            
+            if let eventsJSON = json["sponsors"] as? [NSDictionary] {
+                
+                
+                for eventJson in eventsJSON {
+                    
+                    let event =  Event(dictionary: eventJson)
+                    self.attendee.addEvent(event)
+                }
+            }
+            
+        } catch {
+            print("Error with Json: \(error)")
+        }
+        
+    }
+    internal func loadExhibitor(data:NSData){
+        do{
+            let json = try NSJSONSerialization.JSONObjectWithData(data, options:.AllowFragments)
+            
+            if let eventsJSON = json["exhibitors"] as? [NSDictionary] {
+                
+                
+                for eventJson in eventsJSON {
+                    
+                    let event =  Event(dictionary: eventJson)
+                    self.attendee.addEvent(event)
+                }
+            }
+            
+        } catch {
+            print("Error with Json: \(error)")
+        }
+        
+    }
+    internal func loadSpeakers(data:NSData){
+        do{
+            let json = try NSJSONSerialization.JSONObjectWithData(data, options:.AllowFragments)
+            
+            if let eventsJSON = json["speakers"] as? [NSDictionary] {
+                
+                
+                for eventJson in eventsJSON {
+                    
+                    let event =  Event(dictionary: eventJson)
+                    self.attendee.addEvent(event)
+                }
+            }
+            
+        } catch {
+            print("Error with Json: \(error)")
+        }
+        
+    }
+    
+
+    internal func getDataFromURL(requestURL: NSURL) -> NSData?{
+        
+        var locked = true       // Flag to make sure the
+        var returnData:NSData?
+        
         let urlRequest: NSMutableURLRequest = NSMutableURLRequest(URL: requestURL)
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(urlRequest) {
             (data, response, error) -> Void in
             
-            let httpResponse = response as! NSHTTPURLResponse
-            let statusCode = httpResponse.statusCode
-            
-            if (statusCode == 200) {
+            if let httpResponse = response as? NSHTTPURLResponse {
                 
-                do{
-                    
-                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments)
-                    
-                    
-                    if let events = json["sponsors"] as? [[String: AnyObject]] {
-                        
-                        
-                        for eventData in events {
-                            
-                            let event = self.SponsorsparseEvent(eventData)
-                            self.attendee.addEvent(event)
-                        }
-                        
-                        
-                    }
-                    if let events = json["exhibitors"] as? [[String: AnyObject]] {
-                        
-                        
-                        for eventData in events {
-                            
-                            let event = self.ExhibitorsparseEvent(eventData)
-                            self.attendee.addEvent(event)
-                        }
-                        
-                        
-                    }
-                    if let events = json["speakers"] as? [[String: AnyObject]] {
-                        
-                        
-                        for eventData in events {
-                            
-                            let event = self.SpeakersparseEvent(eventData)
-                            self.attendee.addEvent(event)
-                        }
-                        
-                        
-                    }
-                    
-                } catch {
-                    print("Error with Json: \(error)")
+                let statusCode = httpResponse.statusCode
+                
+                if (statusCode == 200) {
+                    returnData = data!
+                }else{
+                    print("Error while retriving data!")
                 }
+                locked = false
+                
             }
         }
         
         
         task.resume()
-    }
-    
-    private func SponsorsparseEvent(data:[String: AnyObject]) -> Event{
         
-        let id = data["id"] as? String
-        let name = data["name"] as? String
-        let website = data["website"] as? String
-        let logo = data["logo"] as? String
-        let description = data["description"] as? String
-        let jobTitle = data["level"] as? String
-        let event:Event = Event(id: Int(id!)!)
-        
-        event.name = name!
-        event.website = website!
-        event.logo = logo!
-        event.jobTitle = jobTitle!
-        event.description = description!
-        
-        return event
-    }
-    private func SpeakersparseEvent(data:[String: AnyObject]) -> Event{
-        
-        let id = data["id"] as? String
-        let name = data["name"] as? String
-        let website = data["website"] as? String
-        let jobTitle = data["jobtitle"] as? String
-        let description = data["bio"] as? String
-        let linkedin = data["linkedin"] as? String
-        let email = data ["email"] as? String
-        
-        
-        let event:Event = Event(id: Int(id!)!)
-        
-        if (name != nil) {
-            event.name = name!
+        while(locked){ // Runs untill the response is received
+            
         }
         
-        if (website != nil)  {
-            event.website = website!
-        }
-        if (jobTitle != nil)  {
-            event.jobTitle = jobTitle!
-        }
-        if (description != nil) {
-            event.description = description!
-        }
-        if (linkedin != nil)  {
-            event.linkedin = linkedin!
-        }
-        if (email != nil)  {
-             event.email = email!
-        }
-       
-        
-        
-        return event
-    }
-    private func ExhibitorsparseEvent(data:[String: AnyObject]) -> Event{
-        
-        let id = data["id"] as? String
-        let name = data["name"] as? String
-        let website = data["website"] as? String
-        let logo = data["logo"] as? String
-        let description = data["description"] as? String
-        
-        let event:Event = Event(id: Int(id!)!)
-        
-        event.name = name!
-        event.website = website!
-        event.logo = logo!
-        event.description = description!
-        
-        return event
+        return returnData
     }
     
     func getAttendee() -> Attendee {
+        let requestURL: NSURL = NSURL(string: "http://djmobilesoftware.com/jsondata.json")! // URL for the JSON file
+        let data:NSData = self.getDataFromURL(requestURL)!  //loads the JSON data from the URL
+        self.loadSponsors(data)
+        self.loadExhibitor(data)
+        self.loadSpeakers(data)
         return self.attendee
     }
 }

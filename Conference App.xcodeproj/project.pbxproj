@@ -19,12 +19,13 @@
 		0EE564D11CB83E6C001678B0 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE564D01CB83E6C001678B0 /* MapView.storyboard */; };
 		0EE564D51CB845E7001678B0 /* AboutView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE564D41CB845E7001678B0 /* AboutView.storyboard */; };
 		0EE564D71CB84DC1001678B0 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE564D61CB84DC1001678B0 /* AboutViewController.swift */; };
-		4F2FBD121CBC5AEC0017A11F /* AttendeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2FBD111CBC5AEC0017A11F /* AttendeesViewController.swift */; };
+		4F2FBD121CBC5AEC0017A11F /* AttendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2FBD111CBC5AEC0017A11F /* AttendTableViewController.swift */; };
 		4F2FBD141CBC5C7C0017A11F /* AttendeesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2FBD131CBC5C7C0017A11F /* AttendeesCell.swift */; };
 		4F3A78DB1CB5AAF500A87EE6 /* Attendees.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3A78DA1CB5AAF500A87EE6 /* Attendees.storyboard */; };
 		4F4590E41CBEC85A00F51BCE /* Attendee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4590E31CBEC85A00F51BCE /* Attendee.swift */; };
 		4F4590E61CBEC8DE00F51BCE /* AttendeeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4590E51CBEC8DE00F51BCE /* AttendeeData.swift */; };
 		4F4590E81CBEC98F00F51BCE /* AttendeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4590E71CBEC98F00F51BCE /* AttendeeController.swift */; };
+		4F72CBAE1CC884BA00C30D2B /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F72CBAD1CC884BA00C30D2B /* DescriptionViewController.swift */; };
 		827BA99F1CC2E44B003085BA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 827BA99E1CC2E44B003085BA /* Social.framework */; };
 		827BA9A11CC2E464003085BA /* SocialMedia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827BA9A01CC2E464003085BA /* SocialMedia.storyboard */; };
 		827BA9A31CC2E48F003085BA /* SocialMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827BA9A21CC2E48F003085BA /* SocialMediaViewController.swift */; };
@@ -93,12 +94,13 @@
 		0EE564D21CB83E9A001678B0 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0EE564D41CB845E7001678B0 /* AboutView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AboutView.storyboard; sourceTree = "<group>"; };
 		0EE564D61CB84DC1001678B0 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		4F2FBD111CBC5AEC0017A11F /* AttendeesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendeesViewController.swift; sourceTree = "<group>"; };
+		4F2FBD111CBC5AEC0017A11F /* AttendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendTableViewController.swift; sourceTree = "<group>"; };
 		4F2FBD131CBC5C7C0017A11F /* AttendeesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendeesCell.swift; sourceTree = "<group>"; };
 		4F3A78DA1CB5AAF500A87EE6 /* Attendees.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Attendees.storyboard; sourceTree = "<group>"; };
 		4F4590E31CBEC85A00F51BCE /* Attendee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attendee.swift; sourceTree = "<group>"; };
 		4F4590E51CBEC8DE00F51BCE /* AttendeeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendeeData.swift; sourceTree = "<group>"; };
 		4F4590E71CBEC98F00F51BCE /* AttendeeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendeeController.swift; sourceTree = "<group>"; };
+		4F72CBAD1CC884BA00C30D2B /* DescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		827BA99E1CC2E44B003085BA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		827BA9A01CC2E464003085BA /* SocialMedia.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SocialMedia.storyboard; sourceTree = "<group>"; };
 		827BA9A21CC2E48F003085BA /* SocialMediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaViewController.swift; sourceTree = "<group>"; };
@@ -235,11 +237,12 @@
 				FE2623B21CAEFA940074C58F /* Info.plist */,
 				FE2623A31CAEFA940074C58F /* Conference_App.xcdatamodeld */,
 				4F3A78DA1CB5AAF500A87EE6 /* Attendees.storyboard */,
-				4F2FBD111CBC5AEC0017A11F /* AttendeesViewController.swift */,
+				4F2FBD111CBC5AEC0017A11F /* AttendTableViewController.swift */,
 				4F4590E71CBEC98F00F51BCE /* AttendeeController.swift */,
 				4F4590E51CBEC8DE00F51BCE /* AttendeeData.swift */,
 				4F4590E31CBEC85A00F51BCE /* Attendee.swift */,
 				4F2FBD131CBC5C7C0017A11F /* AttendeesCell.swift */,
+				4F72CBAD1CC884BA00C30D2B /* DescriptionViewController.swift */,
 				0EE564D01CB83E6C001678B0 /* MapView.storyboard */,
 				0E647B2E1CBF2E19006DFB68 /* loc.swift */,
 				0E647B301CBF2E38006DFB68 /* AddAnnotation.swift */,
@@ -429,6 +432,7 @@
 				FE8936721CC14EF100F4F103 /* Home.swift in Sources */,
 				FEF7E0CB1CB858E3002A810B /* MapViewController.swift in Sources */,
 				0EBCE1E61CC2E14E008CEA2C /* LiveBroadcastViewController.swift in Sources */,
+				4F72CBAE1CC884BA00C30D2B /* DescriptionViewController.swift in Sources */,
 				A123500E1CB945F300B1233E /* AgendaViewController.swift in Sources */,
 				0EE564D71CB84DC1001678B0 /* AboutViewController.swift in Sources */,
 				B1C3E2E01CC17BEA00E77ADA /* appendToMyIten.swift in Sources */,
@@ -445,7 +449,7 @@
 				FEF7E0C71CB852B5002A810B /* EventCell.swift in Sources */,
 				4F4590E61CBEC8DE00F51BCE /* AttendeeData.swift in Sources */,
 				0E647B2D1CBF2DDB006DFB68 /* MapData.swift in Sources */,
-				4F2FBD121CBC5AEC0017A11F /* AttendeesViewController.swift in Sources */,
+				4F2FBD121CBC5AEC0017A11F /* AttendTableViewController.swift in Sources */,
 				0ED487731CBD817D007DCC2B /* AboutData.swift in Sources */,
 				FEF7E0C51CB852A8002A810B /* EventViewController.swift in Sources */,
 				4F4590E81CBEC98F00F51BCE /* AttendeeController.swift in Sources */,
