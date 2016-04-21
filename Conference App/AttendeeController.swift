@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+//control
 class AttendeeController{
     
     var attendee:Attendee = Attendee()

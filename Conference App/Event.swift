@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+//data structure
 class Event{
 
     var id:Int = 0
@@ -18,6 +18,7 @@ class Event{
     var date:String = ""
     
     //attendees
+    var attendeeName: String = ""
     var logo:String = ""
     var level: String = ""
     var description: String = ""
@@ -61,6 +62,35 @@ class Event{
         if let date = dictionary.objectForKey(EventEnum.date.rawValue) as? String{
             self.date = date
         }
+        
+        if let logo = dictionary.objectForKey(EventEnum.logo.rawValue) as? String{
+            self.logo = logo
+        }
+        if let level = dictionary.objectForKey(EventEnum.level.rawValue) as? String{
+            self.level = level
+        }
+        if let description = dictionary.objectForKey(EventEnum.description.rawValue) as? String{
+            self.description = description
+        }
+        if let jobTitle = dictionary.objectForKey(EventEnum.jobTitle.rawValue) as? String{
+            self.jobTitle = jobTitle
+        }
+        if let company = dictionary.objectForKey(EventEnum.company.rawValue) as? String{
+            self.company = company
+        }
+        if let linkedin = dictionary.objectForKey(EventEnum.linkedin.rawValue) as? String{
+            self.linkedin = linkedin
+        }
+        if let email = dictionary.objectForKey(EventEnum.email.rawValue) as? String{
+            self.email = email
+        }
+        if let website = dictionary.objectForKey(EventEnum.website.rawValue) as? String{
+            self.website = website
+        }
+        if let type = dictionary.objectForKey(EventEnum.type.rawValue) as? String{
+            self.type = type
+        }
+        
     }
 }
 
@@ -72,4 +102,16 @@ enum EventEnum : String{
     case timeStart
     case timeStop
     case date
+    
+    
+   
+    case logo
+    case level
+    case description
+    case jobTitle
+    case company
+    case linkedin
+    case email
+    case website
+    case type
 }
