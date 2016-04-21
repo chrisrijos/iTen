@@ -112,7 +112,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
         let view = Vc[indexPath.row]
-    
+        if view is UITableViewController{
+            let tv = view.view as! UITableView
+            tv.reloadData()
+        }
         
         if !MasterViewController.isConnectedToNetwork() {
             print(x)
