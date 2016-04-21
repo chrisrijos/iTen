@@ -26,7 +26,7 @@ class Home: UITableViewController {
         super.restorationIdentifier = "HomeScreen"
         self.tableView!.delegate = self
         self.tableView!.dataSource = self
-
+        self.tableView.reloadData()
         //self.viewDidLoad()
         //self.refreshControl?.beginRefreshing()
         // Do any additional setup after loading the view.
