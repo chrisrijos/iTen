@@ -8,23 +8,32 @@
 
 import UIKit
 
-class AttendeesViewController: UITableViewController {
+class AttendeesViewController: UITableViewController, UISearchResultsUpdating {
     
     var AttendeeControl:AttendeeController = AttendeeController()
     var detailViewController: DetailViewController? = nil
     var attendes = [Event]()
     var filtered = [Event]()
+    var Handles = [String]()
+    var Filtered = [String]()
     let searchController = UISearchController(searchResultsController: nil)
+    //let searchController = UISearchController(searchResultsController: nil)
     
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        // Setup the Search Controller
+        let ATT = AttendeeControl.dataLoader.getAttendee()
+        let attendes = ATT.event
+        for i in 0...attendes.count-1{
+            Handles.append(attendes[i].name)
+        }
         searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
+        searchController.hidesNavigationBarDuringPresentation = false
+        // Setup the Search Controller
+        //searchController.searchResultsUpdater = self
+        //searchController.searchBar.delegate = self
         definesPresentationContext = true
         searchController.dimsBackgroundDuringPresentation = false
         
@@ -51,11 +60,29 @@ class AttendeesViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(section == 0){
+        /*if(section == 0){
             return AttendeeControl.getEventsCount()
         }
    
-        return attendes.count
+        return attendes.count*/
+        
+        if (searchController.active){
+            /*if (searchController.searchBar.text?.isEmpty) != nil{
+             return Handles.count
+             }*/
+            //if searchController.searchBar.text? == nil{
+            //  return Handles.count
+            //}
+            
+            if let q = searchController.searchBar.text{
+                if q.characters.count <= 0{
+                    return Handles.count
+                }
+                return Filtered.count
+            }
+            
+        }
+        return Handles.count
     }
     
     
@@ -63,8 +90,8 @@ class AttendeesViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
             
-            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! AttendeesCell
-            let event = AttendeeControl.getEventAt(indexPath.row)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! AttendeesCell
+        let event = AttendeeControl.getEventAt(indexPath.row)
         
         //This is part of my search bar but it not working when use it give out of bound array error
         /*
@@ -74,23 +101,53 @@ class AttendeesViewController: UITableViewController {
             } else {
                 candy = candies[indexPath.row]
             }
-        */
+        *//*
             cell.setName(event.name)
             cell.setjobTitle(event.jobTitle)
             cell.setLogo(event.logo)
-            
+            */
         
-            return cell
+        if searchController.active{
+            if let q = searchController.searchBar.text{
+                if q.characters.count <= 0{
+                    cell.setName(event.name)
+                    cell.setjobTitle(event.jobTitle)
+                    cell.setLogo(event.logo)
+                } else{
+                    cell.setName(Filtered[indexPath.row])
+                    for i in 0...Handles.count-1{
+                        if Filtered[indexPath.row] == Handles[i]{
+                            cell.setjobTitle(AttendeeControl.getEventAt(i).jobTitle)
+                            cell.setLogo(AttendeeControl.getEventAt(i).logo)
+                        }
+                    }
+                }
+            }
+            else {
+                cell.setName(event.name)
+                cell.setjobTitle(event.jobTitle)
+                cell.setLogo(event.logo)
+            }
+            //cell.setjobTitle(filtered[indexPath.row].jobTitle)
         }
+        else{
+            cell.setName(event.name)
+            cell.setjobTitle(event.jobTitle)
+            cell.setLogo(event.logo)
+        }
+
+        
+        return cell
+    }
     
     //filtering content
-    func filterContentForSearchText(searchText: String, scope: String = "All") {
+    /*func filterContentForSearchText(searchText: String, scope: String = "All") {
         filtered = attendes.filter({( event : Event) -> Bool in
             let categoryMatch = (scope == "All") || (event.name == scope)
             return categoryMatch && event.name.lowercaseString.containsString(searchText.lowercaseString)
         })
         tableView.reloadData()
-    }
+    }*/
     // MARK: - Segues
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
@@ -109,26 +166,35 @@ class AttendeesViewController: UITableViewController {
             }
         }
     }
-
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
+        let array = (Handles as NSArray).filteredArrayUsingPredicate(searchPredicate)
+        Filtered = array as! [String]
+        //let arr = (attendes as NSArray).filteredArrayUsingPredicate(searchPredicate)
+        //filtered = array as! [Event]
+        
+        self.tableView.reloadData()
+    }
 }
 
 
 
-extension AttendeesViewController: UISearchBarDelegate {
+/*extension AttendeesViewController: UISearchBarDelegate {
     // MARK: - UISearchBar Delegate
     func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
     }
-}
+}*/
 
-extension AttendeesViewController: UISearchResultsUpdating {
+/*extension AttendeesViewController: UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         let searchBar = searchController.searchBar
         let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
         filterContentForSearchText(searchController.searchBar.text!, scope: scope)
     }
-}
+    
+}*/
 
 
 
