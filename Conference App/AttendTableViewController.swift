@@ -83,7 +83,7 @@ class AttendeesViewController: UITableViewController {
             return cell
         }
     
-    
+    //filtering content
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         filtered = attendes.filter({( event : Event) -> Bool in
             let categoryMatch = (scope == "All") || (event.name == scope)

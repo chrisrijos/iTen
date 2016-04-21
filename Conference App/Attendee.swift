@@ -6,7 +6,7 @@
 //  Copyright © 2016 Chrystech Systems. All rights reserved.
 //
 
-
+//add event
 class Attendee{
     var event:[Event] = []
     

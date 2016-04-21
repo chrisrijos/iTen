@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+//data structure
 class Event{
 
     var id:Int = 0

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//event
 class AttendeesCell: UITableViewCell {
     
     @IBOutlet weak var logoImage: UIImageView!

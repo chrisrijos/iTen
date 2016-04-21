@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//description
 class AttendeeDescription: UIViewController {
     
     var event:Event?
@@ -35,8 +35,7 @@ class AttendeeDescription: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-      
+        // load
       configureView()
     }
     

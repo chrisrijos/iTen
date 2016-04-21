@@ -35,6 +35,7 @@ class AttendeeData{
         }
         
     }
+    //json Exhibitor
     internal func loadExhibitor(data:NSData){
         do{
             let json = try NSJSONSerialization.JSONObjectWithData(data, options:.AllowFragments)
@@ -43,7 +44,7 @@ class AttendeeData{
                 
                 
                 for eventJson in eventsJSON {
-                    
+     
                     let event =  Event(dictionary: eventJson)
                     self.attendee.addEvent(event)
                 }
