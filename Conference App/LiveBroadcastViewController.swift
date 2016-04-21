@@ -56,6 +56,8 @@ class LiveBroadcastViewController: UIViewController {
         
         do { try session.setCategory(AVAudioSessionCategoryPlayback) }
         catch { }
+        
+        //print("Bad Stream Count: \(badStreamCount)")
     }
     
     // Figures out the duration that the stream has been going
@@ -63,7 +65,7 @@ class LiveBroadcastViewController: UIViewController {
         
         // Count is number of seconds the stream has been running
         count = count + 1
-        print("Count: \(count)")
+        //print("Count: \(count)")
         let time = secondsToHoursMinutesSeconds(count)
         
         // Format the time
@@ -76,16 +78,20 @@ class LiveBroadcastViewController: UIViewController {
         {
             // Stream is not likely to proceed
             badStreamCount = badStreamCount + 1
-            //print("Bad Stream Count: \(badStreamCount)")
+            //print("Not Likely - Count: \(badStreamCount)")
         }
         else if (self.player?.rate == 0.0) {
             // Internet Connection drops during stream
             badStreamCount = badStreamCount + 1
+            //print("Internet Drops - Not Likely - Count: \(badStreamCount)")
+
         }
         else {
             // Stream is successful, and will keep playing
             if (badStreamCount > 0) {
                 badStreamCount = badStreamCount - 1
+                //print("Bad Stream Count: \(badStreamCount)")
+
             }
         }
         
