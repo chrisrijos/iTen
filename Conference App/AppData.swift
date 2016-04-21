@@ -36,9 +36,8 @@ class AppData {
             print("Out of date files")
         }
     }
-    func getDataFromFile()-> NSDictionary
+    func getDataBear()->NSDictionary
     {
-        checkForPurgeFiles()
         var resultDictionary: NSData?
         var dictionary: NSDictionary?
         do {
@@ -57,6 +56,12 @@ class AppData {
         }
         
         return dictionary!
+        
+    }
+    func getDataFromFile()-> NSDictionary
+    {
+        checkForPurgeFiles()
+        return getDataBear()
     }
     func getDataFromURL(requestURL: NSURL) -> NSData?{
         
@@ -95,11 +100,8 @@ class AppData {
     //
     func checkForPurgeFiles()
     {
-        let urlString = "http://pensacolacandidatewatcher.com/sample.json"
-        // let urlString = "http://djmobilesoftware.com/jsondata.json"
-        let url = NSURL(string: urlString)
         var pastDate: Bool = false
-        var data: NSDictionary = getDataFromFile()
+        var data: NSDictionary = getDataBear()
         
         do{
             
