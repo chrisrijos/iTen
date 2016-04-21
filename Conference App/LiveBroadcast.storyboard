@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Live Broadcast View Controller-->
+        <!--Live Broadcast-->
         <scene sceneID="QIR-Gg-rml">
             <objects>
-                <viewController storyboardIdentifier="LiveBroadcast" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eDK-YJ-Q42" customClass="LiveBroadcastViewController" customModule="Conference_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LiveBroadcast" title="Live Broadcast" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eDK-YJ-Q42" customClass="LiveBroadcastViewController" customModule="Conference_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BTE-ec-sII"/>
                         <viewControllerLayoutGuide type="bottom" id="8Cw-2b-QC7"/>

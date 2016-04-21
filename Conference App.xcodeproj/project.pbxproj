@@ -12,6 +12,7 @@
 		0E647B311CBF2E38006DFB68 /* AddAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E647B301CBF2E38006DFB68 /* AddAnnotation.swift */; };
 		0E647B331CBF2E67006DFB68 /* AnnotationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E647B321CBF2E67006DFB68 /* AnnotationDetailViewController.swift */; };
 		0E7A8FE51CC19D150034513C /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7A8FE41CC19D150034513C /* AppData.swift */; };
+		0E7E95621CC974FD000EF67E /* swipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E7E95611CC974FD000EF67E /* swipe.png */; };
 		0EBCE1E41CC2E128008CEA2C /* LiveBroadcast.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EBCE1E31CC2E128008CEA2C /* LiveBroadcast.storyboard */; };
 		0EBCE1E61CC2E14E008CEA2C /* LiveBroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBCE1E51CC2E14E008CEA2C /* LiveBroadcastViewController.swift */; };
 		0ED487731CBD817D007DCC2B /* AboutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED487721CBD817D007DCC2B /* AboutData.swift */; };
@@ -86,6 +87,7 @@
 		0E647B301CBF2E38006DFB68 /* AddAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAnnotation.swift; sourceTree = "<group>"; };
 		0E647B321CBF2E67006DFB68 /* AnnotationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationDetailViewController.swift; sourceTree = "<group>"; };
 		0E7A8FE41CC19D150034513C /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		0E7E95611CC974FD000EF67E /* swipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipe.png; sourceTree = "<group>"; };
 		0EBCE1E31CC2E128008CEA2C /* LiveBroadcast.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LiveBroadcast.storyboard; sourceTree = "<group>"; };
 		0EBCE1E51CC2E14E008CEA2C /* LiveBroadcastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveBroadcastViewController.swift; sourceTree = "<group>"; };
 		0ED487721CBD817D007DCC2B /* AboutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutData.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		D4C467C21CB84B5F00BD6157 /* Agenda */ = {
 			isa = PBXGroup;
 			children = (
+				0E7E95611CC974FD000EF67E /* swipe.png */,
 				A123500D1CB945F300B1233E /* AgendaViewController.swift */,
 				D4C467C61CB84BA000BD6157 /* AgendaController.swift */,
 				D4C467CF1CB84D9700BD6157 /* AgendaMain.storyboard */,
@@ -395,6 +398,7 @@
 				A12350181CB9500400B1233E /* ItineraryStoryboard.storyboard in Resources */,
 				FE2623DD1CAF3C800074C58F /* SocialMedia.png in Resources */,
 				FE2623D51CAF39CF0074C58F /* Home.png in Resources */,
+				0E7E95621CC974FD000EF67E /* swipe.png in Resources */,
 				0EE564D51CB845E7001678B0 /* AboutView.storyboard in Resources */,
 				0EE564D11CB83E6C001678B0 /* MapView.storyboard in Resources */,
 				FE2623D91CAF3B2B0074C58F /* Agenda.png in Resources */,

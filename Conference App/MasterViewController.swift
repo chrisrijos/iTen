@@ -10,13 +10,13 @@ import UIKit
 import CoreData
 import SystemConfiguration
 
-public var Vc:[UIViewController] = [UINavigationController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController()]
+public var Vc:[UIViewController] = [/*UINavigationController(),*/UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController(),UIViewController()]
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     //initialize String for Menu List
-    let x:[String] = ["Home","Map","Agenda","My Iten","Social Media","Live Broadcast","About","Who is Here", "Settings"]
+    let x:[String] = [/*"Home",*/"Map","Agenda","My Iten","Social Media","Live Broadcast","About","Who is Here", "Settings"]
     //assigns images to menu listß
-    let m:[UIImage] = [UIImage(named:"Home.png")!,UIImage(named:"Map.png")!,UIImage(named:"Agenda.png")!,UIImage(named:"MyIten.png")!,UIImage(named:"SocialMedia.png")!,UIImage(named:"LiveBroadcast.png")!,UIImage(named:"About.png")!,UIImage(named:"Who.png")!,UIImage(named:"Settings.png")!]
+    let m:[UIImage] = [/*UIImage(named:"Home.png")!,*/UIImage(named:"Map.png")!,UIImage(named:"Agenda.png")!,UIImage(named:"MyIten.png")!,UIImage(named:"SocialMedia.png")!,UIImage(named:"LiveBroadcast.png")!,UIImage(named:"About.png")!,UIImage(named:"Who.png")!,UIImage(named:"Settings.png")!]
     
     
     //creates new default instances of UIViewController to initialize storyboards
@@ -46,41 +46,41 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         
         
         //Adds new initialized ViewControllers to a ViewController array
-        var Sbd:UIStoryboard? = UIStoryboard.init(name: "Home", bundle: nil)
-        var dViewController:UIViewController = Sbd!.instantiateViewControllerWithIdentifier("Home")
+        var Sbd:UIStoryboard? = UIStoryboard.init(name: "MapView", bundle: nil)
+        var dViewController:UIViewController = Sbd!.instantiateViewControllerWithIdentifier("MapStoryboard")
         Vc[0] = dViewController
         
-        Sbd = UIStoryboard.init(name: "MapView", bundle: nil)
+        /*Sbd = UIStoryboard.init(name: "MapView", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("MapStoryboard")
-        Vc[1] = dViewController
+        Vc[0] = dViewController*/
         
         Sbd = UIStoryboard.init(name: "AgendaMain", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("AgendaInitial")
-        Vc[2] = dViewController
+        Vc[1] = dViewController
         
         Sbd = UIStoryboard.init(name: "ItineraryStoryboard", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("Itinerary")
-        Vc[3] = dViewController
+        Vc[2] = dViewController
         
         Sbd = UIStoryboard.init(name: "SocialMedia", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("SocialMedia")
-        Vc[4] = dViewController
+        Vc[3] = dViewController
         
         Sbd = UIStoryboard.init(name: "LiveBroadcast", bundle:nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("LiveBroadcast")
-        Vc[5] = dViewController
+        Vc[4] = dViewController
         
         Sbd = UIStoryboard.init(name: "AboutView", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("AboutView")
-        Vc[6] = dViewController
+        Vc[5] = dViewController
         
         Sbd = UIStoryboard.init(name: "Attendees", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("Attendee")
-        Vc[7] = dViewController
+        Vc[6] = dViewController
         
-        Sbd = UIStoryboard.init(name: "Home", bundle: nil)
+        /*Sbd = UIStoryboard.init(name: "Home", bundle: nil)
         dViewController = Sbd!.instantiateViewControllerWithIdentifier("Home")
-        Vc[0] = dViewController
+        Vc[0] = dViewController*/
      
     }
     //Animates view
@@ -112,7 +112,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
         let view = Vc[indexPath.row]
-    
+        if view is UITableViewController{
+            let tv = view.view as! UITableView
+            tv.reloadData()
+        }
         
         if !MasterViewController.isConnectedToNetwork() {
             print(x)
