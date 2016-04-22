@@ -34,6 +34,7 @@ class AgendaController{
                 event = tempEvents
             }
         }
+        
         return event!
     }
     

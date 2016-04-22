@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItineraryViewController: UIViewController {
+class ItineraryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
     
     @IBOutlet weak var ItinTable: UITableView!
@@ -17,8 +17,21 @@ class ItineraryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ItinTable.reloadData()
+        self.ItinTable.delegate = self
+        self.ItinTable.dataSource = self
+        
+        
+        ItinTable.estimatedRowHeight = 85.0
+        ItinTable.rowHeight = UITableViewAutomaticDimension
+        
+        
         // Do any additional setup after loading the view.
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        dataMyIten.reloadData()
+        ItinTable.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,4 +69,8 @@ class ItineraryViewController: UIViewController {
         
         self.navigationController?.pushViewController(destinationViewController, animated: true)
     }
+    func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+        ItinTable.reloadData()
+    }
+    
 }
